@@ -105,153 +105,16 @@
 <img src="/img/bitcoin-symbol.png">
 
 
-<p>首先要理解一个概念：比特币是<strong>记账单位</strong>。这就像“升”是液体的单位，“千克”是重量的单位。虽然比特币不能像纸币那样攥在手里，但这不是重点。真正的重点是：</p>
-<ul>
-<li>比特币可以持有;</li>
-<li>比特币可以转账;</li>
-<li>比特币无法复制。</li>
-</ul>
-<p>这三个特性加在一起，使比特币成为一种非常有效的财富转移工具。这就是比特币有价值的根本原因。</p>
-<p>请回想一下纸币的好处在哪里？实际上也是以上三点。你可以把一元钱揣在自己兜里（持有），你可以把这一元钱付给别人（转账），同时纸币是很难复制的。所以，现金是个很好的财富转移工具，而比特币是另一种更好的选择。</p>
-<p>既然比特币不是实物而只是记账单位，那用什么方法来跟踪记录它呢？</p>
-<p>比特币的解决方案异常巧妙！</p>
-<hr>
-<h2 id="比特币记录交易的方式">比特币记录交易的方式</h2>
-<p>也许你听过这样的说法：比特币是去中心化的，没有中心服务器来记录每个人拥有比特币的数量。但这句话的意思不是说比特币没有服务器。实际上，比特币有成千上万个服务器来记录每个人的比特币数量。这些服务器我们统称为比特币节点。</p>
-<img src="/img/bitcoin-overview.png">
 
-
-<p>每个比特币节点都是一个电子记账员，任何人都可以在自己的电脑上运行一个这样的节点。每个节点都会存一份完整的总账——这个总账记录了从比特币诞生之日起的所有交易。到目前为止，这个总账已经记录了3000万笔交易，大约占用13GB的存储空间。</p>
-<p>想要使用比特币，你需要一个功能类似钱包的设备。它可以是电脑软件、手机应用或者网站服务等。钱包的主要功能是联系比特币节点并将交易写进总账里。节点会将交易广播给其他节点，一传十、十传百——这和BT下载、迅雷下载的工作原理一样。一笔交易从发出的时刻算起，到广播至全网节点，仅需要7秒钟。</p>
-<hr>
-<h2 id="比特币交易信息里写了什么？">比特币交易信息里写了什么？</h2>
-<p>通过上面的解释可以很明显地看出：当你给别人“发送”比特币的时候，你没有直接发给对方任何东西，而是钱包软件在总账里写入了一个交易。这个交易将比特币从一个账户划到另一个账户。比如，下图是3个去年12月发生的交易：</p>
-<img src="/img/public-ledger.png">
-
-
-<p>可以看到，每笔交易都有一系列输入（INPUTS）和输出（OUTPUTS）。输入表示要花掉的比特币从哪来，输出表示这些比特币的付款对象。每一个输入（INPUTS）都是对前项交易中输出（OUTPUTS）的签名信息。只要输出（OUTPUTS）被随后的输入（INPUTS）花掉，其他交易就无法使用这个输出（OUTPUTS）了。这就是比特币无法复制的原理。</p>
-<p>比特币地址中没有花掉的输出就表示这个地址拥有币的数量。如果你把总账中所有没花掉的比特币加起来，就可以得到当下全世界总共有多少比特币。或者直接这样理解：没花掉的输出（OUTPUTS）就是比特币本身。</p>
-<img src="/img/unspent-outputs.png">
-
-
-<p>从上面的交易还可以看到，没有人名出现在交易中，这就是所谓的匿名性。代替真名出现的是比特币地址，比如：1PreshX6QrHmsWbSs8pHpz6kLRcj9kdPy6。比特币地址就像银行帐号，只不过比特币地址比银行帐号更容易创造。理论上，每个人都可以拥有无数个比特币地址。</p>
-<hr>
-<h2 id="比特币地址从哪来？">比特币地址从哪来？</h2>
-<p>很显然，你想接收比特币就需要比特币地址。而比特币钱包可以帮你生成这样的地址。</p>
-<p>为了生成比特币地址，钱包会首先生成私钥。每个私钥都是一个从1到2256的随机数。为了让这个随机数短一点，钱包会把它转换成一串数字、字母的组合。就像下面这样：</p>
-<img src="/img/btc-address-gen-1.png">
-
-
-<p>然后钱包会用一个非常有名的算法从私钥推算出相对应的比特币地址（公钥）。这个算法电脑算起来非常简单。所以，任何人只要知道了你的私钥就可以轻松获得你的比特币地址。现在大部分比特币钱包都有导入私钥的功能。</p>
-<img src="/img/btc-address-gen-2.png">
-
-
-<p>另一方面，想从比特币地址（公钥）反算出私钥几乎不可能。别人只知道你的比特币地址的话是无法反算出私钥的。</p>
-<img src="/img/btc-address-gen-3.png">
-
-
-<p>因此把比特币地址给别人很安全，但要注意保护好私钥。大部分情况下，用户使用比特币不需要看到私钥本身。钱包会帮你把私钥管理起来，它会把私钥保存在加密的钱包文件中。这个文件可能在你的硬盘里、网上或别的地方。</p>
-<hr>
-<h2 id="交易如何签名？">交易如何签名？</h2>
-<p>现在，请你仔细想想为什么要保护好私钥？</p>
-<p>是的。因为只要拥有私钥就拥有对应地址里比特币的控制权。</p>
-<p>这是如何实现的呢？</p>
-<p>看一下列表中的第二笔交易，b6f4ec453a021ac561….这笔交易消费了前项交易e14768c1d648b98a52…中的输出。从前项的输出比特币是发到这个地址：1NqUaJrFeStshjad1bhrEFFzWSQw6JHbqv。这笔交易将比特币的使用权转移给拥有这个比特币地址的人，不管这个人是谁。</p>
-<p>想搞清楚这个过程，还需要理解<strong>数字签名技术</strong>。在比特币世界里，只有数字签名可以证明你拥有某个地址。比特币的安全性核心也在于此：你需要比特币地址对应的私钥来给这个地址发出的交易签名。</p>
-<img src="/img/signature-generate.png">
-
-
-<p>一个有效的交易要加入前项输出，并使用与地址配对的私钥进行数字签名，签名要满足特定公式（椭圆曲线加密算法）。任何比特币节点收到一笔交易，它首先会校验交易的有效性。节点并不知道签名对应私钥，但它不需要知道，而只需要比特币地址就可以验证公式是否成立。</p>
-<img src="/img/signature-verify.png">
-
-
-<p>比特币数字签名的想法，技术上来自一个久经考验的公钥加密算法。比特币不是第一个使用这个加密算法来给交易签名的加密货币。但比特币是第一个不需要依赖中心服务器的加密货币。这就是比特币革命性的核心所在。</p>
-<hr>
-<h2 id="不同的钱包">不同的钱包</h2>
-<p>市面上有很多比特币钱包可供选择，但大部分钱包的功能是一样的：</p>
-<ul>
-<li>保管比特币；</li>
-<li>发送比特币；</li>
-<li>生成地址接收比特币；</li>
-<li>查询交易记录、当前余额。</li>
-</ul>
-<img src="/img/local-wallet.png">
-
-
-<p><strong>桌面钱包</strong>指的是可以安装在Windows、MacOS或者Linux系统的钱包软件，比如Electrum、Multibit和BitcoinQT。桌面钱包的私钥存放在本地硬盘中，文件名默认为wallet.dat。比特币安全性如何，就看你如何保护这个文件了。比较特殊的是BitcoinQT这款软件，它还会将你的电脑变成一个比特币节点，所以它比其他软件需要更多存储空间和网络带宽。</p>
-<img src="/img/web-wallet.png">
-
-
-<p>还有一类钱包是<strong>网络钱包</strong>，比如bifubao.com、coinbase.com、Blockchain.info的My Wallet服务。一般情况下，网络钱包的私钥会加密存放在云端服务器而不是你自己的电脑里。有些网络钱包还提供比特币兑换业务，比如Bitstamp或者BTC-e，这些地方的比特币可以和各种货币进行兑换。</p>
-<img src="/img/mobile-wallet.png">
-
-
-<p><strong>手机钱包</strong>是安装在你手机上的应用程序。大部分手机钱包，比如Coinbase app，只是一个网页阅读器，这意味着你的私钥还是存在云端。特别要介绍一下：Android比特币钱包，它将私钥保存在你的手机里。</p>
-<p>现在大部分智能机都有内置摄像头，用二维码来表示比特币地址等信息就成了非常流行的方法。你可以简单地扫描二维码给别人发送比特币。</p>
-<img src="/img/qr_code.png">
-
-
-<p>二维码可以动态生成，而且可以加入一些附加信息，比如收款数额。所以手机钱包是面对面交易比特币非常好用的工具。</p>
-<img src="/img/qr-pos.jpg">
-
-
-<img src="/img/btc-paper-wallet.png">
-
-
-<p>还有一种钱包叫<strong>纸钱包</strong>。一般纸钱包就一个目的：保存你的私钥。上面介绍的钱包，大都可以打印私钥。但你也可以不用任何钱包，直接生成全新的私钥和地址。bitaddress.org就提供这样的服务。打印私钥后，你可以把它保存在一个安全的地方：比如银行保险柜，然后从电脑里删除掉。这就是所谓的冷钱包。</p>
-<p>比特币协议完全开源，任何人都可以制作兼容比特币协议的软件。这促使比特币整个生态系统都是开源的，大家在共同开发相关的应用。这让各种各样的创新大放异彩-大量的比特币钱包和面对面支付设备正在发明，当然将来还会有更多。比特币的疆域会不断扩大。</p>
-<p>不幸的是，这种开放性也给骗子们很多机会。所以需要谨慎地选择钱包。你需要研究研究看中的钱包值不值得信任。如果使用网络钱包，你必须像信任银行一样信任这个网站。桌面钱包可以成为你的私人银行，但还是要保证你的桌面钱包可以像说明的一样正常运转。选择开源钱包比较好，因为你可以看到它的源代码，而且一般在比特币论坛中口碑很好。比如Bitcoin subreddit和bitcointalk.org.</p>
-<hr>
-<h2 id="比特币有价值背书么？">比特币有价值背书么？</h2>
-<p>如果你问比特币的背书者是谁，我会说就是私钥。当然，所有比特币都有私钥背书。只要发送比特币到一个地址里，这个地址对应的私钥都会变得值钱。</p>
-<p>比如这个地址1933phfhK3ZgFQNLGSDXvqCn32k2buXY8a。它现在就存储着111114个比特币。就在写这篇文章的时候，它已经价值9000万美元了。只要你知道这个地址的私钥，就相当于拥有这9000万美元。</p>
-<img src="/img/rich-key.png">
-
-
-<p>但你不知道，不是么？除了这个地址的拥有者没有人知道私钥。</p>
-<p>无需赘言，世界各地的小偷都想尽办法得到人们的私钥。小偷发明了很多偷私钥的方法，比如：wallet-stealing malware。需要强调一下，保护钱包的安全措施是非常必要的，你要永远记住加密钱包的密码，并且使用干净的电脑操作比特币，要保证电脑没有被任何黑客软件或木马感染过。</p>
-<hr>
-<h2 id="结论">结论</h2>
-<p>回到最开始的问题：</p>
-<blockquote>
-<p>当你掏钱买比特币的时候，到底得到了什么？</p>
-</blockquote>
-<p>答案：</p>
-<blockquote>
-<p>当你获得比特币时，你实际上得到的是：在比特币总账中写入特定交易的权利，而这种权利具有排他性。比特币的存在形式是前项交易的输出（OUTPUTS）。只要这个输出指向你凭空生成的比特币地址，你就一直保有这个权利，直到哪天你把它花掉为止。你的钱包是唯一可以给比特币输出签名的工具，因为它保存着唯一对应的私钥。</p>
-</blockquote>
-<p>整个总账冗余地存储在全球数十万个节点中。你可以想象一下，取缔比特币必然异常困难。</p>
-<img src="/img/nodes-world-map.jpg">
-
-
-<p>不要被网上找到的那些简单的解释愚弄了。比如，那个有名的比特币介绍视频，视频中一个用户把比特币抛给另一个用户。还比如，大多数媒体文章中都会有一张比特币的照片，照片上有印着比特币标志的硬币。现在你应该明白，这些只不过是一种象征性的解释。这些解释根本没有写清楚比特币实际上是怎么存储，怎么转账的。</p>
-<img src="/img/symbolic-bitcoin.png">
-
-
-<hr>
-<h2 id="更多信息">更多信息</h2>
-<p>现在，你已经清楚地知道什么是比特币，比特币有多安全以及比特币是如何转账的。你已经打好了足够的知识基础，可以进一步了解比特币。</p>
-<ul>
-<li><p>比特币总账，大家都叫他块链（the blockchain）。由于块链是完全公开的，于是有人搭建了网站供人们浏览块链的信息，比如：blockchain.info或者blockexplorer.com。</p>
-</li>
-<li><p>我故意没有解释挖矿的细节和它维护块链的角色。因为现在用普通电脑挖矿不合算。而且单纯使用比特币不需要关心挖矿的原理。如果你对挖矿这门艺术很感兴趣，可以看看Asic Miners以及如何加入Mining pool。</p>
-</li>
-<li><p>可汗学院有一套比较复杂的视频教程，可以让你深入了解比特币。</p>
-</li>
-<li><p>这有一个非常好的聊天视频，推荐看看。insightful and entertaining talk</p>
-</li>
-<li><p>中本聪写的比特币白皮书是这一切的起点。如果你有一定计算机基础，可以很轻松的读懂它。</p>
-</li>
-<li><p>几乎所有现存的山寨币，包括：Litecoin，Peercoin，Namecoin，Dogecoin和所有CoinWarz列出的山寨币，都是从Github上比特币项目衍生出来的。</p>
-</li>
-<li><p>本文中对比特币的交易的描述很简单，而真实的比特币交易是基于脚本语言的，这使得比特币平台可以引入很多金融工具。</p>
-</li>
-</ul>
-
+        
+          <p class="article-more-link">
+            <a href="/2014/03/18/what-is-bitcoin-really/#more">阅读全文</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/what-is-bitcoin-really/" data-id="0o6t3g9xavcnen6m" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/what-is-bitcoin-really/" data-id="bkyx30npsx333653" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/what-is-bitcoin-really/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -353,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="31jh2u5wmqj41vg6" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="1jzkbc6t5hco719c" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/致peter-schiff的公开信/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -444,7 +307,7 @@ code
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/try-markdown/" data-id="sr3mywa6bw3id47f" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/try-markdown/" data-id="06o80kjvdh5483zd" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/try-markdown/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -495,7 +358,7 @@ code
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/17/hidden-secrets-of-money/" data-id="tt9p5bimigntp1g7" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/17/hidden-secrets-of-money/" data-id="q0q0p90wfqkhroxd" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/17/hidden-secrets-of-money/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -540,7 +403,7 @@ code
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/17/hello-world/" data-id="7dxb4edmex0zziyb" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/17/hello-world/" data-id="jc4hmsstmlreh0rw" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/17/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
       
