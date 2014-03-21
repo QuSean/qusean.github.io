@@ -12,7 +12,34 @@
 <meta name="og:site_name" content="SeanQu">
 <meta name="og:description" content="Mac自带了Apache环境。
 启动Apache
-显示Apache版本sudo apachectl -v运行Apachesudo apachectl starthosts中加入重定向sudo vi /etc/hosts127.0.0.1 mysites">
+显示Apache版本
+1
+sudo apachectl -v
+
+
+运行Apache
+1
+sudo apachectl start
+
+
+hosts中加入重定向
+1
+sudo vi /etc/hosts
+
+
+加入
+1
+127.0.0.1 mysites
+
+
+创建用户级站点
+1
+sudo makedir ~/sites
+
+
+创建用户配置文件
+1
+sudo">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SeanQu" type="application/atom+xml">
@@ -93,12 +120,81 @@
       
         <p>Mac自带了Apache环境。</p>
 <h2 id="启动Apache">启动Apache</h2>
-<p>显示Apache版本<br><code>sudo apachectl -v</code><br>运行Apache<br><code>sudo apachectl start</code><br>hosts中加入重定向<br><code>sudo vi /etc/hosts</code><br><code>127.0.0.1 mysites</code></p>
+<p>显示Apache版本</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl -v
+</pre></td></tr></table></figure>
+
+<p>运行Apache</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl start
+</pre></td></tr></table></figure>
+
+<p>hosts中加入重定向</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> vi /etc/hosts
+</pre></td></tr></table></figure>
+
+<p>加入</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>127.0.0.1 mysites
+</pre></td></tr></table></figure>
+
+<p>创建用户级站点</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> makedir ~/sites
+</pre></td></tr></table></figure>
+
+<p>创建用户配置文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> vi /etc/apache2/users/username.conf
+</pre></td></tr></table></figure>
+
+<p>给文件权限</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> chmod <span class="number">755</span> /etc/apache2/users/username.conf
+</pre></td></tr></table></figure>
+
+<p>加入配置信息</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="tag">&lt;Directory "/Users/QS/Sites/"&gt;</span>
+<span class="keyword"><span class="common">Options</span></span> Indexes MultiViews
+<span class="keyword">AllowOverride</span> <span class="literal">All</span>
+<span class="keyword"><span class="common">Order</span></span> allow,deny
+<span class="keyword"><span class="common">Allow</span></span> from <span class="literal">all</span>
+<span class="tag">&lt;/Directory&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>重启Apache</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl restart
+</pre></td></tr></table></figure>
+
+<p>在根目录下(~/sites/)创建文件test.php:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="php"><span class="preprocessor">&lt;?php</span> phpinfo(); <span class="preprocessor">?&gt;</span></span>
+</pre></td></tr></table></figure>
+
+<h2 id="启动PHP">启动PHP</h2>
+<p>Mac需手动开启php服务</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>sudo vi /etc/apache2/httpd.conf
+<span class="regexp">/php /</span>/search php
+LoadModule php5_module libexec<span class="regexp">/apache2/libphp5.so /</span>/<span class="keyword">delete</span><span class="comment">#</span>
+</pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/21/在mac-os上配置apache/" data-id="50ms0daptrpuzgl9" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/21/在mac-os上配置apache/" data-id="uxbn583e0cxzaqjz" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/21/在mac-os上配置apache/#disqus_thread" class="article-comment-link">Comments</a>
       

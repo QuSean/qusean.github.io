@@ -105,7 +105,7 @@ q: <span class="command">\\</span>不保存退出
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/21/vim常见操作方法/" data-id="b0ksenko4l6zgmvz" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/21/vim常见操作方法/" data-id="d6n2inhuuhgse8gi" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/21/vim常见操作方法/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -147,12 +147,81 @@ q: <span class="command">\\</span>不保存退出
       
         <p>Mac自带了Apache环境。</p>
 <h2 id="启动Apache">启动Apache</h2>
-<p>显示Apache版本<br><code>sudo apachectl -v</code><br>运行Apache<br><code>sudo apachectl start</code><br>hosts中加入重定向<br><code>sudo vi /etc/hosts</code><br><code>127.0.0.1 mysites</code></p>
+<p>显示Apache版本</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl -v
+</pre></td></tr></table></figure>
+
+<p>运行Apache</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl start
+</pre></td></tr></table></figure>
+
+<p>hosts中加入重定向</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> vi /etc/hosts
+</pre></td></tr></table></figure>
+
+<p>加入</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>127.0.0.1 mysites
+</pre></td></tr></table></figure>
+
+<p>创建用户级站点</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> makedir ~/sites
+</pre></td></tr></table></figure>
+
+<p>创建用户配置文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> vi /etc/apache2/users/username.conf
+</pre></td></tr></table></figure>
+
+<p>给文件权限</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> chmod <span class="number">755</span> /etc/apache2/users/username.conf
+</pre></td></tr></table></figure>
+
+<p>加入配置信息</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="tag">&lt;Directory "/Users/QS/Sites/"&gt;</span>
+<span class="keyword"><span class="common">Options</span></span> Indexes MultiViews
+<span class="keyword">AllowOverride</span> <span class="literal">All</span>
+<span class="keyword"><span class="common">Order</span></span> allow,deny
+<span class="keyword"><span class="common">Allow</span></span> from <span class="literal">all</span>
+<span class="tag">&lt;/Directory&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>重启Apache</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl restart
+</pre></td></tr></table></figure>
+
+<p>在根目录下(~/sites/)创建文件test.php:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="php"><span class="preprocessor">&lt;?php</span> phpinfo(); <span class="preprocessor">?&gt;</span></span>
+</pre></td></tr></table></figure>
+
+<h2 id="启动PHP">启动PHP</h2>
+<p>Mac需手动开启php服务</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre>sudo vi /etc/apache2/httpd.conf
+<span class="regexp">/php /</span>/search php
+LoadModule php5_module libexec<span class="regexp">/apache2/libphp5.so /</span>/<span class="keyword">delete</span><span class="comment">#</span>
+</pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/21/在mac-os上配置apache/" data-id="50ms0daptrpuzgl9" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/21/在mac-os上配置apache/" data-id="uxbn583e0cxzaqjz" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/21/在mac-os上配置apache/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -205,7 +274,7 @@ q: <span class="command">\\</span>不保存退出
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/what-is-bitcoin-really/" data-id="3ybxjoilhae51vnd" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/what-is-bitcoin-really/" data-id="vmv1w6j68y9qtwzt" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/what-is-bitcoin-really/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -263,7 +332,7 @@ q: <span class="command">\\</span>不保存退出
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="bt4bmvu90b4p6i9q" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="rnoe46p9uvjnzqzv" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/致peter-schiff的公开信/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -315,7 +384,7 @@ q: <span class="command">\\</span>不保存退出
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/try-markdown/" data-id="mgz0mot90wal9t3k" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/try-markdown/" data-id="psyfl54mwk320azk" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/try-markdown/#disqus_thread" class="article-comment-link">Comments</a>
       
