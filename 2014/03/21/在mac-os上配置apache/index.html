@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>在Mac OS上配置Apache | SeanQu</title>
+  <title>在Mac OS上配置Apache+php+mysql | SeanQu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="og:type" content="blog">
-<meta name="og:title" content="在Mac OS上配置Apache">
+<meta name="og:title" content="在Mac OS上配置Apache+php+mysql">
 <meta name="og:url" content="http://seanqu.com/2014/03/21/在mac-os上配置apache/">
 <meta name="og:image">
 <meta name="og:site_name" content="SeanQu">
 <meta name="og:description" content="Mac自带了Apache环境。
-启动Apache
 显示Apache版本
 1
 sudo apachectl -v
@@ -39,7 +38,7 @@ sudo makedir ~/sites
 
 创建用户配置文件
 1
-sudo">
+sudo vi /etc/">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="SeanQu" type="application/atom+xml">
@@ -110,7 +109,7 @@ sudo">
         
   
     <h1 class="article-title" itemprop="name">
-      在Mac OS上配置Apache
+      在Mac OS上配置Apache+php+mysql
     </h1>
   
 
@@ -119,7 +118,6 @@ sudo">
     <div class="article-entry" itemprop="articleBody">
       
         <p>Mac自带了Apache环境。</p>
-<h2 id="启动Apache">启动Apache</h2>
 <p>显示Apache版本</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl -v
@@ -191,11 +189,21 @@ sudo">
 </pre></td><td class="code"><pre><span class="preprocessor"># LoadModule php5_module libexec/apache2/libphp5.so</span>
 </pre></td></tr></table></figure>
 
+<ul>
+<li>有问题,按这篇文章操作:<ul>
+<li><a href="http://www.guomii.com/posts/30136" target="_blank">http://www.guomii.com/posts/30136</a></li>
+</ul>
+</li>
+<li>Mac OS X 中配置PHP的MCrypt扩展:<ul>
+<li><a href="http://www.wuleilei.com/blog/313" target="_blank">http://www.wuleilei.com/blog/313</a></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/21/在mac-os上配置apache/" data-id="fcv5y9jgtd56plag" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/21/在mac-os上配置apache/" data-id="29hooff6y67j1eoa" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/21/在mac-os上配置apache/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -285,7 +293,7 @@ sudo">
           </li>
         
           <li>
-            <a href="/2014/03/21/在mac-os上配置apache/">在Mac OS上配置Apache</a>
+            <a href="/2014/03/21/在mac-os上配置apache/">在Mac OS上配置Apache+php+mysql</a>
           </li>
         
           <li>
