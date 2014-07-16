@@ -142,17 +142,304 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">600F</span>FE422B4E00731A59557A5CCA46CC183944191006324A447BDB2D98D4B408</div></pre></td></tr></table></figure><br>4. 取上一步结果，计算 RIPEMD-160 哈希值<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">010966776006953D5567439E5E39F86A0D273BEE</div></pre></td></tr></table></figure>
 
 <ol>
-<li>取上一步结果，前面加入地址版本号（比特币主网版本号<figure class="highlight 0x00```）"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><br>00010966776006953D5567439E5E39F86A0D273BEE<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">6. </span>取上一步结果，计算 SHA-256 哈希值</div></pre></td></tr></table></figure><br>445C7A8007A93D8733188288BB320A8FE2DEBD2AE1B47F0F50BC10BAE845C094<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">7. </span>取上一步结果，再计算一下 SHA-256 哈希值（哈哈）</div></pre></td></tr></table></figure><br>D61967F63C7DD183914A4AE452C9F6AD5D462CE3D277798075B107615C1A8A30<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">8. </span>取上一步结果的前4个字节（8位十六进制）</div></pre></td></tr></table></figure><br>D61967F6<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> 	</div><div class="line"><span class="bullet">9.  </span>把这4个字节加在第5部结果后面作为校验（这就是比特币地址的16进制形态）。</div></pre></td></tr></table></figure><br>00010966776006953D5567439E5E39F86A0D273BEED61967F6<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="code">	</span></div><div class="line"><span class="bullet">10. </span>用base58表示法变换一下地址（这就是最常见的比特币地址形态）。</div></pre></td></tr></table></figure><br>16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">###base58</span></div><div class="line"></div><div class="line"></div><div class="line">简单介绍一下base58。</div><div class="line"></div><div class="line"><span class="constant">Base58</span>其实就是<span class="number">58</span>进制表示法。</div><div class="line"></div><div class="line"></div><div class="line">**<span class="constant">Base58</span>编码表：**</div><div class="line"></div><div class="line">|实际值|编码值||实际值|编码值||实际值|编码值||实际值|编码值|</div><div class="line">|<span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:||</span><span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:||</span><span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:||</span><span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:|</span></div><div class="line">|  <span class="number">0</span> | <span class="number">1</span> || <span class="number">16</span> | <span class="constant">H</span> || <span class="number">32</span> | <span class="constant">Z</span> || <span class="number">48</span> | q</div><div class="line">|  <span class="number">1</span> | <span class="number">2</span> || <span class="number">17</span> | <span class="constant">J</span> || <span class="number">33</span> | a || <span class="number">49</span> | r</div><div class="line">|  <span class="number">2</span> | <span class="number">3</span> || <span class="number">18</span> | <span class="constant">K</span> || <span class="number">34</span> | b || <span class="number">50</span> | s</div><div class="line">|  <span class="number">3</span> | <span class="number">4</span> || <span class="number">19</span> | <span class="constant">L</span> || <span class="number">35</span> | c || <span class="number">51</span> | t</div><div class="line">|  <span class="number">4</span> | <span class="number">5</span> || <span class="number">20</span> | <span class="constant">M</span> || <span class="number">36</span> | d || <span class="number">52</span> | u</div><div class="line">|  <span class="number">5</span> | <span class="number">6</span> || <span class="number">21</span> | <span class="constant">N</span> || <span class="number">37</span> | e || <span class="number">53</span> | v</div><div class="line">|  <span class="number">6</span> | <span class="number">7</span> || <span class="number">22</span> | <span class="constant">P</span> || <span class="number">38</span> | f || <span class="number">54</span> | w</div><div class="line">|  <span class="number">7</span> | <span class="number">8</span> || <span class="number">23</span> | <span class="constant">Q</span> || <span class="number">39</span> | g || <span class="number">55</span> | w</div><div class="line">|  <span class="number">8</span> | <span class="number">9</span> || <span class="number">24</span> | <span class="constant">R</span> || <span class="number">40</span> | h || <span class="number">56</span> | y</div><div class="line">|  <span class="number">9</span> | <span class="constant">A</span> || <span class="number">25</span> | <span class="constant">S</span> || <span class="number">41</span> | i || <span class="number">57</span> | z</div><div class="line">| <span class="number">10</span> | <span class="constant">B</span> || <span class="number">26</span> | <span class="constant">T</span> || <span class="number">42</span> | j ||    |</div><div class="line">| <span class="number">11</span> | <span class="constant">C</span> || <span class="number">27</span> | <span class="constant">U</span> || <span class="number">43</span> | k ||    |</div><div class="line">| <span class="number">12</span> | <span class="constant">D</span> || <span class="number">28</span> | <span class="constant">V</span> || <span class="number">44</span> | m ||    |</div><div class="line">| <span class="number">13</span> | <span class="constant">E</span> || <span class="number">29</span> | <span class="constant">W</span> || <span class="number">45</span> | n ||    |</div><div class="line">| <span class="number">14</span> | <span class="constant">F</span> || <span class="number">30</span> | <span class="constant">X</span> || <span class="number">46</span> | o ||    |</div><div class="line">| <span class="number">15</span> | <span class="constant">G</span> || <span class="number">31</span> | <span class="constant">Y</span> || <span class="number">47</span> | p ||    |</div><div class="line"></div><div class="line">打个比方，十进制的<span class="string">"58"</span>，用<span class="number">16</span>进制表示就是<span class="number">3</span>A，用base58表示就是<span class="string">"20"</span>，而十进制的<span class="string">"68"</span>，<span class="constant">Base58</span>表示就是<span class="string">"2B"</span>。</div><div class="line"></div><div class="line">为什么使用这个奇怪的编码呢？（搞编程的同学注意一下，比特币使用的<span class="constant">Base58</span>和常用的base58的字典顺序有区别。）</div><div class="line"></div><div class="line">引用中本聪在源码base58.h中的注释：</div><div class="line"></div><div class="line"></div><div class="line">&gt;<span class="constant">Why</span> base-<span class="number">58</span> instead of standard base-<span class="number">64</span> encoding?</div><div class="line"></div><div class="line">&gt;为啥用base58,不用base-<span class="number">64</span>?</div><div class="line"></div><div class="line">&gt;<span class="constant">Don</span><span class="string">'t want 0OIl characters that look the same in some fonts and could be used to create visually identical looking account numbers.</span></div><div class="line"></div><div class="line">&gt;俺不想要0、O、I、l这几个字母。因为在很多字体里这几个字母容易混。而且转换以后，看着比以前舒服多了。</div><div class="line"></div><div class="line">&gt;A string with non-alphanumeric characters is not as easily accepted as an account number.</div><div class="line"></div><div class="line">&gt;数字字母组成的账户，大家好理解。</div><div class="line"></div><div class="line">&gt;E-mail usually won't line-<span class="keyword">break</span> <span class="keyword">if</span> there<span class="string">'s no punctuation to break at.</span></div><div class="line"></div><div class="line">&gt;如果没有标点符号，E-mail一般不换行。</div><div class="line"></div><div class="line">&gt;Doubleclicking selects the whole number as one word if it's all alphanumeric.</div><div class="line"></div><div class="line">&gt;双击可以选择整个字符串，哦耶。</div><div class="line"></div><div class="line"><span class="comment">###椭圆曲线、SHA - 256、RIPEMD-160</span></div><div class="line"></div><div class="line">这个...一句两句说不清楚，先忽略了。以后再写文章介绍吧（不要打我）。</div><div class="line"></div><div class="line"><span class="comment">###地址可以没有公钥</span></div><div class="line"></div><div class="line">搞清楚比特币地址的产生步骤，我们可以得出以下结论。</div><div class="line"></div><div class="line"><span class="number">1</span>. 仅有比特币地址，无法反推出公钥。</div><div class="line"><span class="number">2</span>. 合法的比特币地址不一定有对应的公钥。比如这个比特币地址：</div></pre></td></tr></table></figure><br>1111111111111111111114oLvT2</li>
+<li>取上一步结果，前面加入地址版本号（比特币主网版本号“0x00”）</li>
 </ol>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">	它是这样构造出来的：</div></pre></td></tr></table></figure><br>00（版本号） 0000000000000000000000000000000000000000（任意20字节数）94A00911（校验码）</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="code">	有意思的是，真的有人往这个地址里发币（大约3个币，这些币相当于被销毁了），看这里</span></div><div class="line"><span class="code">	&lt;https://blockchain.info/address/1111111111111111111114oLvT2&gt;</span></div><div class="line"><span class="code">	</span></div><div class="line"><span class="header">###比特币地址碰撞</span></div><div class="line"></div><div class="line">地址的来历搞清楚了，我们来分析一下如何碰撞。</div><div class="line"></div><div class="line">就拿全零地址："1111111111111111111114oLvT2"举例。仅随机碰撞出该地址对应的公钥是没有意义的。因为比特币交易需要私钥签名才有效。</div><div class="line"></div><div class="line">所以，如果你想使用这个地址里的比特币，前提是拥有这个地址对应公钥的私钥。</div><div class="line"></div><div class="line">也就是说，你需要：</div><div class="line"></div><div class="line"><span class="bullet">1. </span>随机生成一个私钥。</div><div class="line"><span class="bullet">2. </span>计算该私钥对应的公钥.</div><div class="line"><span class="bullet">3. </span>用公钥算出比特币地址。</div><div class="line"><span class="bullet">4. </span>与目标地址对比，看看是否一致。</div><div class="line"><span class="bullet">5. </span>如果不一致，回到第1步。</div><div class="line"></div><div class="line">根据比特币地址理论总数，容易的看出，单次碰撞成功的理论概率是：</div></pre></td></tr></table></figure><br>1 / ( 2 ^ 160 )  //“2^160”意思是2的160次方</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">由于每次碰撞至少需要<span class="number">3</span>次SHA-<span class="number">256</span>运算，我们放宽为<span class="number">2</span>次。</div><div class="line"></div><div class="line">在不考虑其他运算的情况下，假设你有<span class="number">1</span><span class="keyword">E</span>/每秒的算力（ <span class="keyword">E</span> = （<span class="number">2</span>^<span class="number">60</span>）相当于当前比特币全网算力的<span class="number">10</span>倍）进行破解。那么，每秒碰撞该地址成功的概率：</div></pre></td></tr></table></figure><br>( 1 / ( 2 ^ 160 ) ) * ( 2 ^ 60 ) / 2 </p>
-<p>= 1 / ( 2 ^ 101 )</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">假设你可以活 2^32秒 </span>=<span class="string"> 4294967296秒 ≈ 136.2年，你在有生之年碰撞该地址成功的概率为：</span></div></pre></td></tr></table></figure><br>( 1 / ( 2 ^ 101 ) ) * ( 2 ^ 32 )<br>= 1 / ( 2 ^ 69)</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这是个什么概念呢？</div><div class="line"></div><div class="line">我们看双色球命中500万的概率：</div></pre></td></tr></table></figure><br>1/C(33,6)<em>16 = 1/[ （33 </em> 32 <em> 31 </em> 30 <em> 29 </em>28/6<em>5</em>4<em>3</em>2<em>1）</em> 16 ] = 1/17721088</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">用这个概率除以碰撞概率：</div></pre></td></tr></table></figure><br>( 1 / 17721088 ) / ( 1 / ( 2 ^ 69 ) )<br>≈ 33310359406753.4</p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="vala">所以，结论是：**假设，你掌握了比特币当前全网算力的<span class="number">10</span>倍，花<span class="number">136</span>年不间断地碰撞某个特定的比特币地址。碰撞成功的概率，与中<span class="number">333103</span>亿次<span class="number">500</span>万的概率差不多。(注意单位是亿)**</span></div><div class="line"></div><div class="line"><span class="preprocessor">###考虑生日攻击</span></div><div class="line"></div><div class="line">当前，有币的地址大约为<span class="number">300</span>万个。看这里：&lt;http:<span class="comment">//btc.ondn.net/search&gt;</span></div><div class="line"></div><div class="line">我们把这个数字翻<span class="number">1</span>万倍。假设有<span class="number">343</span>亿个有比特币的地址（<span class="number">2</span>^<span class="number">35</span> ≈ <span class="number">343</span>亿，相当于每个地球人有<span class="number">5</span>个有余额的地址，火星人的先不算了，呵呵)</div><div class="line"></div><div class="line">那么命中其中任意一个地址的概率：</div></pre></td></tr></table></figure><br>( 1 / ( 2 ^ 69 ) ) * ( 2 ^ 35 )<br>= 1 / 2 ^ 34<br>= 1 / 17179869184 </p>
-<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">再和中500万比一下：</div></pre></td></tr></table></figure><br>( 1 / 17721088 ) / ( 1 / 17179869184 )<br>= 969.459052627<br>```</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00010966776006953D5567439E5E39F86A0D273BEE</div></pre></td></tr></table></figure>
+
+<ol>
+<li>取上一步结果，计算 SHA-256 哈希值</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">445C7A8007A93D8733188288BB320A8FE2DEBD2AE1B47F0F50BC10BAE845C094</div></pre></td></tr></table></figure><br>7. 取上一步结果，再计算一下 SHA-256 哈希值（哈哈）<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D61967F63C7DD183914A4AE452C9F6AD5D462CE3D277798075B107615C1A8A30</div></pre></td></tr></table></figure>
+
+<ol>
+<li>取上一步结果的前4个字节（8位十六进制）</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D61967F6</div></pre></td></tr></table></figure>
+
+<ol>
+<li>把这4个字节加在第5部结果后面作为校验（这就是比特币地址的16进制形态）。</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00010966776006953D5567439E5E39F86A0D273BEED61967F6</div></pre></td></tr></table></figure>
+
+<ol>
+<li>用base58表示法变换一下地址（这就是最常见的比特币地址形态）。</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">16U</span>wLL9Risc3QfPqBUvKofHmBQ7wMtjvM</div></pre></td></tr></table></figure>
+
+<h3 id="base58">base58</h3>
+<p>简单介绍一下base58。</p>
+<p>Base58其实就是58进制表示法。</p>
+<p><strong>Base58编码表：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">实际值</th>
+<th style="text-align:center">编码值</th>
+<th></th>
+<th style="text-align:center">实际值</th>
+<th style="text-align:center">编码值</th>
+<th></th>
+<th style="text-align:center">实际值</th>
+<th style="text-align:center">编码值</th>
+<th></th>
+<th style="text-align:center">实际值</th>
+<th style="text-align:center">编码值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td></td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">H</td>
+<td></td>
+<td style="text-align:center">32</td>
+<td style="text-align:center">Z</td>
+<td></td>
+<td style="text-align:center">48</td>
+<td style="text-align:center">q</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td></td>
+<td style="text-align:center">17</td>
+<td style="text-align:center">J</td>
+<td></td>
+<td style="text-align:center">33</td>
+<td style="text-align:center">a</td>
+<td></td>
+<td style="text-align:center">49</td>
+<td style="text-align:center">r</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td></td>
+<td style="text-align:center">18</td>
+<td style="text-align:center">K</td>
+<td></td>
+<td style="text-align:center">34</td>
+<td style="text-align:center">b</td>
+<td></td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">s</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">4</td>
+<td></td>
+<td style="text-align:center">19</td>
+<td style="text-align:center">L</td>
+<td></td>
+<td style="text-align:center">35</td>
+<td style="text-align:center">c</td>
+<td></td>
+<td style="text-align:center">51</td>
+<td style="text-align:center">t</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">5</td>
+<td></td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">M</td>
+<td></td>
+<td style="text-align:center">36</td>
+<td style="text-align:center">d</td>
+<td></td>
+<td style="text-align:center">52</td>
+<td style="text-align:center">u</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">6</td>
+<td></td>
+<td style="text-align:center">21</td>
+<td style="text-align:center">N</td>
+<td></td>
+<td style="text-align:center">37</td>
+<td style="text-align:center">e</td>
+<td></td>
+<td style="text-align:center">53</td>
+<td style="text-align:center">v</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">7</td>
+<td></td>
+<td style="text-align:center">22</td>
+<td style="text-align:center">P</td>
+<td></td>
+<td style="text-align:center">38</td>
+<td style="text-align:center">f</td>
+<td></td>
+<td style="text-align:center">54</td>
+<td style="text-align:center">w</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">8</td>
+<td></td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">Q</td>
+<td></td>
+<td style="text-align:center">39</td>
+<td style="text-align:center">g</td>
+<td></td>
+<td style="text-align:center">55</td>
+<td style="text-align:center">w</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">9</td>
+<td></td>
+<td style="text-align:center">24</td>
+<td style="text-align:center">R</td>
+<td></td>
+<td style="text-align:center">40</td>
+<td style="text-align:center">h</td>
+<td></td>
+<td style="text-align:center">56</td>
+<td style="text-align:center">y</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">A</td>
+<td></td>
+<td style="text-align:center">25</td>
+<td style="text-align:center">S</td>
+<td></td>
+<td style="text-align:center">41</td>
+<td style="text-align:center">i</td>
+<td></td>
+<td style="text-align:center">57</td>
+<td style="text-align:center">z</td>
+</tr>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">B</td>
+<td></td>
+<td style="text-align:center">26</td>
+<td style="text-align:center">T</td>
+<td></td>
+<td style="text-align:center">42</td>
+<td style="text-align:center">j</td>
+<td></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">11</td>
+<td style="text-align:center">C</td>
+<td></td>
+<td style="text-align:center">27</td>
+<td style="text-align:center">U</td>
+<td></td>
+<td style="text-align:center">43</td>
+<td style="text-align:center">k</td>
+<td></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">D</td>
+<td></td>
+<td style="text-align:center">28</td>
+<td style="text-align:center">V</td>
+<td></td>
+<td style="text-align:center">44</td>
+<td style="text-align:center">m</td>
+<td></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">13</td>
+<td style="text-align:center">E</td>
+<td></td>
+<td style="text-align:center">29</td>
+<td style="text-align:center">W</td>
+<td></td>
+<td style="text-align:center">45</td>
+<td style="text-align:center">n</td>
+<td></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">F</td>
+<td></td>
+<td style="text-align:center">30</td>
+<td style="text-align:center">X</td>
+<td></td>
+<td style="text-align:center">46</td>
+<td style="text-align:center">o</td>
+<td></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">15</td>
+<td style="text-align:center">G</td>
+<td></td>
+<td style="text-align:center">31</td>
+<td style="text-align:center">Y</td>
+<td></td>
+<td style="text-align:center">47</td>
+<td style="text-align:center">p</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>打个比方，十进制的”58”，用16进制表示就是3A，用base58表示就是”20”，而十进制的”68”，Base58表示就是”2B”。</p>
+<p>为什么使用这个奇怪的编码呢？（搞编程的同学注意一下，比特币使用的Base58和常用的base58的字典顺序有区别。）</p>
+<p>引用中本聪在源码base58.h中的注释：</p>
+<blockquote>
+<p>Why base-58 instead of standard base-64 encoding?</p>
+<p>为啥用base58,不用base-64?</p>
+<p>Don’t want 0OIl characters that look the same in some fonts and could be used to create visually identical looking account numbers.</p>
+<p>俺不想要0、O、I、l这几个字母。因为在很多字体里这几个字母容易混。而且转换以后，看着比以前舒服多了。</p>
+<p>A string with non-alphanumeric characters is not as easily accepted as an account number.</p>
+<p>数字字母组成的账户，大家好理解。</p>
+<p>E-mail usually won’t line-break if there’s no punctuation to break at.</p>
+<p>如果没有标点符号，E-mail一般不换行。</p>
+<p>Doubleclicking selects the whole number as one word if it’s all alphanumeric.</p>
+<p>双击可以选择整个字符串，哦耶。</p>
+</blockquote>
+<h3 id="椭圆曲线、SHA_-_256、RIPEMD-160">椭圆曲线、SHA - 256、RIPEMD-160</h3>
+<p>这个…一句两句说不清楚，先忽略了。以后再写文章介绍吧（不要打我）。</p>
+<h3 id="地址可以没有公钥">地址可以没有公钥</h3>
+<p>搞清楚比特币地址的产生步骤，我们可以得出以下结论。</p>
+<ol>
+<li>仅有比特币地址，无法反推出公钥。</li>
+<li>合法的比特币地址不一定有对应的公钥。比如这个比特币地址：</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1111111111111111111114oLvT2</div></pre></td></tr></table></figure><br>    它是这样构造出来的：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00（版本号） 0000000000000000000000000000000000000000（任意20字节数）94A00911（校验码）</div></pre></td></tr></table></figure>
+
+<pre><code>有意思的是，真的有人往这个地址里发币（大约<span class="number">3</span>个币，这些币相当于被销毁了），看这里
+&lt;https:<span class="comment">//blockchain.info/address/1111111111111111111114oLvT2&gt;</span>
+</code></pre><h3 id="比特币地址碰撞">比特币地址碰撞</h3>
+<p>地址的来历搞清楚了，我们来分析一下如何碰撞。</p>
+<p>就拿全零地址：”1111111111111111111114oLvT2”举例。仅随机碰撞出该地址对应的公钥是没有意义的。因为比特币交易需要私钥签名才有效。</p>
+<p>所以，如果你想使用这个地址里的比特币，前提是拥有这个地址对应公钥的私钥。</p>
+<p>也就是说，你需要：</p>
+<ol>
+<li>随机生成一个私钥。</li>
+<li>计算该私钥对应的公钥.</li>
+<li>用公钥算出比特币地址。</li>
+<li>与目标地址对比，看看是否一致。</li>
+<li>如果不一致，回到第1步。</li>
+</ol>
+<p>根据比特币地址理论总数，容易的看出，单次碰撞成功的理论概率是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> / ( <span class="number">2</span> ^ <span class="number">160</span> )  //<span class="string">"2^160"</span>意思是<span class="number">2</span>的<span class="number">160</span>次方</div></pre></td></tr></table></figure><br>由于每次碰撞至少需要3次SHA-256运算，我们放宽为2次。<br><br>在不考虑其他运算的情况下，假设你有1E/每秒的算力（ E = （2^60）相当于当前比特币全网算力的10倍）进行破解。那么，每秒碰撞该地址成功的概率：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">( 1 / ( 2 ^ 160 ) ) * ( 2 ^ 60 ) / 2 </div><div class="line"></div><div class="line"><span class="header">= 1 / ( 2 ^ 101 )</span></div></pre></td></tr></table></figure><br>假设你可以活 2^32秒 = 4294967296秒 ≈ 136.2年，你在有生之年碰撞该地址成功的概率为：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">( 1 / ( 2 ^ 101 ) ) * ( 2 ^ 32 )</div><div class="line"><span class="header">= 1 / ( 2 ^ 69)</span></div></pre></td></tr></table></figure><br>这是个什么概念呢？<br><br>我们看双色球命中500万的概率：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>/C(<span class="number">33</span>,<span class="number">6</span>)<span class="variable">*16</span> = <span class="number">1</span>/[ （<span class="number">33</span> * <span class="number">32</span> * <span class="number">31</span> * <span class="number">30</span> * <span class="number">29</span> <span class="variable">*28</span>/<span class="number">6</span><span class="variable">*5</span><span class="variable">*4</span><span class="variable">*3</span><span class="variable">*2</span><span class="variable">*1</span>）* <span class="number">16</span> ] = <span class="number">1</span>/<span class="number">17721088</span></div></pre></td></tr></table></figure><br>用这个概率除以碰撞概率：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">( 1 / 17721088 ) / ( 1 / ( 2 ^ 69 ) ) </div><div class="line">≈ 33310359406753.4</div></pre></td></tr></table></figure>
+
+
+<p>所以，结论是：<strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞某个特定的比特币地址。碰撞成功的概率，与中333103亿次500万的概率差不多。(注意单位是亿)</strong></p>
+<h3 id="考虑生日攻击">考虑生日攻击</h3>
+<p>当前，有币的地址大约为300万个。看这里：<a href="http://btc.ondn.net/search" target="_blank" rel="external">http://btc.ondn.net/search</a></p>
+<p>我们把这个数字翻1万倍。假设有343亿个有比特币的地址（2^35 ≈ 343亿，相当于每个地球人有5个有余额的地址，火星人的先不算了，呵呵)</p>
+<p>那么命中其中任意一个地址的概率：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">( 1 / ( 2 ^ 69 ) ) * ( 2 ^ 35 ) </div><div class="line"><span class="header">= 1 / 2 ^ 34</span></div><div class="line"><span class="header">= 1 / 17179869184</span></div></pre></td></tr></table></figure><br>再和中500万比一下：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">( 1 / 17721088 ) / ( 1 / 17179869184 )</div><div class="line"><span class="header">= 969.459052627</span></div></pre></td></tr></table></figure>
+
 <p>咦，和中1000次500万的概率很接近了!</p>
 <p>所以，结论是：<strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞所有可能有币地址。碰撞到其中任意一个的概率，相当于中1000次500万。</strong> （注意，这些地址中50%以上币量小于0.001BTC）</p>
 <h3 id="后记">后记</h3>
@@ -174,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="q3yqw1gjm19dnrk2" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="yslur39xt9um7qra" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li></ul>
