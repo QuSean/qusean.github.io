@@ -65,241 +65,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-mac操作技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03/24/mac操作技巧/" class="article-date">
-  <time datetime="2014-03-24T06:36:51.000Z" itemprop="datePublished">3月 24 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/coding/">coding</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/03/24/mac操作技巧/">Mac操作技巧</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>用最高权限运行软件,如sublime text:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="smartquote">`sudo '</span>/applications/sublime Text.app/contents/MacOS/sublime Text'
-ctr+z \\挂起
-bg \\后台运行
-`
-</pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/24/mac操作技巧/" data-id="mwnyuo17qn6ocnij" class="article-share-link">Share</a>
-      
-        <a href="http://seanqu.com/2014/03/24/mac操作技巧/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vim常见操作方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03/21/vim常见操作方法/" class="article-date">
-  <time datetime="2014-03-21T03:10:12.000Z" itemprop="datePublished">3月 21 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/coding/">coding</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/03/21/vim常见操作方法/">Vim常见操作方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre><span class="symbol">:w</span> \\保存不退出
-<span class="symbol">:wq</span> \\保存退出
-<span class="symbol">:q!</span> \\不保存强制退出
-<span class="symbol">:q</span> \\不保存退出
-</pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/21/vim常见操作方法/" data-id="5wub7l4oburl3lxm" class="article-share-link">Share</a>
-      
-        <a href="http://seanqu.com/2014/03/21/vim常见操作方法/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-在mac-os上配置apache" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03/21/在mac-os上配置apache/" class="article-date">
-  <time datetime="2014-03-21T02:42:33.000Z" itemprop="datePublished">3月 21 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/coding/">coding</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/03/21/在mac-os上配置apache/">在Mac OS上配置Apache+php+mysql</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Mac自带了Apache环境。</p>
-<p>显示Apache版本</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl -v
-</pre></td></tr></table></figure>
-
-<p>运行Apache</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl start
-</pre></td></tr></table></figure>
-
-<p>hosts中加入重定向</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> vi /etc/hosts
-</pre></td></tr></table></figure>
-
-<p>加入</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre>127.0.0.1 mysites
-</pre></td></tr></table></figure>
-
-<p>创建用户级站点</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> makedir ~/sites
-</pre></td></tr></table></figure>
-
-<p>创建用户配置文件</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> vi /etc/apache2/users/username.conf
-</pre></td></tr></table></figure>
-
-<p>给文件权限</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> chmod <span class="number">755</span> /etc/apache2/users/username.conf
-</pre></td></tr></table></figure>
-
-<p>加入配置信息</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-</pre></td><td class="code"><pre><span class="tag">&lt;Directory "/Users/username/Sites/"&gt;</span>
-<span class="keyword"><span class="common">Options</span></span> Indexes MultiViews
-<span class="keyword">AllowOverride</span> <span class="literal">All</span>
-<span class="keyword"><span class="common">Order</span></span> allow,deny
-<span class="keyword"><span class="common">Allow</span></span> from <span class="literal">all</span>
-<span class="tag">&lt;/Directory&gt;</span>
-</pre></td></tr></table></figure>
-
-<p>重启Apache</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> apachectl restart
-</pre></td></tr></table></figure>
-
-<p>在根目录下(~/sites/)创建文件test.php:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="php"><span class="preprocessor">&lt;?php</span> phpinfo(); <span class="preprocessor">?&gt;</span></span>
-</pre></td></tr></table></figure>
-
-<h2 id="启动PHP">启动PHP</h2>
-<p>Mac需手动开启php服务</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="built_in">sudo</span> vi /etc/apache2/httpd.conf
-</pre></td></tr></table></figure>
-
-<p>vim搜索php<code>:/php</code><br>删除这行的#</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="preprocessor"># LoadModule php5_module libexec/apache2/libphp5.so</span>
-</pre></td></tr></table></figure>
-
-<ul>
-<li>有问题,按这篇文章操作:<ul>
-<li><a href="http://www.guomii.com/posts/30136" target="_blank">http://www.guomii.com/posts/30136</a></li>
-</ul>
-</li>
-<li>Mac OS X 中配置PHP的MCrypt扩展:<ul>
-<li><a href="http://www.wuleilei.com/blog/313" target="_blank">http://www.wuleilei.com/blog/313</a></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/21/在mac-os上配置apache/" data-id="3yebuvaqf313xzz2" class="article-share-link">Share</a>
-      
-        <a href="http://seanqu.com/2014/03/21/在mac-os上配置apache/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/">php</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-what-is-bitcoin-really" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/03/18/what-is-bitcoin-really/" class="article-date">
@@ -318,7 +83,7 @@ bg \\后台运行
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/03/18/what-is-bitcoin-really/">比特币到底是什么，说真的？</a>
+      <a class="article-title" href="/2014/03/18/what-is-bitcoin-really/">比特币到底是什么，说真的？（what is a bitcoin really）</a>
     </h1>
   
 
@@ -326,7 +91,7 @@ bg \\后台运行
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这篇文章开头提出设问，“我掏钱买比特币之后，到底得到了什么？！”，然后一步步解释比特币原理，到最后回答这问题。中间穿插分析新手容易产生的误区，是一篇不错的比特币入门。</p>
+        <p>译者按：这篇文章开头提出设问，“我掏钱买比特币之后，到底得到了什么？！”，然后一步步解释比特币原理，到最后回答这问题。中间穿插分析新手容易产生的误区，是一篇不错的比特币入门。</p>
 <p>翻译排版，顺便练习<a href="/2014/03/18/try-markdown/">Markdown</a>。</p>
 <p>英文好的，推荐看原文：<a href="http://preshing.com/20140127/what-is-a-bitcoin-really/" target="_blank">http://preshing.com/20140127/what-is-a-bitcoin-really/</a></p>
 <h2 id="译文：">译文：</h2>
@@ -339,7 +104,7 @@ bg \\后台运行
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/what-is-bitcoin-really/" data-id="oe2vtokzsfb4c27c" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/what-is-bitcoin-really/" data-id="ou6djz7nuozze1ia" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/what-is-bitcoin-really/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -397,7 +162,7 @@ bg \\后台运行
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="ejlp2pbfw96sx8bn" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="tqqb5tystbujmlju" class="article-share-link">Share</a>
       
         <a href="http://seanqu.com/2014/03/18/致peter-schiff的公开信/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -412,10 +177,6 @@ bg \\后台运行
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </section>
         
           <aside id="sidebar">
@@ -424,7 +185,7 @@ bg \\后台运行
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bitcoin/">bitcoin</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/coding/">coding</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/money/">money</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bitcoin/">bitcoin</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -433,7 +194,7 @@ bg \\后台运行
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitcoin/">bitcoin</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gold/">gold</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/">mac</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/money/">money</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/">php</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translate/">translate</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitcoin/">bitcoin</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translate/">translate</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -442,7 +203,7 @@ bg \\后台运行
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bitcoin/" style="font-size: 20.00px;">bitcoin</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/gold/" style="font-size: 10.00px;">gold</a><a href="/tags/mac/" style="font-size: 10.00px;">mac</a><a href="/tags/markdown/" style="font-size: 20.00px;">markdown</a><a href="/tags/money/" style="font-size: 10.00px;">money</a><a href="/tags/php/" style="font-size: 10.00px;">php</a><a href="/tags/translate/" style="font-size: 20.00px;">translate</a><a href="/tags/vim/" style="font-size: 10.00px;">vim</a>
+      <a href="/tags/bitcoin/" style="font-size: 20.00px;">bitcoin</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/translate/" style="font-size: 20.00px;">translate</a>
     </div>
   </div>
 
@@ -451,7 +212,7 @@ bg \\后台运行
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">8</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -463,19 +224,7 @@ bg \\后台运行
       <ul>
         
           <li>
-            <a href="/2014/03/24/mac操作技巧/">Mac操作技巧</a>
-          </li>
-        
-          <li>
-            <a href="/2014/03/21/vim常见操作方法/">Vim常见操作方法</a>
-          </li>
-        
-          <li>
-            <a href="/2014/03/21/在mac-os上配置apache/">在Mac OS上配置Apache+php+mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2014/03/18/what-is-bitcoin-really/">比特币到底是什么，说真的？</a>
+            <a href="/2014/03/18/what-is-bitcoin-really/">比特币到底是什么，说真的？（what is a bitcoin really）</a>
           </li>
         
           <li>
@@ -499,7 +248,7 @@ bg \\后台运行
 		<div class="widget">
 
 			
-			<a target='_blank' href='https://www.bifubao.com/pay?product_hash_id=503595d4c31a2e30523cd68762f1770c80b1ee9e0f8836364e4f41cffce23987'><img width=188 height=32 src='https://www.bifubao.com/assets/css/img/pay_btn_2x.png'></a>
+			<a href="https://www.bifubao.com/pay?product_hash_id=dc1b158a01b4c45f754fde558948bb8769c8f13a6c28d0b9aaba9533c1b19f86"><img height="32" src="https://www.bifubao.com/css/img/pay_btn_en_2_2x.png"/></a>
 		
 
 		</div>
