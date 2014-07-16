@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Sean Qu is here</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title: 比特币地址的碰撞概率date: 2014-07-16 23:33:05
+tags:[bitcoin]
+关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。
+严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在概率的数量级级别上，进行简单的逻辑推算和对比。
+准确度不高，仅供娱乐。先把结论给不想看过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sean Qu is here">
+<meta property="og:url" content="http://seanqu.com/2014/07/16/difficulty/">
+<meta property="og:site_name" content="Sean Qu is here">
+<meta property="og:description" content="title: 比特币地址的碰撞概率date: 2014-07-16 23:33:05
+tags:[bitcoin]
+关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。
+严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在概率的数量级级别上，进行简单的逻辑推算和对比。
+准确度不高，仅供娱乐。先把结论给不想看过程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sean Qu is here">
+<meta name="twitter:description" content="title: 比特币地址的碰撞概率date: 2014-07-16 23:33:05
+tags:[bitcoin]
+关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。
+严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在概率的数量级级别上，进行简单的逻辑推算和对比。
+准确度不高，仅供娱乐。先把结论给不想看过程">
+
+  
+    <link rel="alternative" href="/atom.xml" title="Sean Qu is here" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Sean Qu is here</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Learning by Sharing</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://seanqu.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-difficulty" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/07/16/difficulty/" class="article-date">
+  <time datetime="2014-07-16T07:34:42.000Z" itemprop="datePublished">7月 16 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: 比特币地址的碰撞概率<br>date: 2014-07-16 23:33:05</p>
+<h2 id="tags:[bitcoin]">tags:[bitcoin]</h2>
+<p>关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。</p>
+<p>严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在概率的数量级级别上，进行简单的逻辑推算和对比。</p>
+<p>准确度不高，仅供娱乐。先把结论给不想看过程的朋友。</p>
+<ul>
+<li><p>结论1：碰撞特定比特币地址的概率</p>
+<p>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞某个特定的比特币地址。</strong></p>
+<p>  <strong>碰撞成功的概率，与中333103亿次500万的概率差不多。(注意单位是亿)</strong></p>
+</li>
+<li><p>结论2：碰撞任意有币地址的概率（生日攻击）</p>
+<p>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞所有可能有币地址。</strong></p>
+<p>  <strong>碰撞到其中任意一个的概率，相当于中1000次500万。</strong> （注意，这些地址中50%以上币量小于0.001BTC）</p>
+</li>
+</ul>
+<p>下面我来看看这个数是怎么来的。</p>
+<p>在推算这个概率之前，我们首先要把比特币地址的来历研究透彻。</p>
+<h3 id="比特币地址不是公钥">比特币地址不是公钥</h3>
+<p>这句话可能出乎很多人意料。</p>
+<p>其实，严谨的说法应该是：<strong>比特币地址是加入校验的公钥摘要。</strong></p>
+<p>我们看一下比特币地址的生成过程就比较清楚了。</p>
+<h3 id="比特币地址的生成的过程">比特币地址的生成的过程</h3>
+<p>（说明: 有些数字以”0x”开头，意思是此数字使用十六进制表示法。”0x”本身没有任何含义，它是C语言流传下来的，约定俗成的写法，比如0xA就是十进制的10。另外，1个字节 = 8位二进制 = 2位十六进制）。</p>
+<ol>
+<li>随机选取一个32字节的数、大小介于<figure class="highlight 1"><figcaption><span>~ 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4141```之间，作为**私钥**。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><br> 18E14A7B6A307F426A94F8114701E7C8E774E7F9A47E2C2035DB29A206321725<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">2. </span>使用椭圆曲线加密算法（ECDSA-secp256k1）计算私钥所对应的<span class="strong">**非压缩公钥**</span>。 (共65字节， 1字节 0x04, 32字节为x坐标，32字节为y坐标）关于公钥压缩、非压缩的问题另文说明。</div></pre></td></tr></table></figure><br>0450863AD64A87AE8A2FE83C1AF1A8403CB53F53E486D8511DAD8A04887E5B23522CD470243453A299FA9E77237716103ABC11A1DF38855ED6F2EE187E9C582BA6<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="code">	</span></div><div class="line"><span class="bullet">3. </span>计算公钥的 SHA-256 哈希值</div></pre></td></tr></table></figure><br> 600FFE422B4E00731A59557A5CCA46CC183944191006324A447BDB2D98D4B408<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">4. </span>取上一步结果，计算 RIPEMD-160 哈希值</div></pre></td></tr></table></figure><br> 010966776006953D5567439E5E39F86A0D273BEE<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">5. </span>取上一步结果，前面加入地址版本号（比特币主网版本号</div></pre></td></tr></table></figure>0x00<figure class="highlight ）"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><br> 00010966776006953D5567439E5E39F86A0D273BEE<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">6. </span>取上一步结果，计算 SHA-256 哈希值</div></pre></td></tr></table></figure><br> 445C7A8007A93D8733188288BB320A8FE2DEBD2AE1B47F0F50BC10BAE845C094<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">7. </span>取上一步结果，再计算一下 SHA-256 哈希值（哈哈）</div></pre></td></tr></table></figure><br> D61967F63C7DD183914A4AE452C9F6AD5D462CE3D277798075B107615C1A8A30<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="bullet">8. </span>取上一步结果的前4个字节（8位十六进制）</div></pre></td></tr></table></figure><br>  D61967F6<br>  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> 	</div><div class="line"><span class="bullet">9.  </span>把这4个字节加在第5部结果后面作为校验（这就是比特币地址的16进制形态）。</div></pre></td></tr></table></figure><br> 00010966776006953D5567439E5E39F86A0D273BEED61967F6<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="code">	</span></div><div class="line"><span class="bullet">10. </span>用base58表示法变换一下地址（这就是最常见的比特币地址形态）。</div></pre></td></tr></table></figure><br> 16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">###base58</span></div><div class="line"></div><div class="line"></div><div class="line">简单介绍一下base58。</div><div class="line"></div><div class="line"><span class="constant">Base58</span>其实就是<span class="number">58</span>进制表示法。</div><div class="line"></div><div class="line"></div><div class="line">**<span class="constant">Base58</span>编码表：**</div><div class="line"></div><div class="line">|实际值|编码值||实际值|编码值||实际值|编码值||实际值|编码值|</div><div class="line">|<span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:||</span><span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:||</span><span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:||</span><span class="symbol">:---</span><span class="symbol">:|</span><span class="symbol">:---</span><span class="symbol">:|</span></div><div class="line">|  <span class="number">0</span> | <span class="number">1</span> || <span class="number">16</span> | <span class="constant">H</span> || <span class="number">32</span> | <span class="constant">Z</span> || <span class="number">48</span> | q</div><div class="line">|  <span class="number">1</span> | <span class="number">2</span> || <span class="number">17</span> | <span class="constant">J</span> || <span class="number">33</span> | a || <span class="number">49</span> | r</div><div class="line">|  <span class="number">2</span> | <span class="number">3</span> || <span class="number">18</span> | <span class="constant">K</span> || <span class="number">34</span> | b || <span class="number">50</span> | s</div><div class="line">|  <span class="number">3</span> | <span class="number">4</span> || <span class="number">19</span> | <span class="constant">L</span> || <span class="number">35</span> | c || <span class="number">51</span> | t</div><div class="line">|  <span class="number">4</span> | <span class="number">5</span> || <span class="number">20</span> | <span class="constant">M</span> || <span class="number">36</span> | d || <span class="number">52</span> | u</div><div class="line">|  <span class="number">5</span> | <span class="number">6</span> || <span class="number">21</span> | <span class="constant">N</span> || <span class="number">37</span> | e || <span class="number">53</span> | v</div><div class="line">|  <span class="number">6</span> | <span class="number">7</span> || <span class="number">22</span> | <span class="constant">P</span> || <span class="number">38</span> | f || <span class="number">54</span> | w</div><div class="line">|  <span class="number">7</span> | <span class="number">8</span> || <span class="number">23</span> | <span class="constant">Q</span> || <span class="number">39</span> | g || <span class="number">55</span> | w</div><div class="line">|  <span class="number">8</span> | <span class="number">9</span> || <span class="number">24</span> | <span class="constant">R</span> || <span class="number">40</span> | h || <span class="number">56</span> | y</div><div class="line">|  <span class="number">9</span> | <span class="constant">A</span> || <span class="number">25</span> | <span class="constant">S</span> || <span class="number">41</span> | i || <span class="number">57</span> | z</div><div class="line">| <span class="number">10</span> | <span class="constant">B</span> || <span class="number">26</span> | <span class="constant">T</span> || <span class="number">42</span> | j ||    |</div><div class="line">| <span class="number">11</span> | <span class="constant">C</span> || <span class="number">27</span> | <span class="constant">U</span> || <span class="number">43</span> | k ||    |</div><div class="line">| <span class="number">12</span> | <span class="constant">D</span> || <span class="number">28</span> | <span class="constant">V</span> || <span class="number">44</span> | m ||    |</div><div class="line">| <span class="number">13</span> | <span class="constant">E</span> || <span class="number">29</span> | <span class="constant">W</span> || <span class="number">45</span> | n ||    |</div><div class="line">| <span class="number">14</span> | <span class="constant">F</span> || <span class="number">30</span> | <span class="constant">X</span> || <span class="number">46</span> | o ||    |</div><div class="line">| <span class="number">15</span> | <span class="constant">G</span> || <span class="number">31</span> | <span class="constant">Y</span> || <span class="number">47</span> | p ||    |</div><div class="line"></div><div class="line">打个比方，十进制的</div></pre></td></tr></table></figure>58<figure class="highlight ，用16进制表示就是```3A```，用base58表示就是```20```，而十进制的```68```，Base58表示就是```2B```。"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">为什么使用这个奇怪的编码呢？（搞编程的同学注意一下，比特币使用的Base58和常用的base58的字典顺序有区别。）</div><div class="line"></div><div class="line">引用中本聪在源码base58.h中的注释：</div><div class="line"></div><div class="line"></div><div class="line">&gt;Why base-<span class="number">58</span> <span class="keyword">instead of</span> standard base-<span class="number">64</span> encoding?</div><div class="line"></div><div class="line">&gt;为啥用base58,不用base-<span class="number">64</span>?</div><div class="line"></div><div class="line">&gt;Don't want <span class="number">0</span>OIl <span class="property">characters</span> <span class="keyword">that</span> look <span class="keyword">the</span> same <span class="keyword">in</span> <span class="keyword">some</span> fonts <span class="keyword">and</span> could be used <span class="keyword">to</span> create visually identical looking account numbers.</div><div class="line"></div><div class="line">&gt;俺不想要<span class="number">0</span>、O、I、l这几个字母。因为在很多字体里这几个字母容易混。而且转换以后，看着比以前舒服多了。</div><div class="line"></div><div class="line">&gt;A <span class="type">string</span> <span class="keyword">with</span> non-alphanumeric <span class="property">characters</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">as</span> easily accepted <span class="keyword">as</span> an account <span class="type">number</span>.</div><div class="line"></div><div class="line">&gt;数字字母组成的账户，大家好理解。</div><div class="line"></div><div class="line">&gt;E-mail usually won't line-break <span class="keyword">if</span> there's no punctuation <span class="keyword">to</span> break <span class="keyword">at</span>.</div><div class="line"></div><div class="line">&gt;如果没有标点符号，E-mail一般不换行。</div><div class="line"></div><div class="line">&gt;Doubleclicking selects <span class="keyword">the</span> whole <span class="type">number</span> <span class="keyword">as</span> one <span class="property">word</span> <span class="keyword">if</span> <span class="keyword">it</span>'s all alphanumeric.</div><div class="line"></div><div class="line">&gt;双击可以选择整个字符串，哦耶。</div><div class="line"></div><div class="line"><span class="comment">###椭圆曲线、SHA - 256、RIPEMD-160</span></div><div class="line"></div><div class="line">这个...一句两句说不清楚，先忽略了。以后再写文章介绍吧（不要打我）。</div><div class="line"></div><div class="line"><span class="comment">###地址可以没有公钥</span></div><div class="line"></div><div class="line">搞清楚比特币地址的产生步骤，我们可以得出以下结论。</div><div class="line"></div><div class="line"><span class="number">1.</span> 仅有比特币地址，无法反推出公钥。</div><div class="line"><span class="number">2.</span> 合法的比特币地址不一定有对应的公钥。比如这个比特币地址：</div></pre></td></tr></table></figure><br> 1111111111111111111114oLvT2<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">	它是这样构造出来的：</div></pre></td></tr></table></figure><br> 00（版本号） 0000000000000000000000000000000000000000（任意20字节数）94A00911（校验码）<br> <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">	有意思的是，真的有人往这个地址里发币（大约3个币，这些币相当于被销毁了），看这里</div><div class="line">	&lt;https://blockchain.info/address/1111111111111111111114oLvT2&gt;</div><div class="line">	</div><div class="line"><span class="comment">###比特币地址碰撞</span></div><div class="line"></div><div class="line">地址的来历搞清楚了，我们来分析一下如何碰撞。</div><div class="line"></div><div class="line">就拿全零地址：</div></pre></td></tr></table></figure>1111111111111111111114oLvT2<figure class="highlight 举例。仅随机碰撞出该地址对应的公钥是没有意义的。因为比特币交易需要私钥签名才有效。"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">所以，如果你想使用这个地址里的比特币，前提是拥有这个地址对应公钥的私钥。</div><div class="line"></div><div class="line">也就是说，你需要：</div><div class="line"></div><div class="line"><span class="bullet">1. </span>随机生成一个私钥。</div><div class="line"><span class="bullet">2. </span>计算该私钥对应的公钥.</div><div class="line"><span class="bullet">3. </span>用公钥算出比特币地址。</div><div class="line"><span class="bullet">4. </span>与目标地址对比，看看是否一致。</div><div class="line"><span class="bullet">5. </span>如果不一致，回到第1步。</div><div class="line"></div><div class="line">根据比特币地址理论总数，容易的看出，单次碰撞成功的理论概率是：</div></pre></td></tr></table></figure><br>1 / ( 2 ^ 160 )  //“2^160”意思是2的160次方<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">由于每次碰撞至少需要<span class="number">3</span>次SHA-<span class="number">256</span>运算，我们放宽为<span class="number">2</span>次。</div><div class="line"></div><div class="line">在不考虑其他运算的情况下，假设你有<span class="number">1</span><span class="keyword">E</span>/每秒的算力（ <span class="keyword">E</span> = （<span class="number">2</span>^<span class="number">60</span>）相当于当前比特币全网算力的<span class="number">10</span>倍）进行破解。那么，每秒碰撞该地址成功的概率：</div></pre></td></tr></table></figure><br>( 1 / ( 2 ^ 160 ) ) * ( 2 ^ 60 ) / 2 </li>
+</ol>
+<p>= 1 / ( 2 ^ 101 )</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">假设你可以活 2^32秒 </span>=<span class="string"> 4294967296秒 ≈ 136.2年，你在有生之年碰撞该地址成功的概率为：</span></div></pre></td></tr></table></figure><br>( 1 / ( 2 ^ 101 ) ) * ( 2 ^ 32 )<br>= 1 / ( 2 ^ 69)</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">这是个什么概念呢？</div><div class="line"></div><div class="line">我们看双色球命中500万的概率：</div></pre></td></tr></table></figure><br>1/C(33,6)<em>16 = 1/[ （33 </em> 32 <em> 31 </em> 30 <em> 29 </em>28/6<em>5</em>4<em>3</em>2<em>1）</em> 16 ] = 1/17721088</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">用这个概率除以碰撞概率：</div></pre></td></tr></table></figure><br>( 1 / 17721088 ) / ( 1 / ( 2 ^ 69 ) )<br>≈ 33310359406753.4</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="vala">所以，结论是：**假设，你掌握了比特币当前全网算力的<span class="number">10</span>倍，花<span class="number">136</span>年不间断地碰撞某个特定的比特币地址。碰撞成功的概率，与中<span class="number">333103</span>亿次<span class="number">500</span>万的概率差不多。(注意单位是亿)**</span></div><div class="line"></div><div class="line"><span class="preprocessor">###考虑生日攻击</span></div><div class="line"></div><div class="line">当前，有币的地址大约为<span class="number">300</span>万个。看这里：&lt;http:<span class="comment">//btc.ondn.net/search&gt;</span></div><div class="line"></div><div class="line">我们把这个数字翻<span class="number">1</span>万倍。假设有<span class="number">343</span>亿个有比特币的地址（<span class="number">2</span>^<span class="number">35</span> ≈ <span class="number">343</span>亿，相当于每个地球人有<span class="number">5</span>个有余额的地址，火星人的先不算了，呵呵)</div><div class="line"></div><div class="line">那么命中其中任意一个地址的概率：</div></pre></td></tr></table></figure><br>( 1 / ( 2 ^ 69 ) ) * ( 2 ^ 35 )<br>= 1 / 2 ^ 34<br>= 1 / 17179869184 </p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">再和中500万比一下：</div></pre></td></tr></table></figure><br>( 1 / 17721088 ) / ( 1 / 17179869184 )<br>= 969.459052627<br>```</p>
+<p>咦，和中1000次500万的概率很接近了!</p>
+<p>所以，结论是：<strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞所有可能有币地址。碰撞到其中任意一个的概率，相当于中1000次500万。</strong> （注意，这些地址中50%以上币量小于0.001BTC）</p>
+<h3 id="后记">后记</h3>
+<p>以上计算有很多省略的地方，计算时考虑最宽松情况。所以实际概率更小。</p>
+<p>比特币系统的设计，让拥有算力的人倾向去算blockchain，因为比碰撞地址划算的多。</p>
+<p>要是本文计算有错误疏漏，欢迎指正，但是指正了，我也不一定改。（开个玩笑，不要打我）。</p>
+<p>没中过1000次500万的同学，不要幻想算出别人的地址了…洗洗睡吧。</p>
+<h3 id="参考文献">参考文献</h3>
+<ol>
+<li><a href="https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses" target="_blank" rel="external">https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses</a></li>
+<li><a href="https://en.bitcoin.it/wiki/Base58Check_encoding" target="_blank" rel="external">https://en.bitcoin.it/wiki/Base58Check_encoding</a></li>
+<li><a href="http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript" target="_blank" rel="external">http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript</a></li>
+<li><a href="https://bitcointalk.org/index.php?topic=41718.0" target="_blank" rel="external">https://bitcointalk.org/index.php?topic=41718.0</a></li>
+<li><a href="https://en.bitcoin.it/wiki/List_of_address_prefixes" target="_blank" rel="external">https://en.bitcoin.it/wiki/List_of_address_prefixes</a></li>
+<li><a href="https://en.bitcoin.it/wiki/Wallet_import_format" target="_blank" rel="external">https://en.bitcoin.it/wiki/Wallet_import_format</a></li>
+<li><a href="https://en.bitcoin.it/wiki/Private_key" target="_blank" rel="external">https://en.bitcoin.it/wiki/Private_key</a> </li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="5y8edzk7h8zzdovo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/07/16/a-comment/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          对《区块链信任的盲区》一文的评论
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/19/what-is-bitcoin-really/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">比特币到底是什么，说真的？（what is a bitcoin ,really?）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bitcoin/">bitcoin</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitcoin/">bitcoin</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translate/">translate</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bitcoin/" style="font-size: 20.00px;">bitcoin</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/translate/" style="font-size: 15.00px;">translate</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/07/16/a-comment/">对《区块链信任的盲区》一文的评论</a>
+          </li>
+        
+          <li>
+            <a href="/2014/07/16/difficulty/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/19/what-is-bitcoin-really/">比特币到底是什么，说真的？（what is a bitcoin ,really?）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/18/致peter-schiff的公开信/">致Peter Schiff的公开信</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 Sean Qu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
