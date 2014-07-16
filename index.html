@@ -113,44 +113,28 @@
 <p>我们看一下比特币地址的生成过程就比较清楚了。</p>
 <h3 id="比特币地址的生成的过程">比特币地址的生成的过程</h3>
 <p>（说明: 有些数字以”0x”开头，意思是此数字使用十六进制表示法。”0x”本身没有任何含义，它是C语言流传下来的，约定俗成的写法，比如0xA就是十进制的10。另外，1个字节 = 8位二进制 = 2位十六进制）。</p>
-<ol>
-<li>随机选取一个32字节的数、大小介于1 ~ 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4141之间，作为<strong>私钥</strong>。</li>
-</ol>
+<p>第一步，随机选取一个32字节的数、大小介于1 ~ 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4141之间，作为<strong>私钥</strong>。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">18E14A7B6A307F426A94F8114701E7C8E774E7F9A47E2C2035DB29A206321725</div></pre></td></tr></table></figure>
 
-<ol>
-<li>使用椭圆曲线加密算法（ECDSA-secp256k1）计算私钥所对应的<strong>非压缩公钥</strong>。 (共65字节， 1字节 0x04, 32字节为x坐标，32字节为y坐标）关于公钥压缩、非压缩的问题另文说明。</li>
-</ol>
+<p>第二步，使用椭圆曲线加密算法（ECDSA-secp256k1）计算私钥所对应的<strong>非压缩公钥</strong>。 (共65字节， 1字节 0x04, 32字节为x坐标，32字节为y坐标）关于公钥压缩、非压缩的问题另文说明。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0450863AD64A87AE8A2FE83C1AF1A8403CB53F53E486D8511DAD8A04887E5B23522CD470243453A299FA9E77237716103ABC11A1DF38855ED6F2EE187E9C582BA6</div></pre></td></tr></table></figure>
 
-<ol>
-<li>计算公钥的 SHA-256 哈希值</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">600F</span>FE422B4E00731A59557A5CCA46CC183944191006324A447BDB2D98D4B408</div></pre></td></tr></table></figure><br>4. 取上一步结果，计算 RIPEMD-160 哈希值<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">010966776006953D5567439E5E39F86A0D273BEE</div></pre></td></tr></table></figure>
+<p>第三步，计算公钥的 SHA-256 哈希值</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">600F</span>FE422B4E00731A59557A5CCA46CC183944191006324A447BDB2D98D4B408</div></pre></td></tr></table></figure><br>第四步，取上一步结果，计算 RIPEMD-160 哈希值<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">010966776006953D5567439E5E39F86A0D273BEE</div></pre></td></tr></table></figure>
 
-<ol>
-<li>取上一步结果，前面加入地址版本号（比特币主网版本号“0x00”）</li>
-</ol>
+<p>第五步，取上一步结果，前面加入地址版本号（比特币主网版本号“0x00”）</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00010966776006953D5567439E5E39F86A0D273BEE</div></pre></td></tr></table></figure>
 
-<ol>
-<li>取上一步结果，计算 SHA-256 哈希值</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">445C7A8007A93D8733188288BB320A8FE2DEBD2AE1B47F0F50BC10BAE845C094</div></pre></td></tr></table></figure><br>7. 取上一步结果，再计算一下 SHA-256 哈希值（哈哈）<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D61967F63C7DD183914A4AE452C9F6AD5D462CE3D277798075B107615C1A8A30</div></pre></td></tr></table></figure>
+<p>第六步，取上一步结果，计算 SHA-256 哈希值</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">445C7A8007A93D8733188288BB320A8FE2DEBD2AE1B47F0F50BC10BAE845C094</div></pre></td></tr></table></figure><br>第七步，取上一步结果，再计算一下 SHA-256 哈希值（哈哈）<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D61967F63C7DD183914A4AE452C9F6AD5D462CE3D277798075B107615C1A8A30</div></pre></td></tr></table></figure>
 
-<ol>
-<li>取上一步结果的前4个字节（8位十六进制）</li>
-</ol>
+<p>第八步，取上一步结果的前4个字节（8位十六进制）</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D61967F6</div></pre></td></tr></table></figure>
 
-<ol>
-<li>把这4个字节加在第5部结果后面作为校验（这就是比特币地址的16进制形态）。</li>
-</ol>
+<p>第九步，把这4个字节加在第五步的结果后面，作为校验（这就是比特币地址的16进制形态）。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00010966776006953D5567439E5E39F86A0D273BEED61967F6</div></pre></td></tr></table></figure>
 
-<ol>
-<li>用base58表示法变换一下地址（这就是最常见的比特币地址形态）。</li>
-</ol>
+<p>第十步，用base58表示法变换一下地址（这就是最常见的比特币地址形态）。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">16U</span>wLL9Risc3QfPqBUvKofHmBQ7wMtjvM</div></pre></td></tr></table></figure>
 
 <h3 id="base58">base58</h3>
@@ -448,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="yslur39xt9um7qra" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="ppcxj3gbz6l4w9kf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li></ul>
@@ -643,7 +627,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/07/16/a-comment/" data-id="vowvdoblbpdo5zp5" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/07/16/a-comment/" data-id="nlspq40w4o2lm2zh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li></ul>
@@ -694,7 +678,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/19/what-is-bitcoin-really/" data-id="wag4b9o22qaxpebq" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/19/what-is-bitcoin-really/" data-id="96nd8o993fs55pfh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/translate/">translate</a></li></ul>
@@ -795,7 +779,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="f6ydmh83m8ithods" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="op4vtkgmyv2qvyk4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/translate/">translate</a></li></ul>
