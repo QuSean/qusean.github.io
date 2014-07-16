@@ -399,9 +399,8 @@
 </ol>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1111111111111111111114oLvT2</div></pre></td></tr></table></figure><br>    它是这样构造出来的：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00（版本号） 0000000000000000000000000000000000000000（任意20字节数）94A00911（校验码）</div></pre></td></tr></table></figure>
 
-<pre><code>有意思的是，真的有人往这个地址里发币（大约<span class="number">3</span>个币，这些币相当于被销毁了），看这里
-&lt;https:<span class="comment">//blockchain.info/address/1111111111111111111114oLvT2&gt;</span>
-</code></pre><h3 id="比特币地址碰撞">比特币地址碰撞</h3>
+<p>有意思的是，真的有人往这个地址里发币（大约3个币，这些币相当于被销毁了），看这里:<br><a href="https://blockchain.info/address/1111111111111111111114oLvT2" target="_blank" rel="external">https://blockchain.info/address/1111111111111111111114oLvT2</a></p>
+<h3 id="比特币地址碰撞">比特币地址碰撞</h3>
 <p>地址的来历搞清楚了，我们来分析一下如何碰撞。</p>
 <p>就拿全零地址：”1111111111111111111114oLvT2”举例。仅随机碰撞出该地址对应的公钥是没有意义的。因为比特币交易需要私钥签名才有效。</p>
 <p>所以，如果你想使用这个地址里的比特币，前提是拥有这个地址对应公钥的私钥。</p>
@@ -431,7 +430,24 @@
 <p>比特币系统的设计，让拥有算力的人倾向去算blockchain，因为比碰撞地址划算的多。</p>
 <p>要是本文计算有错误疏漏，欢迎指正，但是指正了，我也不一定改。（开个玩笑，不要打我）。</p>
 <p>没中过1000次500万的同学，不要幻想算出别人的地址了…洗洗睡吧。</p>
-<h3 id="参考文献">参考文献</h3>
+<pre><code> ▄▄▄▄▄▄▄  ▄    ▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄
+ █ ▄▄▄ █ ▀█▄█▀▀█▀  ▀▄ ▄  ▀ █ ▄▄▄ █
+ █ ███ █ ▀▀▄▀▄▀█▄█▀  █▄▀▄▀ █ ███ █
+ █▄▄▄▄▄█ █ █ ▄▀▄▀█ █ ▄▀█ █ █▄▄▄▄▄█
+ ▄▄▄▄▄ ▄▄▄▄▄ █ ▄▄█▄▀ █▀█ ▄▄ ▄ ▄ ▄ 
+ ▄▀ ▄▀▀▄▄██ ▄▄▄▄▄▀▄▄▀ ▀▀▀  ▀▄ ▄▀█▀
+ ▄█▄▄▄ ▄▄██▀█ ▄▄▄  ▀▀▄▀█ ██ ██▄▀  
+ ▄ ▀▄▀ ▄█ ▀▀ ▀▀▀██  ▀▀▀▀▀  █ ▄  █▀
+   ▄▄█▀▄▀▄▀▄ █▄▄▄▀▄▄█▀▀▀█▄█ █▄ ▀▄ 
+   ▀▄ █▄▀▄▄▀▄▄▄ █▀▄ ▀▀ ▄▀▀▄█ ▄█ █▀
+ ▄▀ ▀▄ ▄█▀▄██ ▄█▄█▄█ █▀▀█▄ ▀██ ▀▄ 
+ █ ▄▄▀█▄█▄ ▀ ▀▄▄█▀ ▄▀██▀▀▄▄█ ▄█ █▀
+ █  ███▄▀▀ █ █▄█  ▄  █▀▀▀▄▄██▄▀▀ ▄
+ ▄▄▄▄▄▄▄ ███▄▄▄███▄▄▀ ██▄█ ▄ █ ▀▄▀
+ █ ▄▄▄ █ ▄▄▄█  ▀██  ▄ ▀▀▀█▄▄▄█▀▀ ▀
+ █ ███ █ █▄▀ ▀█▄▄ ▀█ ███▄ ▀▄▀▀▀▄▄ 
+ █▄▄▄▄▄█ █▀▀ █▀▄▀▄▄▀▄▀▀▄▄▄▄▀ █▀▀▄ 
+</code></pre><h3 id="参考文献">参考文献</h3>
 <ol>
 <li><a href="https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses" target="_blank" rel="external">https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses</a></li>
 <li><a href="https://en.bitcoin.it/wiki/Base58Check_encoding" target="_blank" rel="external">https://en.bitcoin.it/wiki/Base58Check_encoding</a></li>
@@ -445,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="ppcxj3gbz6l4w9kf" class="article-share-link">Share</a>
+      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="beyjru7w583uw81z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li></ul>
