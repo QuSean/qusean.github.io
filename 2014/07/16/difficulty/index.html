@@ -5,30 +5,30 @@
   
   <title>比特币地址碰撞概率 | Sean Qu is here</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。
-严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在数量级上，进行简单的逻辑推算和对比。
-准确度不高，仅供娱乐。先把结论给不想看过程的朋友。
+  <meta name="description" content="校稿：
+原文中对比“买彩票中500万概率”的表达方法有错误，应该如下表达。
 
-结论1：碰撞特定比特币地址的概率
-  假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞某个特定的比">
+结论1：碰撞特定比特币地址的概率  假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞一个特定比特币地址。  碰撞成功的概率，相当于买福彩双色球中500万概率的333103亿分之一。(注意单位是亿)
+
+结论2：碰撞任意有币地址的概率（生日攻击）  假设，你掌握了比特币当前全网算力的10倍，花136年不间断">
 <meta property="og:type" content="article">
 <meta property="og:title" content="比特币地址碰撞概率">
 <meta property="og:url" content="http://seanqu.com/2014/07/16/difficulty/">
 <meta property="og:site_name" content="Sean Qu is here">
-<meta property="og:description" content="关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。
-严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在数量级上，进行简单的逻辑推算和对比。
-准确度不高，仅供娱乐。先把结论给不想看过程的朋友。
+<meta property="og:description" content="校稿：
+原文中对比“买彩票中500万概率”的表达方法有错误，应该如下表达。
 
-结论1：碰撞特定比特币地址的概率
-  假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞某个特定的比">
+结论1：碰撞特定比特币地址的概率  假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞一个特定比特币地址。  碰撞成功的概率，相当于买福彩双色球中500万概率的333103亿分之一。(注意单位是亿)
+
+结论2：碰撞任意有币地址的概率（生日攻击）  假设，你掌握了比特币当前全网算力的10倍，花136年不间断">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="比特币地址碰撞概率">
-<meta name="twitter:description" content="关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。
-严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在数量级上，进行简单的逻辑推算和对比。
-准确度不高，仅供娱乐。先把结论给不想看过程的朋友。
+<meta name="twitter:description" content="校稿：
+原文中对比“买彩票中500万概率”的表达方法有错误，应该如下表达。
 
-结论1：碰撞特定比特币地址的概率
-  假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞某个特定的比">
+结论1：碰撞特定比特币地址的概率  假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞一个特定比特币地址。  碰撞成功的概率，相当于买福彩双色球中500万概率的333103亿分之一。(注意单位是亿)
+
+结论2：碰撞任意有币地址的概率（生日攻击）  假设，你掌握了比特币当前全网算力的10倍，花136年不间断">
 
   
     <link rel="alternative" href="/atom.xml" title="Sean Qu is here" type="application/atom+xml">
@@ -105,7 +105,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。</p>
+        <h3 id="校稿：">校稿：</h3>
+<p>原文中对比“买彩票中500万概率”的表达方法有错误，应该如下表达。</p>
+<ul>
+<li><p>结论1：碰撞特定比特币地址的概率<br>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞一个特定比特币地址。</strong><br>  <strong>碰撞成功的概率，相当于买福彩双色球中500万概率的333103亿分之一。(注意单位是亿)</strong></p>
+</li>
+<li><p>结论2：碰撞任意有币地址的概率（生日攻击）<br>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞所有存币地址。</strong><br>  <strong>碰撞其中任意地址的概率，相当于买福彩双色球500万概率的1000分之一。 （注意，这些地址中50%以上存币量小于0.001BTC）</strong></p>
+</li>
+</ul>
+<p>关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。</p>
 <p>严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在数量级上，进行简单的逻辑推算和对比。</p>
 <p>准确度不高，仅供娱乐。先把结论给不想看过程的朋友。</p>
 <ul>
@@ -464,6 +472,15 @@
     
 <nav id="article-nav">
   
+    <a href="/2014/07/18/difficulty2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          比特币地址碰撞概率（续）
+        
+      </div>
+    </a>
+  
   
     <a href="/2014/07/16/a-comment/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
@@ -494,7 +511,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bitcoin/">bitcoin</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bitcoin/">bitcoin</a><span class="category-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -503,7 +520,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitcoin/">bitcoin</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translate/">translate</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitcoin/">bitcoin</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translate/">translate</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -521,7 +538,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -531,6 +548,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/07/18/difficulty2/">比特币地址碰撞概率（续）</a>
+          </li>
         
           <li>
             <a href="/2014/07/16/difficulty/">比特币地址碰撞概率</a>
