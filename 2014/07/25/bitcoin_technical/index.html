@@ -4,19 +4,17 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>比特币地址碰撞概率（续） | Sean Qu is here</title>
+    <title>Sean Qu is here</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Sean Qu">
     
-    <meta name="description" content="上一篇文章《比特币地址的碰撞概率》讨论了地址碰撞概率的计算方法。
-后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。
+    <meta name="description" content="title: 比特币高质量技术贴集锦（持续更新）date: 2014-07-25 17:29:29
+tags:[bitcoin]
+碰撞概率一文被转载至bitcointalk.org后，有大神指出文中错漏。汗颜之余，决定搜罗一些高质量技术贴，加以整理。以供后人研究使用。
+此集锦的原则：
 
-
-
-
-我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。
-如果每个格子的大小是1平方毫米，那么这个">
+不包括常见基">
     
     
     
@@ -76,15 +74,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/07/18/difficulty2/" title="比特币地址碰撞概率（续）" itemprop="url">比特币地址碰撞概率（续）</a>
+      <a href="/2014/07/25/bitcoin_technical/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://seanqu.com" title="Sean Qu">Sean Qu</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-07-18T01:52:49.000Z" itemprop="datePublished">7月 18 2014</time>
-    更新日期:<time datetime="2014-07-17T10:08:30.000Z" itemprop="dateModified">7月 17 2014</time>
+    <time datetime="2014-07-25T02:59:25.000Z" itemprop="datePublished">7月 25 2014</time>
+    更新日期:<time datetime="2014-07-25T02:55:58.000Z" itemprop="dateModified">7月 25 2014</time>
     
   </p>
 </header>
@@ -93,50 +91,50 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:[bitcoin]"><span class="toc-number">1.</span> <span class="toc-text">tags:[bitcoin]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#综合"><span class="toc-number">1.1.</span> <span class="toc-text">综合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公钥、私钥"><span class="toc-number">1.2.</span> <span class="toc-text">公钥、私钥</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>上一篇文章<a href="http://seanqu.com/2014/07/16/difficulty/" target="_blank" rel="external">《比特币地址的碰撞概率》</a>讨论了地址碰撞概率的计算方法。</p>
-<p>后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。</p>
-<img src="/img/galaxy.png">
-
-
-
-<p>我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。</p>
-<p>如果每个格子的大小是<strong>1平方毫米</strong>，那么这个棋盘的边长就是2^80毫米，大约是太阳系直径的<strong>1亿倍</strong>。</p>
-<hr>
-<p>2^160 = 2^80 * 2^80</p>
-<p>2^80/120 0000 0000 000 000 //太阳系的直径约为120亿公里≈1.2*10^16毫米</p>
-<p>= 100743818.301219 ≈ 1亿</p>
-<hr>
-<p>所有有币的地址随机分布在棋盘上。如果把这些地址集中起来（400万个地址），总面积大约是4平方米。</p>
-<p>如果你想碰撞比特币地址。就像你手里有1根针，每次只能随机地把针扔在这个棋盘上某个格子里。</p>
-<p>你不断地扔针，直到戳到有币的地址。</p>
-<p>当然，现在都是用电脑扔。</p>
-<p>比如显卡（AMD5970:800MH/s），每秒可以扔8亿根针，能戳800平米。</p>
-<p>比如矿机（AntMinerS2:1000000MH/s），每秒可以扔10000亿根针，能戳10000平米，和1个足球场差不多大。</p>
-<p>听上去挺容易戳到的。</p>
-<p>可是，再想想总面积：<strong>1亿*1亿个太阳系。</strong></p>
+		<p>title: 比特币高质量技术贴集锦（持续更新）<br>date: 2014-07-25 17:29:29</p>
+<h2 id="tags:[bitcoin]">tags:[bitcoin]</h2>
+<p>碰撞概率一文被转载至bitcointalk.org后，有大神指出文中错漏。汗颜之余，决定搜罗一些高质量技术贴，加以整理。以供后人研究使用。</p>
+<p>此集锦的原则：</p>
+<ol>
+<li>不包括常见基本原理描述。</li>
+<li>纯技术为主，一般不包括应用研究。</li>
+<li>在原理之上提升一层研究，或将原理描述更清楚，易理解。</li>
+<li>除极度相关，不包含山寨币技术研究。</li>
+</ol>
+<h3 id="综合">综合</h3>
+<ul>
+<li><p><strong>bitcoin 高质量技术讨论区</strong></p>
+<p>  <a href="https://bitcointalk.org/index.php?topic=653151.0" target="_blank" rel="external">https://bitcointalk.org/index.php?topic=653151.0</a></p>
+</li>
+<li><p><strong>比特币研究论文汇总</strong></p>
+<p>  <a href="https://en.bitcoin.it/wiki/Research" target="_blank" rel="external">https://en.bitcoin.it/wiki/Research</a></p>
+</li>
+<li><p><strong>中本聪在bitcointalk上的所有公开言论</strong></p>
+<p>  <a href="https://bitcointalk.org/index.php?action=profile;u=3;sa=showPosts;start=0" target="_blank" rel="external">https://bitcointalk.org/index.php?action=profile;u=3;sa=showPosts;start=0</a></p>
+</li>
+<li><p><strong>中本聪bitcoin v0.1 alpha 发布文案</strong></p>
+<p>  <a href="http://sourceforge.net/p/bitcoin/mailman/message/21312004/" target="_blank" rel="external">http://sourceforge.net/p/bitcoin/mailman/message/21312004/</a></p>
+</li>
+</ul>
+<h3 id="公钥、私钥">公钥、私钥</h3>
+<ul>
+<li><p><strong>公钥压缩与非压缩地址用例测试</strong></p>
+<p>  <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x68;&#x74;&#x74;&#x70;&#58;&#x2f;&#47;&#x73;&#111;&#117;&#x72;&#x63;&#x65;&#x66;&#111;&#114;&#103;&#101;&#x2e;&#110;&#x65;&#116;&#47;&#112;&#x2f;&#98;&#105;&#116;&#99;&#x6f;&#x69;&#x6e;&#x2f;&#x6d;&#x61;&#x69;&#108;&#x6d;&#97;&#110;&#47;&#98;&#105;&#x74;&#99;&#111;&#105;&#x6e;&#45;&#x64;&#101;&#x76;&#x65;&#108;&#x6f;&#x70;&#x6d;&#101;&#x6e;&#116;&#x2f;&#x74;&#x68;&#x72;&#101;&#97;&#100;&#x2f;&#67;&#x41;&#80;&#103;&#43;&#115;&#x42;&#104;&#68;&#x46;&#67;&#x6a;&#65;&#110;&#49;&#116;&#82;&#x52;&#x51;&#104;&#x61;&#x75;&#100;&#116;&#x71;&#119;&#115;&#x68;&#52;&#x76;&#x63;&#86;&#x62;&#120;&#122;&#109;&#43;&#x41;&#65;&#50;&#x4f;&#117;&#70;&#120;&#78;&#x37;&#49;&#x66;&#x77;&#x55;&#x41;&#x40;&#109;&#97;&#105;&#108;&#x2e;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;&#47;">&#x68;&#x74;&#x74;&#x70;&#58;&#x2f;&#47;&#x73;&#111;&#117;&#x72;&#x63;&#x65;&#x66;&#111;&#114;&#103;&#101;&#x2e;&#110;&#x65;&#116;&#47;&#112;&#x2f;&#98;&#105;&#116;&#99;&#x6f;&#x69;&#x6e;&#x2f;&#x6d;&#x61;&#x69;&#108;&#x6d;&#97;&#110;&#47;&#98;&#105;&#x74;&#99;&#111;&#105;&#x6e;&#45;&#x64;&#101;&#x76;&#x65;&#108;&#x6f;&#x70;&#x6d;&#101;&#x6e;&#116;&#x2f;&#x74;&#x68;&#x72;&#101;&#97;&#100;&#x2f;&#67;&#x41;&#80;&#103;&#43;&#115;&#x42;&#104;&#68;&#x46;&#67;&#x6a;&#65;&#110;&#49;&#116;&#82;&#x52;&#x51;&#104;&#x61;&#x75;&#100;&#116;&#x71;&#119;&#115;&#x68;&#52;&#x76;&#x63;&#86;&#x62;&#120;&#122;&#109;&#43;&#x41;&#65;&#50;&#x4f;&#117;&#70;&#120;&#78;&#x37;&#49;&#x66;&#x77;&#x55;&#x41;&#x40;&#109;&#97;&#105;&#108;&#x2e;&#103;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#x6d;&#47;</a></p>
+</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/bitcoin/">bitcoin</a>
-  </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://seanqu.com/2014/07/18/difficulty2/" data-title="比特币地址碰撞概率（续） | Sean Qu is here" data-tsina="shuangqu2010" class="share clearfix">
+  <div data-url="http://seanqu.com/2014/07/25/bitcoin_technical/" data-title="Sean Qu is here" data-tsina="shuangqu2010" class="share clearfix">
   </div>
 
 </div>
@@ -146,7 +144,7 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2014/07/25/bitcoin_technical/" title="">
+ <a href="/2014/07/25/20140725bitcointoday/" title="">
   <strong>PREVIOUS:</strong><br/>
   <span>
   (no title)</span>
@@ -155,9 +153,9 @@
 
 
 <div class="next">
-<a href="/2014/07/16/difficulty/"  title="比特币地址碰撞概率">
+<a href="/2014/07/18/difficulty2/"  title="比特币地址碰撞概率（续）">
  <strong>NEXT:</strong><br/> 
- <span>比特币地址碰撞概率
+ <span>比特币地址碰撞概率（续）
 </span>
 </a>
 </div>
@@ -170,7 +168,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tags:[bitcoin]"><span class="toc-number">1.</span> <span class="toc-text">tags:[bitcoin]</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#综合"><span class="toc-number">1.1.</span> <span class="toc-text">综合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#公钥、私钥"><span class="toc-number">1.2.</span> <span class="toc-text">公钥、私钥</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
