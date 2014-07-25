@@ -1,1120 +1,322 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>Sean Qu is here</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Focus on Bitcoin">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sean Qu is here">
-<meta property="og:url" content="http://seanqu.com/">
-<meta property="og:site_name" content="Sean Qu is here">
-<meta property="og:description" content="Focus on Bitcoin">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sean Qu is here">
-<meta name="twitter:description" content="Focus on Bitcoin">
+    <title>Sean Qu is here</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Sean Qu">
+    
+    <meta name="description" content="Focus on Bitcoin">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 
-  
-    <link rel="alternative" href="/atom.xml" title="Sean Qu is here" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
-
-  
 </head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Sean Qu is here</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Learning by Sharing</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://seanqu.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-difficulty2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/07/18/difficulty2/" class="article-date">
-  <time datetime="2014-07-18T01:52:49.000Z" itemprop="datePublished">7月 18 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-  </div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/07/18/difficulty2/">比特币地址碰撞概率（续）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上一篇文章<a href="http://seanqu.com/2014/07/16/difficulty/" target="_blank" rel="external">《比特币地址的碰撞概率》</a>讨论了地址碰撞概率的计算方法。</p>
-<p>后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。</p>
-<img src="/img/galaxy.png">
-
-
-
-<p>我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。</p>
-<p>如果每个格子的大小是<strong>1平方毫米</strong>，那么这个棋盘的边长就是2^80毫米，大约是太阳系直径的<strong>1亿倍</strong>。</p>
-<hr>
-<p>2^160 = 2^80 * 2^80</p>
-<p>2^80/120 0000 0000 000 000 //太阳系的直径约为120亿公里≈1.2*10^16毫米</p>
-<p>= 100743818.301219 ≈ 1亿</p>
-<hr>
-<p>所有有币的地址随机分布在棋盘上。如果把这些地址集中起来（400万个地址），总面积大约是4平方米。</p>
-<p>如果你想碰撞比特币地址。就像你手里有1根针，每次只能随机地把针扔在这个棋盘上某个格子里。</p>
-<p>你不断地扔针，直到戳到有币的地址。</p>
-<p>当然，现在都是用电脑扔。</p>
-<p>比如显卡（AMD5970:800MH/s），每秒可以扔8亿根针，能戳800平米。</p>
-<p>比如矿机（AntMinerS2:1000000MH/s），每秒可以扔10000亿根针，能戳10000平米，和1个足球场差不多大。</p>
-<p>听上去挺容易戳到的。</p>
-<p>可是，再想想总面积：<strong>1亿*1亿个太阳系。</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/07/18/difficulty2/" data-id="r5ui7sk7u0jo07e1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-difficulty" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/07/16/difficulty/" class="article-date">
-  <time datetime="2014-07-16T11:57:54.000Z" itemprop="datePublished">7月 16 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/07/16/difficulty/">比特币地址碰撞概率</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="校稿：">校稿：</h3>
-<p>原文中对比“买彩票中500万概率”的表达方法有错误，应该如下表达。</p>
-<ul>
-<li><p>结论1：碰撞特定比特币地址的概率<br>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞一个特定比特币地址。</strong><br>  <strong>碰撞成功的概率，相当于买福彩双色球中500万概率的333103亿分之一。(注意单位是亿)</strong></p>
-</li>
-<li><p>结论2：碰撞任意有币地址的概率（生日攻击）<br>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞所有存币地址。</strong><br>  <strong>碰撞其中任意地址的概率，相当于买福彩双色球500万概率的1000分之一。 （注意，这些地址中50%以上存币量小于0.001BTC）</strong></p>
-</li>
-</ul>
-<p>关于比特币地址的碰撞概率，好像还没有特别详细的论证。其实这是一个非常重要的问题。因为它直接影响到大众对比特币安全的信心。</p>
-<p>严谨的碰撞概率计算，需要考虑的因素太多，算式也复杂。所以，以下的分析仅在数量级上，进行简单的逻辑推算和对比。</p>
-<p>准确度不高，仅供娱乐。先把结论给不想看过程的朋友。</p>
-<ul>
-<li><p>结论1：碰撞特定比特币地址的概率</p>
-<p>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞某个特定的比特币地址。</strong></p>
-<p>  <strong>碰撞成功的概率，相当于买福彩双色球中了333103亿次500万。(注意单位是亿)</strong></p>
-</li>
-<li><p>结论2：碰撞任意有币地址的概率（生日攻击）</p>
-<p>  <strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞所有可能有币地址。</strong></p>
-<p>  <strong>碰撞其中任意地址的概率，相当于买福彩双色球中1000次500万。</strong> （注意，这些地址中50%以上存币量小于0.001BTC）</p>
-</li>
-</ul>
-<p>下面我来看看这两个结论的推导过程。</p>
-<p>在推算这个概率之前，我们首先要把比特币地址研究透彻。</p>
-<h3 id="比特币地址不是公钥">比特币地址不是公钥</h3>
-<p>这句话可能出乎很多人意料。</p>
-<p>其实，严谨的说法应该是：<strong>比特币地址是加入校验的公钥摘要。</strong></p>
-<p>我们看一下比特币地址的生成过程就比较清楚了。</p>
-<h3 id="比特币地址的生成的过程">比特币地址的生成的过程</h3>
-<p>（说明: 有些数字以”0x”开头，意思是此数字使用十六进制表示法。”0x”本身没有任何含义，它是C语言流传下来的，约定俗成的写法，比如0xA就是十进制的10。另外，1个字节 = 8位二进制 = 2位十六进制）。</p>
-<p>第一步，随机选取一个32字节的数、大小介于1 ~ 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4141之间，作为<strong>私钥</strong>。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">18E14A7B6A307F426A94F8114701E7C8E774E7F9A47E2C2035DB29A206321725</div></pre></td></tr></table></figure>
-
-<p>第二步，使用椭圆曲线加密算法（ECDSA-secp256k1）计算私钥所对应的<strong>非压缩公钥</strong>。 (共65字节， 1字节 0x04, 32字节为x坐标，32字节为y坐标）关于公钥压缩、非压缩的问题另文说明。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0450863AD64A87AE8A2FE83C1AF1A8403CB53F53E486D8511DAD8A04887E5B23522CD470243453A299FA9E77237716103ABC11A1DF38855ED6F2EE187E9C582BA6</div></pre></td></tr></table></figure>
-
-<p>第三步，计算公钥的 SHA-256 哈希值</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">600F</span>FE422B4E00731A59557A5CCA46CC183944191006324A447BDB2D98D4B408</div></pre></td></tr></table></figure><br>第四步，取上一步结果，计算 RIPEMD-160 哈希值<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">010966776006953D5567439E5E39F86A0D273BEE</div></pre></td></tr></table></figure>
-
-<p>第五步，取上一步结果，前面加入地址版本号（比特币主网版本号“0x00”）</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00010966776006953D5567439E5E39F86A0D273BEE</div></pre></td></tr></table></figure>
-
-<p>第六步，取上一步结果，计算 SHA-256 哈希值</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">445C7A8007A93D8733188288BB320A8FE2DEBD2AE1B47F0F50BC10BAE845C094</div></pre></td></tr></table></figure><br>第七步，取上一步结果，再计算一下 SHA-256 哈希值（哈哈）<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D61967F63C7DD183914A4AE452C9F6AD5D462CE3D277798075B107615C1A8A30</div></pre></td></tr></table></figure>
-
-<p>第八步，取上一步结果的前4个字节（8位十六进制）</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">D61967F6</div></pre></td></tr></table></figure>
-
-<p>第九步，把这4个字节加在第五步的结果后面，作为校验（这就是比特币地址的16进制形态）。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00010966776006953D5567439E5E39F86A0D273BEED61967F6</div></pre></td></tr></table></figure>
-
-<p>第十步，用base58表示法变换一下地址（这就是最常见的比特币地址形态）。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">16U</span>wLL9Risc3QfPqBUvKofHmBQ7wMtjvM</div></pre></td></tr></table></figure>
-
-<h3 id="base58">base58</h3>
-<p>简单介绍一下base58。</p>
-<p>Base58其实就是58进制表示法。</p>
-<p><strong>Base58编码表：</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">实际值</th>
-<th style="text-align:center">编码值</th>
-<th></th>
-<th style="text-align:center">实际值</th>
-<th style="text-align:center">编码值</th>
-<th></th>
-<th style="text-align:center">实际值</th>
-<th style="text-align:center">编码值</th>
-<th></th>
-<th style="text-align:center">实际值</th>
-<th style="text-align:center">编码值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">1</td>
-<td></td>
-<td style="text-align:center">16</td>
-<td style="text-align:center">H</td>
-<td></td>
-<td style="text-align:center">32</td>
-<td style="text-align:center">Z</td>
-<td></td>
-<td style="text-align:center">48</td>
-<td style="text-align:center">q</td>
-</tr>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">2</td>
-<td></td>
-<td style="text-align:center">17</td>
-<td style="text-align:center">J</td>
-<td></td>
-<td style="text-align:center">33</td>
-<td style="text-align:center">a</td>
-<td></td>
-<td style="text-align:center">49</td>
-<td style="text-align:center">r</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">3</td>
-<td></td>
-<td style="text-align:center">18</td>
-<td style="text-align:center">K</td>
-<td></td>
-<td style="text-align:center">34</td>
-<td style="text-align:center">b</td>
-<td></td>
-<td style="text-align:center">50</td>
-<td style="text-align:center">s</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">4</td>
-<td></td>
-<td style="text-align:center">19</td>
-<td style="text-align:center">L</td>
-<td></td>
-<td style="text-align:center">35</td>
-<td style="text-align:center">c</td>
-<td></td>
-<td style="text-align:center">51</td>
-<td style="text-align:center">t</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">5</td>
-<td></td>
-<td style="text-align:center">20</td>
-<td style="text-align:center">M</td>
-<td></td>
-<td style="text-align:center">36</td>
-<td style="text-align:center">d</td>
-<td></td>
-<td style="text-align:center">52</td>
-<td style="text-align:center">u</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">6</td>
-<td></td>
-<td style="text-align:center">21</td>
-<td style="text-align:center">N</td>
-<td></td>
-<td style="text-align:center">37</td>
-<td style="text-align:center">e</td>
-<td></td>
-<td style="text-align:center">53</td>
-<td style="text-align:center">v</td>
-</tr>
-<tr>
-<td style="text-align:center">6</td>
-<td style="text-align:center">7</td>
-<td></td>
-<td style="text-align:center">22</td>
-<td style="text-align:center">P</td>
-<td></td>
-<td style="text-align:center">38</td>
-<td style="text-align:center">f</td>
-<td></td>
-<td style="text-align:center">54</td>
-<td style="text-align:center">w</td>
-</tr>
-<tr>
-<td style="text-align:center">7</td>
-<td style="text-align:center">8</td>
-<td></td>
-<td style="text-align:center">23</td>
-<td style="text-align:center">Q</td>
-<td></td>
-<td style="text-align:center">39</td>
-<td style="text-align:center">g</td>
-<td></td>
-<td style="text-align:center">55</td>
-<td style="text-align:center">w</td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center">9</td>
-<td></td>
-<td style="text-align:center">24</td>
-<td style="text-align:center">R</td>
-<td></td>
-<td style="text-align:center">40</td>
-<td style="text-align:center">h</td>
-<td></td>
-<td style="text-align:center">56</td>
-<td style="text-align:center">y</td>
-</tr>
-<tr>
-<td style="text-align:center">9</td>
-<td style="text-align:center">A</td>
-<td></td>
-<td style="text-align:center">25</td>
-<td style="text-align:center">S</td>
-<td></td>
-<td style="text-align:center">41</td>
-<td style="text-align:center">i</td>
-<td></td>
-<td style="text-align:center">57</td>
-<td style="text-align:center">z</td>
-</tr>
-<tr>
-<td style="text-align:center">10</td>
-<td style="text-align:center">B</td>
-<td></td>
-<td style="text-align:center">26</td>
-<td style="text-align:center">T</td>
-<td></td>
-<td style="text-align:center">42</td>
-<td style="text-align:center">j</td>
-<td></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">C</td>
-<td></td>
-<td style="text-align:center">27</td>
-<td style="text-align:center">U</td>
-<td></td>
-<td style="text-align:center">43</td>
-<td style="text-align:center">k</td>
-<td></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">12</td>
-<td style="text-align:center">D</td>
-<td></td>
-<td style="text-align:center">28</td>
-<td style="text-align:center">V</td>
-<td></td>
-<td style="text-align:center">44</td>
-<td style="text-align:center">m</td>
-<td></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">13</td>
-<td style="text-align:center">E</td>
-<td></td>
-<td style="text-align:center">29</td>
-<td style="text-align:center">W</td>
-<td></td>
-<td style="text-align:center">45</td>
-<td style="text-align:center">n</td>
-<td></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">14</td>
-<td style="text-align:center">F</td>
-<td></td>
-<td style="text-align:center">30</td>
-<td style="text-align:center">X</td>
-<td></td>
-<td style="text-align:center">46</td>
-<td style="text-align:center">o</td>
-<td></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">G</td>
-<td></td>
-<td style="text-align:center">31</td>
-<td style="text-align:center">Y</td>
-<td></td>
-<td style="text-align:center">47</td>
-<td style="text-align:center">p</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>打个比方，十进制的”58”，用16进制表示就是3A，用base58表示就是”20”，而十进制的”68”，Base58表示就是”2B”。</p>
-<p>为什么使用这个奇怪的编码呢？（搞编程的同学注意一下，比特币使用的Base58和常用的base58的字典顺序有区别。）</p>
-<p>引用中本聪在源码base58.h中的注释：</p>
-<blockquote>
-<p>Why base-58 instead of standard base-64 encoding?</p>
-<p>为啥用base58,不用base-64?</p>
-<p>Don’t want 0OIl characters that look the same in some fonts and could be used to create visually identical looking account numbers.</p>
-<p>俺不想要0、O、I、l这几个字母。因为在很多字体里这几个字母容易混。而且转换以后，看着比以前舒服多了。</p>
-<p>A string with non-alphanumeric characters is not as easily accepted as an account number.</p>
-<p>数字字母组成的账户，大家好理解。</p>
-<p>E-mail usually won’t line-break if there’s no punctuation to break at.</p>
-<p>如果没有标点符号，E-mail一般不换行。</p>
-<p>Doubleclicking selects the whole number as one word if it’s all alphanumeric.</p>
-<p>双击可以选择整个字符串，哦耶。</p>
-</blockquote>
-<h3 id="椭圆曲线加密算法、SHA-256哈希算法、RIPEMD-160哈希算法">椭圆曲线加密算法、SHA-256哈希算法、RIPEMD-160哈希算法</h3>
-<p>原理一句两句说不清楚，先忽略了。以后再写文章详细介绍吧（不要打我）。</p>
-<p>只说用途：</p>
-<ul>
-<li><p><strong>椭圆曲线加密算法：</strong>把任意随机数当做私钥，生成公钥，形成密码对。私钥保密，公钥公开。私钥签名的信息，可用公钥验证签名的真实性。签名无法伪造。</p>
-</li>
-<li><p><strong>SHA-256哈希算法：</strong>把任意大小的数据，经特定算法混淆后，生成一个256位二进制长度的摘要信息。（可验算，无法反推）</p>
-</li>
-<li><p><strong>RIPEMD-160哈希算法：</strong>把任意大小的数据，经特定算法混淆后，生成一个160位二进制长度的摘要信息。（可验算，无法反推）</p>
-</li>
-</ul>
-<h3 id="地址可以没有公钥">地址可以没有公钥</h3>
-<p>搞清楚比特币地址的产生步骤，我们可以得出以下结论。</p>
-<ol>
-<li>仅有比特币地址，无法反推出公钥。</li>
-<li>合法的比特币地址不一定有对应的公钥。比如这个：</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">1111111111111111111114oLvT2</div></pre></td></tr></table></figure><br>它是这样构造出来的：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">00（版本号） 0000000000000000000000000000000000000000（任意20字节数）94A00911（校验码）</div></pre></td></tr></table></figure>
-
-<p>有意思的是，真的有人往这个地址里发币（大约3个币，这些币相当于被销毁了），看这里:<br><a href="https://blockchain.info/address/1111111111111111111114oLvT2" target="_blank" rel="external">https://blockchain.info/address/1111111111111111111114oLvT2</a></p>
-<h3 id="比特币地址碰撞">比特币地址碰撞</h3>
-<p>地址的来历搞清楚了，我们来分析一下如何碰撞。</p>
-<p>就拿全零地址：”1111111111111111111114oLvT2”举例。仅随机碰撞出该地址对应的公钥是没有意义的。因为比特币交易需要私钥签名才有效。</p>
-<p>所以，如果你想使用这个地址里的比特币，前提是拥有这个地址对应公钥的私钥。</p>
-<p>也就是说，你需要：</p>
-<ol>
-<li>随机生成一个私钥。</li>
-<li>计算该私钥对应的公钥.</li>
-<li>用公钥算出比特币地址。</li>
-<li>与目标地址对比，看看是否一致。</li>
-<li>如果不一致，回到第1步。</li>
-</ol>
-<p>根据比特币地址理论总数，容易的看出，单次碰撞成功的理论概率是：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> / ( <span class="number">2</span> ^ <span class="number">160</span> )  //<span class="string">"2^160"</span>意思是<span class="number">2</span>的<span class="number">160</span>次方</div></pre></td></tr></table></figure><br>由于每次碰撞至少需要3次SHA-256运算，我们放宽为2次。<br><br>在不考虑其他运算的情况下，假设你有1E/每秒的算力（ E = 2^60 相当于当前比特币全网算力的10倍）进行破解。那么，每秒碰撞该地址成功的概率：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">( 1 / ( 2 ^ 160 ) ) * ( 2 ^ 60 ) / 2 </div><div class="line"></div><div class="line"><span class="header">= 1 / ( 2 ^ 101 )</span></div></pre></td></tr></table></figure><br>假设你可以活 2^32秒 = 4294967296秒 ≈ 136.2年，你在有生之年碰撞该地址成功的概率为：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">( 1 / ( 2 ^ 101 ) ) * ( 2 ^ 32 )</div><div class="line"><span class="header">= 1 / ( 2 ^ 69)</span></div></pre></td></tr></table></figure><br>这是个什么概念呢？<br><br>我们看双色球命中500万的概率：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>/C(<span class="number">33</span>,<span class="number">6</span>)<span class="variable">*16</span> = <span class="number">1</span>/[ （<span class="number">33</span> * <span class="number">32</span> * <span class="number">31</span> * <span class="number">30</span> * <span class="number">29</span> <span class="variable">*28</span>/<span class="number">6</span><span class="variable">*5</span><span class="variable">*4</span><span class="variable">*3</span><span class="variable">*2</span><span class="variable">*1</span>）* <span class="number">16</span> ] = <span class="number">1</span>/<span class="number">17721088</span></div></pre></td></tr></table></figure><br>用这个概率除以碰撞概率：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">( 1 / 17721088 ) / ( 1 / ( 2 ^ 69 ) ) </div><div class="line">≈ 33310359406753.4</div></pre></td></tr></table></figure>
-
-
-<p>所以，结论是：<strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞某个特定的比特币地址。碰撞成功的概率，与中333103亿次500万的概率差不多。(注意单位是亿)</strong></p>
-<h3 id="考虑生日攻击">考虑生日攻击</h3>
-<p>当前，有币的地址大约为300万个。看这里：<a href="http://btc.ondn.net/search" target="_blank" rel="external">http://btc.ondn.net/search</a></p>
-<p>我们把这个数字翻1万倍。假设有343亿个有比特币的地址（2^35 ≈ 343亿，相当于每个地球人有5个有余额的地址，火星人的先不算了，呵呵)</p>
-<p>那么命中其中任意一个地址的概率：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">( 1 / ( 2 ^ 69 ) ) * ( 2 ^ 35 ) </div><div class="line"><span class="header">= 1 / 2 ^ 34</span></div><div class="line"><span class="header">= 1 / 17179869184</span></div></pre></td></tr></table></figure><br>再和中500万比一下：<br><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">( 1 / 17721088 ) / ( 1 / 17179869184 )</div><div class="line"><span class="header">= 969.459052627</span></div></pre></td></tr></table></figure>
-
-<p>咦，和中1000次500万的概率很接近了!</p>
-<p>所以，结论是：<strong>假设，你掌握了比特币当前全网算力的10倍，花136年不间断地碰撞所有可能有币地址。碰撞到其中任意一个的概率，相当于中1000次500万。</strong> （注意，这些地址中50%以上币量小于0.001BTC）</p>
-<h3 id="后记">后记</h3>
-<p>以上计算有很多省略的地方，计算时考虑最宽松情况。所以实际概率更小。</p>
-<p>比特币系统的设计，让拥有算力的人倾向去算blockchain，因为比碰撞地址划算的多。</p>
-<p>本文计算有错误疏漏，欢迎指正。但是指正了，我也不一定改。（开个玩笑，不要打我）</p>
-<p>没中过1000次500万的同学，不要幻想算出别人的地址了…洗洗睡吧。</p>
-<h3 id="参考文献">参考文献</h3>
-<ol>
-<li><a href="https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses" target="_blank" rel="external">https://en.bitcoin.it/wiki/Technical_background_of_Bitcoin_addresses</a></li>
-<li><a href="https://en.bitcoin.it/wiki/Base58Check_encoding" target="_blank" rel="external">https://en.bitcoin.it/wiki/Base58Check_encoding</a></li>
-<li><a href="http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript" target="_blank" rel="external">http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript</a></li>
-<li><a href="https://bitcointalk.org/index.php?topic=41718.0" target="_blank" rel="external">https://bitcointalk.org/index.php?topic=41718.0</a></li>
-<li><a href="https://en.bitcoin.it/wiki/List_of_address_prefixes" target="_blank" rel="external">https://en.bitcoin.it/wiki/List_of_address_prefixes</a></li>
-<li><a href="https://en.bitcoin.it/wiki/Wallet_import_format" target="_blank" rel="external">https://en.bitcoin.it/wiki/Wallet_import_format</a></li>
-<li><a href="https://en.bitcoin.it/wiki/Private_key" target="_blank" rel="external">https://en.bitcoin.it/wiki/Private_key</a> </li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/07/16/difficulty/" data-id="we2yn6rlmup3h45z" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-a-comment" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/07/16/a-comment/" class="article-date">
-  <time datetime="2014-07-16T10:57:54.000Z" itemprop="datePublished">7月 16 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/07/16/a-comment/">对《区块链信任的盲区》一文的评论</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>刚看了发布在巴比特上的一篇文章：《区块链信任的盲区》</p>
-<p>作者是巴比特资讯·专栏作者：常拜不败</p>
-<p>原作者捐款地址：16iQ55vkDKtJyg13rqR9x96qYNtGBq58kq</p>
-<p>编辑：bitPaul</p>
-<p>原文链接：<a href="http://www.8btc.com/chaintrust0279" target="_blank" rel="external">http://www.8btc.com/chaintrust0279</a></p>
-<p>本人对作者的观点不甚认同。于是转载下来，针对作者的一些观点进行简单辩论。论述有错误偏颇的地方欢迎文明讨论。</p>
-<blockquote>
-<p>区块链加密基于SHA散列，而SHA表的大小取决于一组素数。</p>
-</blockquote>
-<ul>
-<li><p>SHA256散列只是做了区块链摘要，并非加密。摘要的目的是标识区块和出示工作量证明。</p>
-</li>
-<li><p>不太清楚作者SHA表这个词的意思。SHA256算法并没有使用素数，而只是使用一个素数的一部分作为起始算子。由于SHA256是将整个数据块分割后循环计算的，所以区块的的体积越大，这些起始算子对结果的影响就越小。</p>
-</li>
-<li><p>SHA算法具体实现，请参考文献：</p>
-<p>  文献1. Descriptions of SHA-256, SHA-384, and SHA-512<br>  <a href="http://csrc.nist.gov/groups/STM/cavp/documents/shs/sha256-384-512.pdf" target="_blank" rel="external">http://csrc.nist.gov/groups/STM/cavp/documents/shs/sha256-384-512.pdf</a></p>
-<p>  文献2. SHA-2系列算法wiki<br>  <a href="http://en.wikipedia.org/wiki/SHA-2" target="_blank" rel="external">http://en.wikipedia.org/wiki/SHA-2</a></p>
-</li>
-<li><p>哈希碰撞率可参考文献：</p>
-<p>  文献3. 哈希碰撞概率<br>  <a href="http://preshing.com/20110504/hash-collision-probabilities/" target="_blank" rel="external">http://preshing.com/20110504/hash-collision-probabilities/</a></p>
-</li>
-</ul>
-<blockquote>
-<p>为什么是素数呢？因为在做映射时，被映射的空间大小是素数。 如果不是用素数来做mod运算的话,很多数据分布会形成“碰撞”.</p>
-</blockquote>
-<ul>
-<li>SHA256算法中没有使用mod运算，参考：文献1 - page 6。</li>
-</ul>
-<blockquote>
-<p>也就是两个私匙对应一个公匙的现象。所以最后采用了素数做mod的除数.那么说，这个有什么意义呢？</p>
-</blockquote>
-<ul>
-<li><p>作者将椭圆曲线加密算法和SHA256算法搞混了。SHA256算法中没有公钥私钥概念。</p>
-</li>
-<li><p>椭圆曲线加密算法及实现参考文献：</p>
-<p>  文献4. ECDSA wiki<br>  <a href="http://en.wikipedia.org/wiki/Elliptic_Curve_DSA" target="_blank" rel="external">http://en.wikipedia.org/wiki/Elliptic_Curve_DSA</a></p>
-<p>  文献5. generating a bitcoin address with javascript<br>  <a href="http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript" target="_blank" rel="external">http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript</a></p>
-</li>
-</ul>
-<blockquote>
-<p>因为一旦数据结构散列在素数分布上，区块链信任的前提就和RSA一样，就建立在“素数分布是没有规律的”这种假说（尚未确信为自然公理）上了。</p>
-</blockquote>
-<ul>
-<li>基于以上分析，作者这个结论不成立。</li>
-</ul>
-<blockquote>
-<p>由于未知素数分布的规律，就只有计算举穷数据大小得出所需的算力，由算力\硬件配置，从而推导出所需要的时间，当所需要的时间非常大的时候，我们得出区块链是值得信任的这一结果。</p>
-<p>可是这里面有两个前题，第一是“素数分布是没有规律的”这件事。按照学院派的看法，素数分布是否有规律尚待验证，只是我们暂时未知其规律而已（可能存在某种规律、也可能的确不存在）。</p>
-<p>因此，比特币信任的前提是：一条尚未验证的假说。</p>
-<p>另外，并行计算则是区块链信任的另一潜在的大敌。</p>
-<h3 id="区块链大敌之————素数分布假说">区块链大敌之————素数分布假说</h3>
-<p>1 3 5 7 11 13……我们可以知道这些素数的位置，例如“13”就是第六位素数，可是，如果我要问你一个比较大的素数的时候，就难以回答了。</p>
-<p>拿梅森素数（2p－1，p为素数）为例来说，人类目前已知的只有48位，而这已知的48位，全部是通过穷举算出来的。</p>
-<p>如果你能通过计算机算出第49位，那么恭喜你，可以立即获得美国电子前沿基金会的10万美金奖励。如果你更进一步通过“某种公式”算出第49位，那么先不要着急公布，你可以直接转走整个市场上所有的比特币。并且，会获得美国克雷数学研究所提供的100万美元的奖励，因为，你已经成功的破解了黎曼猜想。</p>
-<p>有同学可能会问，素数分布或梅森素数分布到底有无规律？对此我只能说……呵呵……抛开这个问题不谈，有无规律本身就已经构成了悬念，而这个悬念，就是长期持币者无法回避的一个问题。</p>
-</blockquote>
-<ul>
-<li><p>这一大段论证，都针对作者错误理解比特币后，提出的一个不成立的论点，不需要进行反驳。但由于很多专业知识夹杂其中，容易让人误会或迷信专业知识。</p>
-</li>
-<li><p>就以“梅森素数”来说：</p>
-<ol>
-<li><p>原文说梅森素数都是穷举法算出来的。前十几个梅森素数很可能是使用穷举法（没有深入研究），但随着数越来越大，根本无法使用穷举法，只能使用先猜测后验证的方法。实际上第44到第48个梅森素数中间到底还有没有梅森素数，目前还不确定。如果真的使用穷举法，肯定是可以确定的。（最近一个梅森素数是2013年1月25日发现的）</p>
-</li>
-<li><p>关于寻找素数规律的问题，还有黎曼猜想什么的就不讨论了，属于数学未解之谜。即使破解了，目测跟比特币关系也不大。(作者用这个来吓唬小白，不太厚道)</p>
-<p>文献6.<br>梅森素数 <a href="http://zh.wikipedia.org/wiki/%E6%A2%85%E6%A3%AE%E7%B4%A0%E6%95%B0" target="_blank" rel="external">http://zh.wikipedia.org/wiki/%E6%A2%85%E6%A3%AE%E7%B4%A0%E6%95%B0</a></p>
-</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<h3 id="区块链大敌之————并行计算">区块链大敌之————并行计算</h3>
-<p>区块链安全的另一大杀手来自并行计算， 并行计算可以极大的缩短穷举时间，从而直接杀死比特币、以及其他一切山寨币。</p>
-<p>什么是并行计算呢？小到抛硬币下注，大到买彩票、结婚、买卖比特币……整个人生的一切，都离不开“并行计算”。</p>
-<p>并行计算可分为针对过去、现在、未来三种。</p>
-<p>针对未来的并行计算，德国 vs 荷兰 谁赢？</p>
-<p>硬币转动中（并行计算中……) ，硬币停止转动（结果呈现）</p>
-<p>针对过去的并行计算，上届世界杯德国，巴西谁是冠军？</p>
-<p>硬币转动中（并行计算中……) ，硬币停止转动（结果呈现）</p>
-<p>针对当下的并行计算……</p>
-</blockquote>
-<ul>
-<li><p>这个论点，俺看懂了。论据，真的没看懂…</p>
-</li>
-<li><p>德国 VS 阿根廷</p>
-</li>
-<li><p>不知道作者理解的并行计算具体定义是什么。但是按照常规的定义，现在的矿机都使用了并行计算技术。</p>
-</li>
-<li><p>所以，并行计算杀死比特币的问题作者说反了。应该是：<strong>没有并行计算，比特币就不存在。</strong></p>
-</li>
-</ul>
-<blockquote>
-<h3 id="迷失货币学">迷失货币学</h3>
-<p>有人可能会问：“既然区块链信任有此两大劲敌，可是目前，比特币仍然有80亿美元市值呀？这又是为什么呢？</p>
-<p>我想，这可能和：第一个人是聪明人,他判断，会来一个傻子，结果，这个傻子判断，还会来一个比他更傻的……以此类推（接盘侠？）。</p>
-</blockquote>
-<ul>
-<li>逻辑错误。再次使用“庞氏骗局”、“博傻论”。很多文章讨论过这个观点，这里不赘述。</li>
-</ul>
-<ul>
-<li><p>比特币的价格是比特币系统使用价值的体现。生存在比特币系统中的比特币是稀缺的、易传递的、无法双重支付、没有中央发行机构、广泛被认可的商品。离开了这一系统，比特币什么都不是。</p>
-</li>
-<li><p>如果傻子都能像使用纸币一样轻松愉悦地使用比特币，比特币价值会更高。</p>
-</li>
-</ul>
-<blockquote>
-<h3 id="货币去中心化演变的历史">货币去中心化演变的历史</h3>
-<p>票号是中国最早的金融机构，票号在大家普遍使用黄金白银的年代，衍生出” 纸币“，进而发展出”银行“概念，不得不说是社会的进步。</p>
-<p>以山西票号”日盛昌“为例，大大小小在全国乃至世界都开有”分号“（节点），建立了一个“分布式总账”。然后用抵押进来的白银，从事银行业务，取得了巨大的成功。</p>
-<p>那么，曾经为商业做出过巨大贡献的山西票号，为什么在商业银行的崛起下落败了呢？</p>
-<p>商业银行的纸币，其实也是一种票号，只不过，法币相对于票号，揉入了“国家信任”概念。</p>
-<p>我们知道，1934年全球进入了美元锚定黄金的年代(布雷顿森林体系）。这种锚定直接导致了现代商业银行的崛起。对票号的白银锚定汇票业务构成冲击。</p>
-<p>大家读到这里可能会问，为什么锚定黄金的纸币会冲击到票号呢？答案很简单，在这种模式下，建立起来的银行体系，可以滥发纸币了，因此才有了1972年尼克松总统宣布违约，不再履行35美元锚定一盎司黄金的承诺，从而失信于全球各国央行。</p>
-<p>但恰恰是这种失信，造就了进一步去中心化的货币“无黄金背书纸币”（牙买加浮动汇率体系）的诞生，可以说整个一个货币史，就是一部去中心化的历史。</p>
-</blockquote>
-<ul>
-<li><p>票号不是中国最早的金融机构。典当行业才是。</p>
-</li>
-<li><p>日升昌的败落并非源于商业银行的崛起，实际上日升昌就是清代最大的商业银行。日升昌倒闭，主要源于对战争准备不足。由于战争导致其发行的纸币各地区分配极度不均，而现货金银运输成本很高，无法满足兑换，产生局部挤兑，最终引发恐慌。</p>
-</li>
-</ul>
-<blockquote>
-<h3 id="货币背书的演变">货币背书的演变</h3>
-<p>美元也称“国家信用货币”：其背书的是美国的国家信用。也正因为这一点，比特币的批判者们，常常批判比特币没有“信用”背书。</p>
-<p>可是这里面矛盾的是，所谓“国家信用”是一个模糊的概念，美联储窃取了“信任”概念，代之“国家信用”发行的纸币，极大的打击了长期持币者的信心。</p>
-<p>我们知道，自美元发行以来，其实际购买力下降了90%以上。</p>
-<p>对于比特币，只要算力集中在少数几个矿工手里，危险就在酝酿，爆发只是时间问题。</p>
-<p>因此去中心化、P2P、开源的比特币，在2008年频繁的经济危机中应运而生。比特币高喊“去中心化”，把权利还给人民，可是在执行过程中走上了老路。</p>
-<p>算力集中的威胁，使得部分“去中心化爱好者”加入POS的阵营。但POS阵营也很快出现问题，大家发现，币量多的人，似乎拥有某种权利，违背了“去中心化的精神”。</p>
-<p>仔细想来，P2P、开源……等等，关于比特币的一切，都直指一个共同“去中心化”的核心。</p>
-<p>在货币的演变史上，我们也的确看到，在朝这个目标逼近。某种思潮认为，不必要达到100%，只要无限逼近就好了。可是，技术的进步无止境，货币去中心化的需求，也是无止境的。谁能进一步提高货币的去中心化程度，谁就能在货币战争中存活下来。</p>
-<h3 id="信用货币的崛起">信用货币的崛起</h3>
-<p>去中心化意味着公开、透明，因而有了信用。在有了信用之后，如果背弃公开透明，则会失去信用。</p>
-<p>我们看到，曾经的美金，在获取了货币地位后，不断上演着失信、贬值……从而导致了加密货币区块链信用的崛起。</p>
-<p>而区块链信用本身呢？我们只能说：在盲区内是安全的，盲区外就没有未必信用了。</p>
-<h3 id="走出盲区：直接背书信用？">走出盲区：直接背书信用？</h3>
-<p>那么，既然区块链技术有“盲区”，那么，我们能不能设想，一种直接背书信用的p2p货币呢？</p>
-<p>以山西票号为例，直接发行一种票号币，放弃之前的黄金背书，直接背书“信用”本身。以其全国各个分号做节点，模仿现代银行模式，用比特币区块链技术辅助记账，因此票号币有了“信用”，p2p、开源、去中心化……等，全部比特币的优势，避免了比特币区块链的盲区。</p>
-<p>因为，区块链技术是一种辅助记账工具。因此这种信用货币，被注入了人文特征。</p>
-</blockquote>
-<ul>
-<li><p>这三大段想表达的意思就是：1.比特币不靠谱。2.法币不靠谱。3.不如建立一个电子票号，发行自己的货币，用信用竞争吸引用户。</p>
-</li>
-<li><p>作者的梦想和奥派经济学的梦想不谋而合。这不就是货币的非国家化么？！</p>
-</li>
-<li><p>等等，为啥支付宝不直接发行支付宝币呢？QQ币如果自由兑换不就直接变成票号币了么，腾讯为什么不干？！</p>
-</li>
-<li><p>偷偷告诉你，私自发行货币是违法的。</p>
-</li>
-<li><p>最后，祝票号币成功：)真心祝福，因为如果成功了，必然是中国经济体制的一次重大改革。</p>
-</li>
-<li><p>但，请各位注意人身安全。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/07/16/a-comment/" data-id="qtmkylq0r54xrnfx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-what-is-bitcoin-really" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03/19/what-is-bitcoin-really/" class="article-date">
-  <time datetime="2014-03-18T23:04:27.000Z" itemprop="datePublished">3月 19 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/03/19/what-is-bitcoin-really/">比特币到底是什么，说真的？（what is a bitcoin ,really?）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>译者按：这篇文章开头提出设问，“我掏钱买比特币之后，到底得到了什么？！”，然后一步步解释比特币原理，到最后回答这问题。中间穿插分析新手容易产生的误区，是一篇不错的比特币入门。</p>
-<p>翻译排版，顺便练习<a href="/2014/03/18/try-markdown/">Markdown</a>。</p>
-<p>英文好的，推荐看原文：<a href="http://preshing.com/20140127/what-is-a-bitcoin-really/" target="_blank" rel="external">http://preshing.com/20140127/what-is-a-bitcoin-really/</a></p>
-<h2 id="译文：">译文：</h2>
-<hr>
-<hr>
-<p>从我接触比特币开始，网络上各种信息纷至沓来，但没有任何信息直接回答了困扰我很久问题：</p>
-<blockquote>
-<p>我掏钱买比特币之后，到底得到了什么？！</p>
-</blockquote>
-<p>本文回答了这个问题，顺便介绍一些比特币的知识点。通过本文，你可以了解到比特币到底安全性如何，以及比特币到底是怎么转账的。</p>
-<img src="/img/bitcoin-symbol.png">
-
-<p>首先要理解一个概念：比特币是<strong>记账单位</strong>。这就像“升”是液体的单位，“千克”是重量的单位。虽然比特币不能像纸币那样攥在手里，但这不是重点。真正的重点是：</p>
-<ul>
-<li>比特币可以持有;</li>
-<li>比特币可以转账;</li>
-<li>比特币无法复制。</li>
-</ul>
-<p>这三个特性加在一起，使比特币成为一种非常有效的财富转移工具。这就是比特币有价值的根本原因。</p>
-<p>请回想一下纸币的好处在哪里？实际上也是以上三点。你可以把一元钱揣在自己兜里（持有），你可以把这一元钱付给别人（转账），同时纸币是很难复制的。所以，现金是个很好的财富转移工具，而比特币是另一种更好的选择。</p>
-<p>既然比特币不是实物而只是记账单位，那用什么方法来跟踪记录它呢？</p>
-<p>比特币的解决方案异常巧妙！</p>
-<hr>
-<h2 id="比特币记录交易的方式">比特币记录交易的方式</h2>
-<p>也许你听过这样的说法：比特币是去中心化的，没有中心服务器来记录每个人拥有比特币的数量。但这句话的意思不是说比特币没有服务器。实际上，比特币有成千上万个服务器来记录每个人的比特币数量。这些服务器我们统称为比特币节点。</p>
-<img src="/img/bitcoin-overview.png">
-
-<p>每个比特币节点都是一个电子记账员，任何人都可以在自己的电脑上运行一个这样的节点。每个节点都会存一份完整的总账——这个总账记录了从比特币诞生之日起的所有交易。到目前为止，这个总账已经记录了3000万笔交易，大约占用13GB的存储空间。</p>
-<p>想要使用比特币，你需要一个功能类似钱包的设备。它可以是电脑软件、手机应用或者网站服务等。钱包的主要功能是联系比特币节点并将交易写进总账里。节点会将交易广播给其他节点，一传十、十传百——这和BT下载、迅雷下载的工作原理一样。一笔交易从发出的时刻算起，到广播至全网节点，仅需要7秒钟。</p>
-<hr>
-<h2 id="比特币交易信息里写了什么？">比特币交易信息里写了什么？</h2>
-<p>通过上面的解释可以很明显地看出：当你给别人“发送”比特币的时候，你没有直接发给对方任何东西，而是钱包软件在总账里写入了一个交易。这个交易将比特币从一个账户划到另一个账户。比如，下图是3个去年12月发生的交易：</p>
-<img src="/img/public-ledger.png">
-
-<p>可以看到，每笔交易都有一系列输入（INPUTS）和输出（OUTPUTS）。输入表示要花掉的比特币从哪来，输出表示这些比特币的付款对象。每一个输入（INPUTS）都是对前项交易中输出（OUTPUTS）的签名信息。只要输出（OUTPUTS）被随后的输入（INPUTS）花掉，其他交易就无法使用这个输出（OUTPUTS）了。这就是比特币无法复制的原理。</p>
-<p>比特币地址中没有花掉的输出就表示这个地址拥有币的数量。如果你把总账中所有没花掉的比特币加起来，就可以得到当下全世界总共有多少比特币。或者直接这样理解：没花掉的输出（OUTPUTS）就是比特币本身。</p>
-<img src="/img/unspent-outputs.png">
-
-<p>从上面的交易还可以看到，没有人名出现在交易中，这就是所谓的匿名性。代替真名出现的是比特币地址，比如：1PreshX6QrHmsWbSs8pHpz6kLRcj9kdPy6。比特币地址就像银行帐号，只不过比特币地址比银行帐号更容易创造。理论上，每个人都可以拥有无数个比特币地址。</p>
-<hr>
-<h2 id="比特币地址从哪来？">比特币地址从哪来？</h2>
-<p>很显然，你想接收比特币就需要比特币地址。而比特币钱包可以帮你生成这样的地址。</p>
-<p>为了生成比特币地址，钱包会首先生成私钥。每个私钥都是一个从1到2256的随机数。为了让这个随机数短一点，钱包会把它转换成一串数字、字母的组合。就像下面这样：</p>
-<img src="/img/btc-address-gen-1.png">
-
-<p>然后钱包会用一个非常有名的算法从私钥推算出相对应的比特币地址（公钥）。这个算法电脑算起来非常简单。所以，任何人只要知道了你的私钥就可以轻松获得你的比特币地址。现在大部分比特币钱包都有导入私钥的功能。</p>
-<img src="/img/btc-address-gen-2.png">
-
-<p>另一方面，想从比特币地址（公钥）反算出私钥几乎不可能。别人只知道你的比特币地址的话是无法反算出私钥的。</p>
-<img src="/img/btc-address-gen-3.png">
-
-<p>因此把比特币地址给别人很安全，但要注意保护好私钥。大部分情况下，用户使用比特币不需要看到私钥本身。钱包会帮你把私钥管理起来，它会把私钥保存在加密的钱包文件中。这个文件可能在你的硬盘里、网上或别的地方。</p>
-<hr>
-<h2 id="交易如何签名？">交易如何签名？</h2>
-<p>现在，请你仔细想想为什么要保护好私钥？</p>
-<p>是的。因为只要拥有私钥就拥有对应地址里比特币的控制权。</p>
-<p>这是如何实现的呢？</p>
-<p>看一下列表中的第二笔交易，b6f4ec453a021ac561….这笔交易消费了前项交易e14768c1d648b98a52…中的输出。从前项的输出比特币是发到这个地址：1NqUaJrFeStshjad1bhrEFFzWSQw6JHbqv。这笔交易将比特币的使用权转移给拥有这个比特币地址的人，不管这个人是谁。</p>
-<p>想搞清楚这个过程，还需要理解<strong>数字签名技术</strong>。在比特币世界里，只有数字签名可以证明你拥有某个地址。比特币的安全性核心也在于此：你需要比特币地址对应的私钥来给这个地址发出的交易签名。</p>
-<img src="/img/signature-generate.png">
-
-<p>一个有效的交易要加入前项输出，并使用与地址配对的私钥进行数字签名，签名要满足特定公式（椭圆曲线加密算法）。任何比特币节点收到一笔交易，它首先会校验交易的有效性。节点并不知道签名对应私钥，但它不需要知道，而只需要比特币地址就可以验证公式是否成立。</p>
-<img src="/img/signature-verify.png">
-
-<p>比特币数字签名的想法，技术上来自一个久经考验的公钥加密算法。比特币不是第一个使用这个加密算法来给交易签名的加密货币。但比特币是第一个不需要依赖中心服务器的加密货币。这就是比特币革命性的核心所在。</p>
-<hr>
-<h2 id="不同的钱包">不同的钱包</h2>
-<p>市面上有很多比特币钱包可供选择，但大部分钱包的功能是一样的：</p>
-<ul>
-<li>保管比特币；</li>
-<li>发送比特币；</li>
-<li>生成地址接收比特币；</li>
-<li>查询交易记录、当前余额。</li>
-</ul>
-<img src="/img/local-wallet.png">
-
-<p><strong>桌面钱包</strong>指的是可以安装在Windows、MacOS或者Linux系统的钱包软件，比如Electrum、Multibit和BitcoinQT。桌面钱包的私钥存放在本地硬盘中，文件名默认为wallet.dat。比特币安全性如何，就看你如何保护这个文件了。比较特殊的是BitcoinQT这款软件，它还会将你的电脑变成一个比特币节点，所以它比其他软件需要更多存储空间和网络带宽。</p>
-<img src="/img/web-wallet.png">
-
-<p>还有一类钱包是<strong>网络钱包</strong>，比如bifubao.com、coinbase.com、Blockchain.info的My Wallet服务。一般情况下，网络钱包的私钥会加密存放在云端服务器而不是你自己的电脑里。有些网络钱包还提供比特币兑换业务，比如Bitstamp或者BTC-e，这些地方的比特币可以和各种货币进行兑换。</p>
-<img src="/img/mobile-wallet.png">
-
-<p><strong>手机钱包</strong>是安装在你手机上的应用程序。大部分手机钱包，比如Coinbase app，只是一个网页阅读器，这意味着你的私钥还是存在云端。特别要介绍一下：Android比特币钱包，它将私钥保存在你的手机里。</p>
-<p>现在大部分智能机都有内置摄像头，用二维码来表示比特币地址等信息就成了非常流行的方法。你可以简单地扫描二维码给别人发送比特币。</p>
-<img src="/img/qr_code.png">
-
-<p>二维码可以动态生成，而且可以加入一些附加信息，比如收款数额。所以手机钱包是面对面交易比特币非常好用的工具。</p>
-<img src="/img/qr-pos.jpg">
-
-<img src="/img/btc-paper-wallet.png">
-
-<p>还有一种钱包叫<strong>纸钱包</strong>。一般纸钱包就一个目的：保存你的私钥。上面介绍的钱包，大都可以打印私钥。但你也可以不用任何钱包，直接生成全新的私钥和地址。bitaddress.org就提供这样的服务。打印私钥后，你可以把它保存在一个安全的地方：比如银行保险柜，然后从电脑里删除掉。这就是所谓的冷钱包。</p>
-<p>比特币协议完全开源，任何人都可以制作兼容比特币协议的软件。这促使比特币整个生态系统都是开源的，大家在共同开发相关的应用。这让各种各样的创新大放异彩-大量的比特币钱包和面对面支付设备正在发明，当然将来还会有更多。比特币的疆域会不断扩大。</p>
-<p>不幸的是，这种开放性也给骗子们很多机会。所以需要谨慎地选择钱包。你需要研究研究看中的钱包值不值得信任。如果使用网络钱包，你必须像信任银行一样信任这个网站。桌面钱包可以成为你的私人银行，但还是要保证你的桌面钱包可以像说明的一样正常运转。选择开源钱包比较好，因为你可以看到它的源代码，而且一般在比特币论坛中口碑很好。比如Bitcoin subreddit和bitcointalk.org.</p>
-<hr>
-<h2 id="比特币有价值背书么？">比特币有价值背书么？</h2>
-<p>如果你问比特币的背书者是谁，我会说就是私钥。当然，所有比特币都有私钥背书。只要发送比特币到一个地址里，这个地址对应的私钥都会变得值钱。</p>
-<p>比如这个地址1933phfhK3ZgFQNLGSDXvqCn32k2buXY8a。它现在就存储着111114个比特币。就在写这篇文章的时候，它已经价值9000万美元了。只要你知道这个地址的私钥，就相当于拥有这9000万美元。</p>
-<img src="/img/rich-key.png">
-
-<p>但你不知道，不是么？除了这个地址的拥有者没有人知道私钥。</p>
-<p>无需赘言，世界各地的小偷都想尽办法得到人们的私钥。小偷发明了很多偷私钥的方法，比如：wallet-stealing malware。需要强调一下，保护钱包的安全措施是非常必要的，你要永远记住加密钱包的密码，并且使用干净的电脑操作比特币，要保证电脑没有被任何黑客软件或木马感染过。</p>
-<hr>
-<h2 id="结论">结论</h2>
-<p>回到最开始的问题：</p>
-<blockquote>
-<p>当你掏钱买比特币的时候，到底得到了什么？</p>
-</blockquote>
-<p>答案：</p>
-<blockquote>
-<p>当你获得比特币时，你实际上得到的是：在比特币总账中写入特定交易的权利，而这种权利具有排他性。比特币的存在形式是前项交易的输出（OUTPUTS）。只要这个输出指向你凭空生成的比特币地址，你就一直保有这个权利，直到哪天你把它花掉为止。你的钱包是唯一可以给比特币输出签名的工具，因为它保存着唯一对应的私钥。</p>
-</blockquote>
-<p>整个总账冗余地存储在全球数十万个节点中。你可以想象一下，取缔比特币必然异常困难。</p>
-<img src="/img/nodes-world-map.jpg">
-
-<p>不要被网上找到的那些简单的解释愚弄了。比如，那个有名的比特币介绍视频，视频中一个用户把比特币抛给另一个用户。还比如，大多数媒体文章中都会有一张比特币的照片，照片上有印着比特币标志的硬币。现在你应该明白，这些只不过是一种象征性的解释。这些解释根本没有写清楚比特币实际上是怎么存储，怎么转账的。</p>
-<img src="/img/symbolic-bitcoin.png">
-
-<hr>
-<h2 id="更多信息">更多信息</h2>
-<p>现在，你已经清楚地知道什么是比特币，比特币有多安全以及比特币是如何转账的。你已经打好了足够的知识基础，可以进一步了解比特币。</p>
-<ul>
-<li><p>比特币总账，大家都叫他块链（the blockchain）。由于块链是完全公开的，于是有人搭建了网站供人们浏览块链的信息，比如：blockchain.info或者blockexplorer.com。</p>
-</li>
-<li><p>我故意没有解释挖矿的细节和它维护块链的角色。因为现在用普通电脑挖矿不合算。而且单纯使用比特币不需要关心挖矿的原理。如果你对挖矿这门艺术很感兴趣，可以看看Asic Miners以及如何加入Mining pool。</p>
-</li>
-<li><p>可汗学院有一套比较复杂的视频教程，可以让你深入了解比特币。</p>
-</li>
-<li><p>这有一个非常好的聊天视频，推荐看看。insightful and entertaining talk</p>
-</li>
-<li><p>中本聪写的比特币白皮书是这一切的起点。如果你有一定计算机基础，可以很轻松的读懂它。</p>
-</li>
-<li><p>几乎所有现存的山寨币，包括：Litecoin，Peercoin，Namecoin，Dogecoin和所有CoinWarz列出的山寨币，都是从Github上比特币项目衍生出来的。</p>
-</li>
-<li><p>本文中对比特币的交易的描述很简单，而真实的比特币交易是基于脚本语言的，这使得比特币平台可以引入很多金融工具。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/19/what-is-bitcoin-really/" data-id="l7lpwhb4oidgppzk" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/translate/">translate</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-致peter-schiff的公开信" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/03/18/致peter-schiff的公开信/" class="article-date">
-  <time datetime="2014-03-18T12:50:12.000Z" itemprop="datePublished">3月 18 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/03/18/致peter-schiff的公开信/">致Peter Schiff的公开信</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这是Erik Voorhees参加Peter Schiff秀之后给主持人写的公开信，发表在Reddit上。文章就节目中对比特币的争论进行了观点的总结和延伸。第一次看到原文，我就被作者的谦虚、坚定、逻辑清晰以及娓娓道来的优美文字打动。之前网上已有的翻译很不错，只是某些地方没有完全体现出文字的力量。所以重新整理了一遍，希望能把文章背后的气质表现出来。</p>
-<ul>
-<li><p>Erik Voorhees，美国创业家。他是比特币公司Coinpult的联合创始人，曾在BitInstant做市场总监。同时，他也是比特币最早最大的赌博网站SatoshiDice的联合创始人及股东（2013年7月被不愿透露姓名的买家收购）。</p>
-</li>
-<li><p>Peter Schiff，美国商人、投资经理人、作家、金融顾问。Peter Schiff是Euro Pacific Capital Inc.的CEO、总裁及全球战略专家。其公司主要经营股票代理业务。后主持一档经济节目Peter Schiff秀。</p>
-</li>
-</ul>
-<p>英文好的，推荐看原文：<a href="http://redd.it/1rxmk3" target="_blank" rel="external">http://redd.it/1rxmk3</a></p>
-<h2 id="译文：">译文：</h2>
-<hr>
-<p>亲爱的Peter，</p>
-<p>今天有幸参与您的广播节目，我感到万分自豪。五年前，我就成为了您的忠实拥趸并直至今日；您是我认识奥地利学派经济学的重要原因之一（并因此结识了比特币）；您对经济体中消费与生产关系的深刻释义一直指引着我理解这个世界的运行规律。真诚的感谢您的教导，也感谢能有这样一次机会参加您的节目。这对我来说是个非常特别的时刻。</p>
-<p>我们今天的讨论非常有价值，但我感觉再明确一下我的观点很有必要。</p>
-<p>您对新技术以及由此产生的货币体系所持的高度怀疑态度非常合理。但请千万注意，不要让这种怀疑态度蒙蔽了您的双眼，而无法看到一个人类为自由构思出的最重要的工具，这谨是我衷心的建议。</p>
-<hr>
-<h2 id="基本原理">基本原理</h2>
-<p>第一，（Bitcoin）比特币这个名词实际上一直代表着两样东西：比特币支付系统（Bitcoin）和比特币货币单位（bitcoins）。如果能理解比特币支付系统（Bitcoin），往往会化解对比特币货币单位（bitcoins）的种种谴责。说到这点，中本聪在设计的时候，应该把比特币和比特币系统分开命名，这样就可以避免混淆了。</p>
-<p>当您提出“比特币没有任何固有价值”的观点时，我想您只是针对比特币货币单位（bitcoins）本身，而没有考虑到它背后的支付系统（Bitcoin）。实际上我更倾向于使用“实用性”这个词，而不是“固有价值”（因为价值是人的主观判断），我必须承认，比特币（bitcoins）做为一种货币单位本身确实没有任何固有价值，甚至完全没有讨论的必要。但是比特币支付系统（Bitcoin）却有着非常广泛的实用性，这才是重点。</p>
-<p>事实上，比特币支付系统（Bitcoin）很可能是这个星球上现有的，最有价值、最重要的技术之一。有些人几年前就意识到了这一点，而有些人刚刚意识到，将来会有更多人意识到。比特币支付系统（Bitcoin）本质上，是一个不由任何人控制的所有权总账。请花些时间思考一下这句话。这使得转移价值及所有权的操作彻底脱离了任何政府的控制，这不是由（被权利左右的）公投产生的，而是人类技术的结晶。</p>
-<p>我记得，在录制节目的过程中，您也同意这一观点：这类支付系统具有实用性。那么，在比特币支付系统（Bitcoin）确实有实用性的前提下，系统中只接受一种货币单位：比特币（bitcoins），再加上其具有稀缺性，那么它是否应该有市场价格呢？虽然没有人知道这个价格应该是多少，但它应该有价格，您同意么？</p>
-<p>任何具有实用性和稀缺性的商品就会有市场价格（比如空气有实用性但不稀缺，长着三只眼的鱼有稀缺性但不实用，所以两者都没有价格）。那么，比特币支付系统（Bitcoin）有实用性，而这个实用的系统中只有稀缺的比特币（bitcoins）可以流通，所以比特币（bitcoins）有价格就不奇怪了。是的，比特币应该有个价格，除非这个系统（Bitcoin）失去了实用性或者比特币（bitcoins）失去了稀缺性。</p>
-<p>这不是什么魔术，也不是所谓的庞氏骗局或精心策划的诈骗。它不过是市场对某种实用性的价格判断。随着这个网络（Bitcoin）的成长和使用人群的增多，它的实用性也会随之提升，稀缺的比特币（bitcoins）就会受到更多追捧。</p>
-<p>当然，那些在早期持有大量比特币的人会从中获得巨大收益。这就像在淘金热年代，那些早期在加州山脚下挖出金块的人一样。我们都知道，黄金并非金字塔型传销组织，因为早期持有者是通过后来者大量的需求和相关应用获取利益。</p>
-<hr>
-<h2 id="比特币的实用性和竞争者">比特币的实用性和竞争者</h2>
-<p>所以，想充分说明比特币（bitcoins）本质上一文不值（这是您在国家电视台声称比特币是庞氏骗局的隐含假设），您首先要证明比特币支付系统（Bitcoin）没有实用性。假设在银行放假的星期日，一个人想进行10万美金的即时跨国转账，我可以非常自信的说，在这样的场景下您想证明比特币系统没有价值很困难。</p>
-<p>我相信，如果您能花时间客观的进行思考，您会理解并认同我以上提出的观点。随后，您的争论转到：如果比特币系统（Bitcoin）可以被任何人复制，那么，即使这个系统有实用性，比特币（bitcoins）也会随着系统的不断复制失去稀缺性，从而失去价格。您也许会说，虽然比特币（bitcoins）被限制在2100万个，但只要复制了这个系统，就会有另外2100万个数字货币，依此类推它不具有稀缺性，所以根本就一文不值。</p>
-<p>您在今天的节目中曾多次提到这一观点。当然，从您的角度提出这样的观点非常合理，但请允许我慢慢地解释给您听。</p>
-<p>比特币系统，实际上不能复制。确实，比特币的开源软件代码可以复制，而复制者也可以发行山寨币（CopyCoin，而且这一直在发生）。但是，复制者无法复制它的基础设施。比特币协议层很容易复制，但想复制它已经建立起来的基础设施却不那么容易。比特币产生那天，它的基础设施同样空空如也。但是，就我在比特币世界里运营企业这几年的所见所闻，我可以告诉您，现在比特币的基础设施非常坚实而可观。</p>
-<p>是的，在写这封信的时刻，我就坐在我的办公室里看着我的员工们辛勤地建设着这个非同寻常的基础设施。 他们的工作，以及世界上千千万万比特币工作者的共同劳动成果，不是那么容易被复制的。</p>
-<p>让我们来做个类比吧。我记得您在描述美联储荒唐的政策以及政府项目的适得其反时，经常使用很有说服力的类比，我相信以下的类比是很合理的。</p>
-<p>可以说，语言本身也是一种协议 —— 即一系列为传递信息而设置的规则集合。一个人完全可以复制整套英语系统，改进其中的某些部分，然后发布一个英语2.0。</p>
-<ul>
-<li>可现在问题来了，谁会用他的语言系统呢？</li>
-<li>即使它对传统英语做了改进，但英语2.0的基础设施在哪里？</li>
-<li>有哪些传世巨著是用英语2.0写的？</li>
-<li>有哪些演说家、作家和学者使用英语2.0？</li>
-<li>英语2.0的图书馆、Wikipedia在哪里？</li>
-<li>有多少报纸和稿件用英语2.0撰稿？</li>
-<li>又有多少Peter Schiff的播客节目是用英语2.0发布的呢？</li>
-</ul>
-<p>这样的基础设施不存在，所以用户也不存在。这就是网络效应自然而然产生的结果。英语是语言的协议，同样的，比特币是货币的协议。</p>
-<p>那么，是不是说这种网络效应就意味着英语或者比特币将永远无法替代呢？答案是否定的，只不过想替换这两者都异常困难。</p>
-<p>但是，反过来想一想，即便将来有另一种更好的数字货币在公开市场中取代了比特币（这是有可能发生的），那是否意味着比特币就是失败的或是骗局呢？这会影响当下比特币给市场带来的实用性么？事实上，人们完全可以在一小段时间里使用比特币系统并从中获益，而不会因比特币长期价格的大幅波动受到影响。比如说，去年用比特币系统进行的支付就已经完成了它的使命——价值自由转移。用户已经从中获益，即便一年后这个系统崩溃了也没关系。</p>
-<p>也就是说，一年以后系统失效，不影响今天它所具有的实用性。比特币当下的实用性，不基于它将永存的假设。</p>
-<hr>
-<h2 id="平等地看待市场主导货币">平等地看待市场主导货币</h2>
-<p>我想，如果您反思一下就会发现，您对比特币的担心可以归结为三点：剧烈波动性、高度投机性和非保守型资产，这些我完全同意。但是，如果您声称比特币支付系统本身是个骗局——一个不值得尊重甚至不值得考虑的庞氏骗局——那么我必须站出来反对。比特币网络完全是一项革命性的技术。它把货币发行权从政府手里夺走，这是黄金很不幸没有完成的任务。</p>
-<p>完全了解比特币真正意义的自由战士们将热泪盈眶，因为他们反对专制制度、反对无知的政府以及它手下那些白痴货币砖家！这就是全球数以万计的人献身这一事业的理由。我们在做一个社会实验，它不需要经过任何人的许可。我们并不怕失败，因为如果成功，我们将改变这个世界。这种改变，在比特币产生之前是无法想象的！</p>
-<p>当然，我完全支持您发行金本位数字货币的想法。请一定要付诸行动，我非常乐意成为您的第一个客户，因为我热爱黄金。但是在看到支付业、银行业和政府监管的运作模式后，我可以告诉您，您的主意很可能失败。它不是自我毁灭（比如GoldMoney），就是被政府取缔（比如e-gold）。</p>
-<p>一个与黄金挂钩的货币支付系统是依赖其背书者的。也就是说，它依赖一个中心化、受信赖的第三方来提供储存和兑换黄金服务。这就是所谓的交易对手风险，而比特币规避了这一风险。</p>
-<p>任何一个需要中心化背书者的支付系统，都必须遵守法律，否则就会被取缔。想要遵守法律，客户的信息就必须公开，这意味着不可能保护客户隐私。转账限额和强制的使用条款，意味着不可能实现金融自由。当然，附加的合规成本也会不请自来。您有没有注意到国际银行正在放弃美国客户？这些就是根本原因。即使真的发生了奇迹，某种金本位电子货币成长为全球性的支付网络。我们也有理由相信，政府无论如何都会把它扼杀掉。因为它将挑战法币的统治地位——这是政府大部分权利的源泉。</p>
-<p>一个在政府暴力工具面前异常脆弱的货币是不可能和法币竞争的。比特币则不同，它虽不能完全免疫政府的暴力手段，但它抗性极强。政府想审查e-gold非常简单，但要审查比特币……只能说很有娱乐精神。</p>
-<p>不管怎样，如果您真对发行金本位电子货币感兴趣，我支持您的举动。因为我十分认可贵金属作为商品和货币的价值。但是，在您的货币体系建立起来之前，我谦恭地请求您也支持我们的努力，并真诚地提醒您，比特币（bitcoins）虽然虚拟但有价值，因为它是人类已知的、最具革命性的支付网络所接受的唯一货币。这不是我的理论，实际上它每天正处理着相当于上百万美元的结算业务。我们有幸把米赛斯（奥地利学派先驱）书本上的理论变成了现实。我们已经在自由市场中真实地运行着了。</p>
-<p>当然，比特币仍然是个非常不稳定的实验，但它应该得到更多的尊重，而不是被诋毁为庞氏骗局。不论您认为比特币当前的价格合不合理，您必须承认的是：广义上，这一技术对金融业和个人自由都是有价值的。</p>
-<p>当我的祖辈们问我，如何保护他们财富的时候，我不会让他们去买比特币，而是让他们买贵金属。当他们问我如何进行跨国转帐的时候，我不会让他们去邮寄金块，而是让他们使用比特币。我写这封信的目的其实很简单——希望您看到比特币和黄金本身的魅力，看到它们两者都是推动自由市场发展的重要工具——黄金具有长期性、保守性和物理性，而比特币具有创新性、技术性、政治颠覆性和数字性。两者不会互相取代，但我相信两者在未来都会取代法币，谢天谢地，这天终于要来临了！</p>
-<h2 id="以自由的名义，Erik_Voorhees">以自由的名义，Erik Voorhees</h2>
-<h2 id="全文完">全文完</h2>
-<p>后记：这篇文章是我毅然投身比特币行业的导火索之一，因为这个行业中有太多这样的人。他们不光因为比特币能带来财富，而是一群真正热爱比特币思想、有想法，有干劲的人。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://seanqu.com/2014/03/18/致peter-schiff的公开信/" data-id="0te5if0dyjos7ghf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bitcoin/">bitcoin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/translate/">translate</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
-</section>
-        
-          <aside id="sidebar">
-  
-    <div class="widget-wrap">
-	<h3 class="widget-title">Donate</h3>
-		<div class="widget">
-
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Sean Qu is here" title="Sean Qu is here"/></a>
+			</div>
 			
-			<a href="https://www.bifubao.com/pay?product_hash_id=dc1b158a01b4c45f754fde558948bb8769c8f13a6c28d0b9aaba9533c1b19f86"><img height="32" src="https://www.bifubao.com/css/img/pay_btn_en_2_2x.png"/></a>
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Sean Qu is here">Sean Qu is here</a></h1>
+				<h2 class="blog-motto">Learning by Sharing</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:seanqu.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main">
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/25/20140725bitcointoday/" title="" itemprop="url">
+  
+    <h1 itemprop="name"></h1>
+    
+     
+           <p itemprop="description" >title: 20140725今日比特币date: 2014-07-25 18:38:56
+tags:[bitcointoday]
+【1】人民日报报道比特币
+
+@石头剪刀币:人民日报报道了比特币，其中较大篇幅介绍了PPC点点币的重大创新！http://t.cn/RPbBMbK。@</p>
+        
+    
+    <time datetime="2014-07-25T02:54:16.000Z" itemprop="datePublished">7月 25 2014</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/25/bitcoin_technical/" title="" itemprop="url">
+  
+    <h1 itemprop="name"></h1>
+    
+     
+           <p itemprop="description" >title: 比特币高质量技术贴集锦（持续更新）date: 2014-07-25 17:29:29
+tags:[bitcoin]
+碰撞概率一文被转载至bitcointalk.org后，有大神指出文中错漏。汗颜之余，决定搜罗一些高质量技术贴，加以整理。以供后人研究使用。
+此集锦的原</p>
+        
+    
+    <time datetime="2014-07-25T02:38:10.000Z" itemprop="datePublished">7月 25 2014</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/18/difficulty2/" title="比特币地址碰撞概率（续）" itemprop="url">
+  
+    <h1 itemprop="name">比特币地址碰撞概率（续）</h1>
+    
+     
+           <p itemprop="description" >上一篇文章《比特币地址的碰撞概率》讨论了地址碰撞概率的计算方法。
+后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。
+
+
+
+
+我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。
+如果每个格子的大小是</p>
+        
+    
+    <time datetime="2014-07-18T01:52:49.000Z" itemprop="datePublished">7月 18 2014</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/16/difficulty/" title="比特币地址碰撞概率" itemprop="url">
+  
+    <h1 itemprop="name">比特币地址碰撞概率</h1>
+    
+     
+           <p itemprop="description" >校稿：
+原文中对比“买彩票中500万概率”的表达方法有错误，应该如下表达。
+
+结论1：碰撞特定比特币地址的概率  假设，你掌握了比特币当前全网算力的10倍，花136年不间断地，碰撞一个特定比特币地址。  碰撞成功的概率，相当于买福彩双色球中500万概率的333103亿分之一。(注</p>
+        
+    
+    <time datetime="2014-07-16T11:57:54.000Z" itemprop="datePublished">7月 16 2014</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/07/16/a-comment/" title="对《区块链信任的盲区》一文的评论" itemprop="url">
+  
+    <h1 itemprop="name">对《区块链信任的盲区》一文的评论</h1>
+    
+     
+           <p itemprop="description" >刚看了发布在巴比特上的一篇文章：《区块链信任的盲区》
+作者是巴比特资讯·专栏作者：常拜不败
+原作者捐款地址：16iQ55vkDKtJyg13rqR9x96qYNtGBq58kq
+编辑：bitPaul
+原文链接：http://www.8btc.com/chaintrust0279
+</p>
+        
+    
+    <time datetime="2014-07-16T10:57:54.000Z" itemprop="datePublished">7月 16 2014</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/03/19/what-is-bitcoin-really/" title="比特币到底是什么，说真的？（what is a bitcoin ,really?）" itemprop="url">
+  
+    <h1 itemprop="name">比特币到底是什么，说真的？（what is a bitcoin ,really?）</h1>
+    
+     
+           <p itemprop="description" >译者按：这篇文章开头提出设问，“我掏钱买比特币之后，到底得到了什么？！”，然后一步步解释比特币原理，到最后回答这问题。中间穿插分析新手容易产生的误区，是一篇不错的比特币入门。
+翻译排版，顺便练习Markdown。
+英文好的，推荐看原文：http://preshing.com/20</p>
+        
+    
+    <time datetime="2014-03-18T23:04:27.000Z" itemprop="datePublished">3月 19 2014</time>
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2014/03/18/致peter-schiff的公开信/" title="致Peter Schiff的公开信" itemprop="url">
+  
+    <h1 itemprop="name">致Peter Schiff的公开信</h1>
+    
+     
+           <p itemprop="description" >这是Erik Voorhees参加Peter Schiff秀之后给主持人写的公开信，发表在Reddit上。文章就节目中对比特币的争论进行了观点的总结和延伸。第一次看到原文，我就被作者的谦虚、坚定、逻辑清晰以及娓娓道来的优美文字打动。之前网上已有的翻译很不错，只是某些地方没有完全体</p>
+        
+    
+    <time datetime="2014-03-18T12:50:12.000Z" itemprop="datePublished">3月 18 2014</time>
+  </a>
+</section>
+
+
+</div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div class="donate">
+	<p class="asidetitle">捐助</p>
+	<br>
+	<ul>
+	  <li></li>
+	  <li><a href="https://www.bifubao.com/pay?product_hash_id=dc1b158a01b4c45f754fde558948bb8769c8f13a6c28d0b9aaba9533c1b19f86"><img height="32" src="https://www.bifubao.com/css/img/pay_btn_en_2_2x.png"/></a></li>
 		
 
-		</div>
 </div>
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/bitcoin/">bitcoin</a><span class="category-list-count">5</span></li></ul>
-    </div>
-  </div>
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bitcoin/">bitcoin</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/translate/">translate</a><span class="tag-list-count">2</span></li></ul>
-    </div>
-  </div>
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/bitcoin/" title="bitcoin">bitcoin<sup>5</sup></a></li>
+		
+		</ul>
+</div>
+
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/bitcoin/" style="font-size: 20.00px;">bitcoin</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/translate/" style="font-size: 15.00px;">translate</a>
-    </div>
-  </div>
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/bifubao/" title="bifubao">bifubao<sup>0</sup></a></li>
+		
+			<li><a href="/tags/bitcoin/" title="bitcoin">bitcoin<sup>5</sup></a></li>
+		
+			<li><a href="/tags/bitcoinsand/" title="bitcoinsand">bitcoinsand<sup>0</sup></a></li>
+		
+			<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+		
+			<li><a href="/tags/translate/" title="translate">translate<sup>2</sup></a></li>
+		
+		</ul>
+</div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">七月 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">三月 2014</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2014/07/18/difficulty2/">比特币地址碰撞概率（续）</a>
-          </li>
-        
-          <li>
-            <a href="/2014/07/16/difficulty/">比特币地址碰撞概率</a>
-          </li>
-        
-          <li>
-            <a href="/2014/07/16/a-comment/">对《区块链信任的盲区》一文的评论</a>
-          </li>
-        
-          <li>
-            <a href="/2014/03/19/what-is-bitcoin-really/">比特币到底是什么，说真的？（what is a bitcoin ,really?）</a>
-          </li>
-        
-          <li>
-            <a href="/2014/03/18/致peter-schiff的公开信/">致Peter Schiff的公开信</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
 
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2014 Sean Qu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/http://weibo.com/shuangqu2010" target="_blank" title="weibo"></a>
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://seanqu.com" target="_blank" title="Sean Qu">Sean Qu</a>
+		
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
 
 
 
-<script src="/js/script.js" type="text/javascript"></script>
 
-  </div>
-</body>
-</html>
+
+
+  </body>
+ </html>
