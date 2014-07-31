@@ -1,0 +1,369 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>从Stripe的视角看比特币 | Sean Qu is here</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="Sean Qu">
+    
+    <meta name="description" content="作者：格雷格·布罗克曼 ，2014年7月21日
+很多人说过，当下比特币的情况，类似90年代初的互联网：那时，我们还没有建立Google这样的搜索引擎，使互联网方便访问。我们也没有Facebook和Netflixes这样的服务，让普罗大众可以受益于互联网。所以，我们现在的问题是：一个让主流社会、大众群">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="Sean Qu is here" title="Sean Qu is here"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Sean Qu is here">Sean Qu is here</a></h1>
+				<h2 class="blog-motto">Learning by Sharing</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:seanqu.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/07/30/stripe/" title="从Stripe的视角看比特币" itemprop="url">从Stripe的视角看比特币</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://seanqu.com" title="Sean Qu">Sean Qu</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-07-30T15:47:05.000Z" itemprop="datePublished">7月 30 2014</time>
+    更新日期:<time datetime="2014-07-31T10:45:44.000Z" itemprop="dateModified">7月 31 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#【1】货币"><span class="toc-number">1.</span> <span class="toc-text">【1】货币</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【2】网关"><span class="toc-number">2.</span> <span class="toc-text">【2】网关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【3】比特币作为IP层"><span class="toc-number">3.</span> <span class="toc-text">【3】比特币作为IP层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【4】对比与其他跨国支付网络"><span class="toc-number">4.</span> <span class="toc-text">【4】对比与其他跨国支付网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【5】对比信用卡网络"><span class="toc-number">5.</span> <span class="toc-text">【5】对比信用卡网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结论"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li></ol>
+		</div>
+		
+		<p>作者：格雷格·布罗克曼 ，2014年7月21日</p>
+<p>很多人说过，当下比特币的情况，类似90年代初的互联网：那时，我们还没有建立Google这样的搜索引擎，使互联网方便访问。我们也没有Facebook和Netflixes这样的服务，让普罗大众可以受益于互联网。所以，我们现在的问题是：一个让主流社会、大众群体普遍接受的比特币系统，应该是什么样子？</p>
+<h4 id="【1】货币">【1】货币</h4>
+<p>货币有三种功能：1.价值储备（你可以把你的积蓄存起来），2.计价单位（即价值的衡量标准），3.交换媒介（价值传输）。就前两个领域来说，比特币在高通胀经济体中已经表现出相当的优势。但它在经济相对稳定的国家，很难进入主流视野。因为，在经济稳定的国家，消费者大多希望有一个安全的地方保存自己的积蓄，而现有的银行账户和用户安全机制，已经在这一领域设置了较高的门槛。</p>
+<p>不过，比特币在颠覆价值传输这个领域，有着巨大的潜力。今天，资金转移的体验仍旧很差。实际上，网络支付是过去20年里唯一没有被互联网完全颠覆的行业。当然有几个封闭的系统做的确实不错（App Store，亚马逊）但除此之外，你仍需要没完没了地键入你的信用卡信息。 （当然，这一点我们正在努力改进。）</p>
+<p>还有个雪上加霜的问题：当涉及到跨境支付时，价值传输就遇到更大的挑战。与此形成鲜明对比的是信息传递：如果你在洪都拉斯使用互联网，你不需要弄清楚如何连接本地的网络提供商(ISP)，无需知道他们是怎样将数据包发送到肯尼亚的。传统的支付系统，看起来就像互联网兴起前的电脑网络。</p>
+<p>比特币的出现，给了我们解决这一问题的好机会。</p>
+<h4 id="【2】网关">【2】网关</h4>
+<p>如果我们想让比特币系统发挥优势，同时让消费者使用他们习惯的本地货币。一种解决思路是建立一系列“网关”。这些网关应该让人们平滑地进入和离开比特币网络，就像使用本地货币一样，不需要思考背后的业务逻辑。</p>
+<p><img src="https://stripe.com/img/blog/posts/bitcoin-the-stripe-perspective/gateway.png"></p>
+<p>消费者可以签约其所在地的网关，并关联个人银行账户。这样消费者就可以像用本地货币一样使用比特币网络：“发10英镑到这个网店，发20元到那个账户“。</p>
+<p>而背后的运行方式是这样的：发送者的网关将指定的金额转换成比特币，并把这些比特币到接收者的网关，接收者的网关将比特币转换为其可以接受的本地货币。</p>
+<p>如果这种模式被广泛采用，我们就建立了世界金融系统之间的桥梁。今天，这些金融系统在同一国家或同一市场内的资金转移功能已经做的不错了，但金融系统间传输价值还没有太好的途径。如果各个金融系统的都使用比特币（或其他加密货币）作为桥梁，世界看起来就会相像这样：</p>
+<p><img src="https://stripe.com/img/blog/posts/bitcoin-the-stripe-perspective/network.png"></p>
+<p>你也可以想象，如果网关们选择了某个传统金融系统作为桥梁，而不是比特币。在这种情况下，网关就需要对交易双方囯家的监管和伙伴关系有深入了解：即使，他们对本地政策理解的很到位，但对这个桥梁或交易对方所在囯的政策，就不一定清楚了。例如，如果美国的ACH是这个桥梁，一个企业家想通过它，建立一个澳大利亚的直接付款网关，这就需要同时建立澳洲银行、美国银行合作关系。</p>
+<h4 id="【3】比特币作为IP层">【3】比特币作为IP层</h4>
+<p>基于比特币的网关生态系统，还有一个令人兴奋的地方：参与者都是开源社区中的技术驱动型公司。他们都很乐于接受，可以带来附加价值的新协议。<br>例如，我们可以建立一种协议，使网络支付体验如下所示：</p>
+<p><img src="https://stripe.com/img/blog/posts/bitcoin-the-stripe-perspective/form.png"></p>
+<p>也就是说，互联网上的每一个实体都可以有类似电子邮件地址的付款地址。在使用网络支付的时候，你只需提供你的付款地址。商家的网关将从你的账户所在网关请求资金，你可以通过推送通知，在您的手机上进行授权。</p>
+<p>以这种方式，比特币就成了支付系统的IP层。这就像用户使用网址（例如stripe.com）解析到一个IP地址，这个系统用具有可读性的名称（alice@cad-gateway.com）解析到一个比特币地址。在背后，系统间仍然会使用比特币协议进行对话。 （关于这点，迈克·赫恩有一些好的想法）</p>
+<p><img src="https://stripe.com/img/blog/posts/bitcoin-the-stripe-perspective/network2.png"></p>
+<p>这样，我们就拥有了一个连接全球的支付网络。它不会取代现有的金融体系，消费者仍然可以使用当前的所有基础设施。它实际上将使现有系统，变得更有价值。就像互联网把全球的局域网络连接在一起，而使价值不断叠加。</p>
+<h4 id="【4】对比与其他跨国支付网络">【4】对比与其他跨国支付网络</h4>
+<p>这当然不是第一个跨国支付网络，我们可以对比PayPal。比特币的网关生态系统和PayPal比，根本优势在于开放性。本质上，任何封闭的网络都没有结构性压力带来的动力。第三方无法帮助一个封闭网络进步；即使他们真想这么做，他们也会尝试从头开始复制网络本身。相比之下，比特币世界里已经看到大量的快速迭代和复合性改善。</p>
+<p>Swift是另一个全球性支付网络。当Swift转账时，一家银行对另一家银行说“我要发给你100欧元”，然后开始找一个点对点路径，进行实际的货币转换。服务费及货币兑换是通过特定方式（往往令人惊讶）完成的。系统协议中定义好的“操作原则”越多，系统就越容易理解也越容易使用。比特币比Swift做的更好的地方，就是它本身已经包含了货币的转移和手续费机制。但它同样缺乏兑换本地货币的功能。</p>
+<p>有许多加密货币已经在协议层建立了网关功能（比如Open Transactions 和 Ripple）。不过，网络效应在类似的金融系统中举足轻重，而到今天为止，这些替代系统都没能赢得必要的用户支持。</p>
+<h4 id="【5】对比信用卡网络">【5】对比信用卡网络</h4>
+<p>如果我们真想创造方便消费者使用的全球支付网络，我们需要和这个已经非常好用的系统做对比：Visa。Visa有很多功能，大致分为三类：</p>
+<ol>
+<li>发起交易和转移资金。</li>
+<li>制定规章制度。</li>
+<li>消费者的信任和保护（回滚交易，卡被盗）。</li>
+</ol>
+<p>（其他功能，比如消费信贷是由银行提供，而不是Visa本身。）</p>
+<p>其中，上述比特币的网关网络提供了实现1和2的功能（“制定相关规则”是涵盖的，但“每个网上商家需要自己的隐私政策”不包括）。 但第3个功能也是非常重要的。最终，Visa传送给消费者的信息是：只要他们看到的Visa的标志，他们就是安全的。即使出现问题（如商家提供一个假冒伪劣产品）消费者可以全身而退。这让很多本来不可能发生的交易得以实现，使整个生态系统更有价值。</p>
+<p>因此，在我们解决分布式系统的的声誉问题（人们已经开始思考有关解决办法）之前，比特币生态中会出现一些中心化的“消费者信任供应商”。</p>
+<p>实际上，这方面的需求和比特币第三方担保服务已经出现了。然而，第三方担保实际上不是一个解决信任的方案，而是解决<strong>不信任</strong>的方案。 这是有道理的只为购买某一部分，并要求您通过跳铁圈压力像以前那样不可撤回地释放资金完成货物的检查。</p>
+<p>在这个领域里的赢家，相反会鼓励消费者信任那些他们认可的公司。他们会提供消费者保障服务，如扣费调解（并与商家直接关系到实际收回资金用于那些扣款）。 他们会成气候Bitcoin的，接受商户之间，如果他们能够促进销售：</p>
+<p><img src="https://stripe.com/img/blog/posts/bitcoin-the-stripe-perspective/example_protected.png"></p>
+<p>因为信任提供商的主要资产是他们的品牌，而这些品牌受益于网络效应，它会普遍意义的这些公司巩固。 最终会有一个或几个主要球员，就像有在信用卡世界。</p>
+<p>在生态系统中的其他参与者将要显示的品牌了。 你会看到网关与信任提供商合作品牌，就像今天你看到的联合品牌与Visa和发卡银行卡。</p>
+<p><img src="https://stripe.com/img/blog/posts/bitcoin-the-stripe-perspective/card.png"></p>
+<p>因此，这些信任中心就有责任建立可信商家和可信网关的网络。为了确保系统中参与者不作恶，他们需要制定和执行相应的规章制度来规范商家行为，否则他们的品牌将变得不那么有意义。 这把我们带回到谁去设置规则的几个实体的世界。</p>
+<h4 id="结论">结论</h4>
+<p>那么，我们能得到了怎样的结论呢？</p>
+<p>结论就是，现有的金融体系将有三大改进。</p>
+<p>首先，网关生态系统在技术上是开放的。开放式的生态系统比封闭系统发展起来更好更快。任何人都可以进入并连接到网络，并在它上面建立良好的工具和应用程序。紧随而来的监管可能会对它有一定影响，但这一根本的优势依然存在。</p>
+<p>其次，这种模式将当前由政府控制的金融系统解放出来，交给独立的公司运营。要理解这一点的价值所在，你可以对比美国的移动运营商，他们一开始拥有整个产业链。包括手机，操作系统，应用程序，以及相关服务。 这意味着，产业链里的大部分环节都没有动力革新，甚至它们本能地保护那些过时的创收设施，比如短信。通过引入竞争，每一个环节都会改进。</p>
+<p>第三，这将是第一个真正的全球支付网络：任何人都都有能力在其所在地建立一个网关，而不需要依赖某个现有的金融中心去建立网关。这对那些银行系统相对落后的国家更有意义，因为传统支付系统还没有占领这些地方。</p>
+<p>那么Stripe将在这一进程中扮演什么样的角色呢？首先，我们已经提供了比特币的支付支持，而且我们正在积极调研其他功能。不久，我们就会有新的更新。</p>
+<p>比特币行业仍处于发展早期，但我们可以看到比特币和其他加密货币潜在的影响力和未来图景。 如果我们做的足够好，这一系统将造福全球几十亿人。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://seanqu.com/2014/07/30/stripe/" data-title="从Stripe的视角看比特币 | Sean Qu is here" data-tsina="shuangqu2010" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/07/30/20140730/"  title="【比特币今日摘要20140730】">
+ <strong>NEXT:</strong><br/> 
+ <span>【比特币今日摘要20140730】
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#【1】货币"><span class="toc-number">1.</span> <span class="toc-text">【1】货币</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【2】网关"><span class="toc-number">2.</span> <span class="toc-text">【2】网关</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【3】比特币作为IP层"><span class="toc-number">3.</span> <span class="toc-text">【3】比特币作为IP层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【4】对比与其他跨国支付网络"><span class="toc-number">4.</span> <span class="toc-text">【4】对比与其他跨国支付网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【5】对比信用卡网络"><span class="toc-number">5.</span> <span class="toc-text">【5】对比信用卡网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结论"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div class="donate">
+	<p class="asidetitle">捐助</p>
+	<br>
+	<ul>
+	  <li></li>
+	  <li><a href="https://www.bifubao.com/pay?product_hash_id=dc1b158a01b4c45f754fde558948bb8769c8f13a6c28d0b9aaba9533c1b19f86"><img height="32" src="https://www.bifubao.com/css/img/pay_btn_en_2_2x.png"/></a></li>
+		
+
+</div>
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/bitcoin/" title="bitcoin">bitcoin<sup>5</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/bitcoin/" title="bitcoin">bitcoin<sup>10</sup></a></li>
+		
+			<li><a href="/tags/hash/" title="hash">hash<sup>2</sup></a></li>
+		
+			<li><a href="/tags/markdown/" title="markdown">markdown<sup>1</sup></a></li>
+		
+			<li><a href="/tags/translate/" title="translate">translate<sup>2</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/http://weibo.com/shuangqu2010" target="_blank" title="weibo"></a>
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://seanqu.com" target="_blank" title="Sean Qu">Sean Qu</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+
+
+
+  </body>
+</html>
