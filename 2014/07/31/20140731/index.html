@@ -4,19 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>比特币地址碰撞概率（续） | Sean Qu is here</title>
+    <title>【比特币今日摘要20140730】 | Sean Qu is here</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Sean Qu">
     
-    <meta name="description" content="上一篇文章《比特币地址的碰撞概率》讨论了地址碰撞概率的计算方法。
-后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。
+    <meta name="description" content="【1】言论
 
+超级比特币：在这个时间点上，比特币的每一次利好消息，对其他币来说都是利空消息，接下来，会越演越烈，加速走向赢者通吃。
 
+【2】比特币基金会
 
-
-我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。
-如果每个格子的大小是1平方毫米，那么这个">
+《比特币基金会遭指责》 http://t.cn/RPIWpfA 该博文指责基金会执行董事Jon Matonis私人经营的基金Exante在市场上">
     
     
     
@@ -76,15 +75,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/07/18/difficulty2/" title="比特币地址碰撞概率（续）" itemprop="url">比特币地址碰撞概率（续）</a>
+      <a href="/2014/07/31/20140731/" title="【比特币今日摘要20140730】" itemprop="url">【比特币今日摘要20140730】</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://seanqu.com" title="Sean Qu">Sean Qu</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-07-17T17:52:49.000Z" itemprop="datePublished">7月 18 2014</time>
-    更新日期:<time datetime="2014-07-25T05:20:32.000Z" itemprop="dateModified">7月 25 2014</time>
+    <time datetime="2014-07-31T10:14:18.000Z" itemprop="datePublished">7月 31 2014</time>
+    更新日期:<time datetime="2014-08-01T02:54:05.000Z" itemprop="dateModified">8月 1 2014</time>
     
   </p>
 </header>
@@ -93,30 +92,51 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#【1】言论"><span class="toc-number">1.</span> <span class="toc-text">【1】言论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【2】比特币基金会"><span class="toc-number">2.</span> <span class="toc-text">【2】比特币基金会</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【3】玩笑的存在"><span class="toc-number">3.</span> <span class="toc-text">【3】玩笑的存在</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【4】香港"><span class="toc-number">4.</span> <span class="toc-text">【4】香港</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【5】Coinbase"><span class="toc-number">5.</span> <span class="toc-text">【5】Coinbase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【6】查，这怎么查"><span class="toc-number">6.</span> <span class="toc-text">【6】查，这怎么查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【7】Btctrip"><span class="toc-number">7.</span> <span class="toc-text">【7】Btctrip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中本聪说:"><span class="toc-number">8.</span> <span class="toc-text">中本聪说:</span></a></li></ol>
 		</div>
 		
-		<p>上一篇文章<a href="http://seanqu.com/2014/07/16/difficulty/" target="_blank" rel="external">《比特币地址的碰撞概率》</a>讨论了地址碰撞概率的计算方法。</p>
-<p>后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。</p>
-<img src="/img/galaxy.png">
-
-
-
-<p>我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。</p>
-<p>如果每个格子的大小是<strong>1平方毫米</strong>，那么这个棋盘的边长就是2^80毫米，大约是太阳系直径的<strong>1亿倍</strong>。</p>
-<hr>
-<p>2^160 = 2^80 * 2^80</p>
-<p>2^80/120 0000 0000 000 000 //太阳系的直径约为120亿公里≈1.2*10^16毫米</p>
-<p>= 100743818.301219 ≈ 1亿</p>
-<hr>
-<p>所有有币的地址随机分布在棋盘上。如果把这些地址集中起来（400万个地址），总面积大约是4平方米。</p>
-<p>如果你想碰撞比特币地址。就像你手里有1根针，每次只能随机地把针扔在这个棋盘上某个格子里。</p>
-<p>你不断地扔针，直到戳到有币的地址。</p>
-<p>当然，现在都是用电脑扔。</p>
-<p>比如显卡（AMD5970:800MH/s），每秒可以扔8亿根针，能戳800平米。</p>
-<p>比如矿机（AntMinerS2:1000000MH/s），每秒可以扔10000亿根针，能戳10000平米，和1个足球场差不多大。</p>
-<p>听上去挺容易戳到的。</p>
-<p>可是，再想想总面积：<strong>1亿*1亿个太阳系。</strong></p>
+		<h4 id="【1】言论">【1】言论</h4>
+<blockquote>
+<p>超级比特币：在这个时间点上，比特币的每一次利好消息，对其他币来说都是利空消息，接下来，会越演越烈，加速走向赢者通吃。</p>
+</blockquote>
+<h4 id="【2】比特币基金会">【2】比特币基金会</h4>
+<blockquote>
+<p>《比特币基金会遭指责》 <a href="http://t.cn/RPIWpfA" target="_blank" rel="external">http://t.cn/RPIWpfA</a> 该博文指责基金会执行董事Jon Matonis私人经营的基金Exante在市场上大量抛售比特币，部分造成了近期的跌势。博主自称掌握了Exante的税务记录和其他证据，并要求Jon在两周内予以澄清。</p>
+</blockquote>
+<p><img src="http://bitcoinmagazine.com/wp-content/uploads/2013/12/bitcoin-foundation.jpg"></p>
+<p><strong>评论：</strong></p>
+<blockquote>
+<p>亨利问：帮规好严呀！[吃惊]//@Ryan_XxOo:加入了比特币基金会就不能卖自己的比特币？难道是参加了黑帮组织？</p>
+</blockquote>
+<h4 id="【3】玩笑的存在">【3】玩笑的存在</h4>
+<blockquote>
+<p>币民南宫远：@赵乐天 基金会本身就是一个玩笑般的存在—不知道干过啥好事，却已劣迹斑斑。 @独行巨蟹 ：矿工本身就是一个玩笑般的存在—不知道干过啥好事，却已劣迹斑斑。@瑞波支付 3i本身就是一个玩笑般的存在—不知道干过啥好事，却已劣迹斑斑。@陈思进 比特币本身就是一个玩笑般的存在—不知道干过啥好事，却已劣迹斑斑。</p>
+</blockquote>
+<h4 id="【4】香港">【4】香港</h4>
+<blockquote>
+<p>@Coin711应用导航网：【视频：Coin711比特币应用：flower delivery HK（香港比特币鲜花店）】 （分享自 @优酷） <a href="http://t.cn/RPI1PUY" target="_blank" rel="external">http://t.cn/RPI1PUY</a></p>
+</blockquote>
+<h4 id="【5】Coinbase">【5】Coinbase</h4>
+<blockquote>
+<p>Coinbase Drops Bitcoin Processing Fees for Non-Profits</p>
+</blockquote>
+<p><img src="http://media.coindesk.com/2014/07/DSC_3233-600x370.jpg"></p>
+<h4 id="【6】查，这怎么查">【6】查，这怎么查</h4>
+<blockquote>
+<p>Tokyo Police Launch Investigation into Missing Mt. Gox Bitcoin</p>
+</blockquote>
+<h4 id="【7】Btctrip">【7】Btctrip</h4>
+<blockquote>
+<p>BTCTrip: We Accept Bitcoiners</p>
+</blockquote>
+<p><a href="http://bitcoinmagazine.com/15232/btctrip-we-accept-bitcoiners/" target="_blank" rel="external">http://bitcoinmagazine.com/15232/btctrip-we-accept-bitcoiners/</a></p>
+<p><img src="http://bitcoinmagazine.com/wp-content/uploads/2014/07/logo-btcW.png"></p>
+<h4 id="中本聪说:">中本聪说:</h4>
+<blockquote>
+<p>I agree.  All transactions, IP changes, renewals, etc. should have some fee that goes to the miners.</p>
+<p>You might consider a certain amount of work to generate a domain, instead of a fixed total circulation.  The work per domain could be on a schedule that grows with Moore’s Law.  That way the number of domains would grow with demand and the number of people using it.</p>
+</blockquote>
+<p><a href="https://bitcointalk.org/index.php?topic=1790.msg28963#msg28963" target="_blank" rel="external">https://bitcointalk.org/index.php?topic=1790.msg28963#msg28963</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -127,16 +147,11 @@
   </div>
 
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-</div>
-
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://seanqu.com/2014/07/18/difficulty2/" data-title="比特币地址碰撞概率（续） | Sean Qu is here" data-tsina="shuangqu2010" class="share clearfix">
+  <div data-url="http://seanqu.com/2014/07/31/20140731/" data-title="【比特币今日摘要20140730】 | Sean Qu is here" data-tsina="shuangqu2010" class="share clearfix">
   </div>
 
 </div>
@@ -145,19 +160,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/07/24/21million/" title="2100万">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  2100万</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/07/16/difficulty/"  title="比特币地址碰撞概率">
+<a href="/2014/07/30/20140730/"  title="【比特币今日摘要20140730】">
  <strong>NEXT:</strong><br/> 
- <span>比特币地址碰撞概率
+ <span>【比特币今日摘要20140730】
 </span>
 </a>
 </div>
@@ -170,7 +177,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#【1】言论"><span class="toc-number">1.</span> <span class="toc-text">【1】言论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【2】比特币基金会"><span class="toc-number">2.</span> <span class="toc-text">【2】比特币基金会</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【3】玩笑的存在"><span class="toc-number">3.</span> <span class="toc-text">【3】玩笑的存在</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【4】香港"><span class="toc-number">4.</span> <span class="toc-text">【4】香港</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【5】Coinbase"><span class="toc-number">5.</span> <span class="toc-text">【5】Coinbase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【6】查，这怎么查"><span class="toc-number">6.</span> <span class="toc-text">【6】查，这怎么查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【7】Btctrip"><span class="toc-number">7.</span> <span class="toc-text">【7】Btctrip</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中本聪说:"><span class="toc-number">8.</span> <span class="toc-text">中本聪说:</span></a></li></ol>
   </div>
 
 <div id="asidepart">
