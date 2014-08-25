@@ -4,19 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>比特币地址碰撞概率（续） | Sean Qu is here</title>
+    <title>【喷币20140825】 | Sean Qu is here</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Sean Qu">
     
-    <meta name="description" content="上一篇文章《比特币地址的碰撞概率》讨论了地址碰撞概率的计算方法。
-后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。
+    <meta name="description" content="【1】言论
 
-
-
-
-我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。
-如果每个格子的大小是1平方毫米，那么这个">
+@比特黑点康姆: #比特黑# 横盘几时论优劣，飞涨哪日都盯盘。此时不盯亦不评，不是死多就是零。你说它好它就好？你说它衰它就衰？兄弟你别吹太强，bts 路还长。一个两个三四个，嫩模排排绕梦淫。你说我在扯逼蛋，我笑你只会撸管。谁人抱钱骂币烂，谁人又把币儿还。今宵不到三毛半，哥们你就转三转！">
     
     
     
@@ -76,15 +71,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/07/18/difficulty2/" title="比特币地址碰撞概率（续）" itemprop="url">比特币地址碰撞概率（续）</a>
+      <a href="/2014/08/25/20140825/" title="【喷币20140825】" itemprop="url">【喷币20140825】</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://seanqu.com" title="Sean Qu">Sean Qu</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-07-17T17:52:49.000Z" itemprop="datePublished">7月 18 2014</time>
-    更新日期:<time datetime="2014-07-25T05:20:32.000Z" itemprop="dateModified">7月 25 2014</time>
+    <time datetime="2014-08-25T09:56:17.000Z" itemprop="datePublished">8月 25 2014</time>
+    更新日期:<time datetime="2014-08-25T03:11:53.000Z" itemprop="dateModified">8月 25 2014</time>
     
   </p>
 </header>
@@ -93,30 +88,36 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#【1】言论"><span class="toc-number">1.</span> <span class="toc-text">【1】言论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【2】200台"><span class="toc-number">2.</span> <span class="toc-text">【2】200台</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【3】ETA_CEO欢迎比特币"><span class="toc-number">3.</span> <span class="toc-text">【3】ETA CEO欢迎比特币</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【4】嘴年代"><span class="toc-number">4.</span> <span class="toc-text">【4】嘴年代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【5】Gavin说"><span class="toc-number">5.</span> <span class="toc-text">【5】Gavin说</span></a></li></ol>
 		</div>
 		
-		<p>上一篇文章<a href="http://seanqu.com/2014/07/16/difficulty/" target="_blank" rel="external">《比特币地址的碰撞概率》</a>讨论了地址碰撞概率的计算方法。</p>
-<p>后来琢磨，有没有更形象方法来形容这个碰撞概率。于是，想到了大刘的二向箔（出自《三体》，作者刘慈欣），觉得这个思路不错。</p>
-<img src="/img/galaxy.png">
-
-
-
-<p>我们假设有一个正方形的巨大棋盘，棋盘上的格子代表所有比特币地址。</p>
-<p>如果每个格子的大小是<strong>1平方毫米</strong>，那么这个棋盘的边长就是2^80毫米，大约是太阳系直径的<strong>1亿倍</strong>。</p>
-<hr>
-<p>2^160 = 2^80 * 2^80</p>
-<p>2^80/120 0000 0000 000 000 //太阳系的直径约为120亿公里≈1.2*10^16毫米</p>
-<p>= 100743818.301219 ≈ 1亿</p>
-<hr>
-<p>所有有币的地址随机分布在棋盘上。如果把这些地址集中起来（400万个地址），总面积大约是4平方米。</p>
-<p>如果你想碰撞比特币地址。就像你手里有1根针，每次只能随机地把针扔在这个棋盘上某个格子里。</p>
-<p>你不断地扔针，直到戳到有币的地址。</p>
-<p>当然，现在都是用电脑扔。</p>
-<p>比如显卡（AMD5970:800MH/s），每秒可以扔8亿根针，能戳800平米。</p>
-<p>比如矿机（AntMinerS2:1000000MH/s），每秒可以扔10000亿根针，能戳10000平米，和1个足球场差不多大。</p>
-<p>听上去挺容易戳到的。</p>
-<p>可是，再想想总面积：<strong>1亿*1亿个太阳系。</strong></p>
+		<h4 id="【1】言论">【1】言论</h4>
+<blockquote>
+<p>@比特黑点康姆: #比特黑# 横盘几时论优劣，飞涨哪日都盯盘。此时不盯亦不评，不是死多就是零。你说它好它就好？你说它衰它就衰？兄弟你别吹太强，bts 路还长。一个两个三四个，嫩模排排绕梦淫。你说我在扯逼蛋，我笑你只会撸管。谁人抱钱骂币烂，谁人又把币儿还。今宵不到三毛半，哥们你就转三转！</p>
+</blockquote>
+<h4 id="【2】200台">【2】200台</h4>
+<blockquote>
+<p>全球比特币ATM机超过200台，<a href="http://t.cn/RPrQJom" target="_blank" rel="external">http://t.cn/RPrQJom</a> ，发展迅猛，半年时间，分布在6个大洲，来自15个制造商。@彩云比特</p>
+</blockquote>
+<p><img src="https://cloud.githubusercontent.com/assets/3157180/4025776/3ab7b462-2c03-11e4-8737-996913c0252c.png"></p>
+<h4 id="【3】ETA_CEO欢迎比特币">【3】ETA CEO欢迎比特币</h4>
+<p><a href="http://thebitcoinnews.co.uk/2014/08/24/electronic-transactions-association-ceo-expecting-more-partnerships-with-bitcoin-startups/" target="_blank" rel="external">http://thebitcoinnews.co.uk/2014/08/24/electronic-transactions-association-ceo-expecting-more-partnerships-with-bitcoin-startups/</a></p>
+<p>前置新闻：Bitpay成文ETA成员。</p>
+<p><img src="http://www.btcside.com/Content/File/Manage/image/20140825/20140825095547_0347.jpg"></p>
+<h4 id="【4】嘴年代">【4】嘴年代</h4>
+<blockquote>
+<p>BTSX甚嚣尘上，时刻谨记只有真正研究透彻，才能安心持有或不持有。不要被言论左右。</p>
+</blockquote>
+<h4 id="【5】Gavin说">【5】Gavin说</h4>
+<p><img src="http://www.btcside.com/Content/File/Manage/image/20140517/20140517121014_5533.jpg"></p>
+<p>I haven’t seen anybody post about what would be my biggest worry if I were trying out alternative block chains. I realize this may be perceived as “Gavin is FUD’ding anything that isn’t bitcoin!”  (FUD == Fear, Uncertainty and Doubt)  But I think some of you might be forgetting some basic computer security fundamentals in the excitement to be early adopters.</p>
+<p>When I first heard about bitcoin, my questions were:</p>
+<p>1) Can it possibly work (do the ideas for how it works make sense)?<br>2) Is it a scam?<br>3) If it is not a scam, could it open my computer up to viruses/trojans if I run it?</p>
+<p>I answered those questions by:</p>
+<p>1) Reading and understanding Satoshi’s whitepaper.  Then thinking about it for a day or two and reading it again.<br>2) Finding out everything I could about the project.  I read every forum thread here (there were probably under a hundred threads back then) and read Satoshi’s initial postings on the crypto mailing list.<br>3) Downloaded and skimmed the source code to see if it looked vulnerable to buffer overflow or other remotely exploitable attacks.</p>
+<p>If I were going to experiment with an alternative block-chain, I’d go through the same process again. But I’m an old conservative fuddy-duddy.</p>
+<p>If you want to take a risk on a brand-new alternative block-chain, I’d strongly suggest that you:</p>
+<p>1) Run the software in a virtual machine or on a machine that doesn’t contain anything valuable.<br>2) Don’t invest more money or time than you can afford to lose.<br>3) Use a different passphrase at every exchange site.</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -127,16 +128,11 @@
   </div>
 
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/bitcoin/">bitcoin</a>
-</div>
-
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://seanqu.com/2014/07/18/difficulty2/" data-title="比特币地址碰撞概率（续） | Sean Qu is here" data-tsina="shuangqu2010" class="share clearfix">
+  <div data-url="http://seanqu.com/2014/08/25/20140825/" data-title="【喷币20140825】 | Sean Qu is here" data-tsina="shuangqu2010" class="share clearfix">
   </div>
 
 </div>
@@ -145,19 +141,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/07/24/21million/" title="2100万">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  2100万</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/07/16/difficulty/"  title="比特币地址碰撞概率">
+<a href="/2014/08/22/20140822/"  title="【喷币20140822】">
  <strong>NEXT:</strong><br/> 
- <span>比特币地址碰撞概率
+ <span>【喷币20140822】
 </span>
 </a>
 </div>
@@ -170,7 +158,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#【1】言论"><span class="toc-number">1.</span> <span class="toc-text">【1】言论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【2】200台"><span class="toc-number">2.</span> <span class="toc-text">【2】200台</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【3】ETA_CEO欢迎比特币"><span class="toc-number">3.</span> <span class="toc-text">【3】ETA CEO欢迎比特币</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【4】嘴年代"><span class="toc-number">4.</span> <span class="toc-text">【4】嘴年代</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【5】Gavin说"><span class="toc-number">5.</span> <span class="toc-text">【5】Gavin说</span></a></li></ol>
   </div>
 
 <div id="asidepart">
